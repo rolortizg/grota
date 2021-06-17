@@ -1,0 +1,4 @@
+add_cart:
+  version: 1.x
+  js:
+    js/add_cart.js: {}

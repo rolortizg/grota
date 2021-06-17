@@ -1,0 +1,20 @@
+uuid: 4ce352c3-0b8f-44d5-a017-cbdd3fc6450e
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_check_labor_social
+field_name: field_check_labor_social
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

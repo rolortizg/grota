@@ -1,0 +1,52 @@
+uuid: 934da5a5-27f4-4610-8782-0af16a8b205c
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.medir_el_impacto.field_certificados
+    - field.field.node.medir_el_impacto.field_check_labor_social
+    - field.field.node.medir_el_impacto.field_checks_de_labor_social
+    - field.field.node.medir_el_impacto.field_checks_de_materiales
+    - field.field.node.medir_el_impacto.field_descripcion
+    - field.field.node.medir_el_impacto.field_descripcion_2
+    - field.field.node.medir_el_impacto.field_descripcion_3
+    - field.field.node.medir_el_impacto.field_imagen_de_fondo
+    - field.field.node.medir_el_impacto.field_titulo
+    - field.field.node.medir_el_impacto.field_titulo_2
+    - field.field.node.medir_el_impacto.field_titulo_3
+    - field.field.node.medir_el_impacto.field_titulo_4
+    - node.type.medir_el_impacto
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.medir_el_impacto.teaser
+targetEntityType: node
+bundle: medir_el_impacto
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_certificados: true
+  field_check_labor_social: true
+  field_checks_de_labor_social: true
+  field_checks_de_materiales: true
+  field_descripcion: true
+  field_descripcion_2: true
+  field_descripcion_3: true
+  field_imagen_de_fondo: true
+  field_titulo: true
+  field_titulo_2: true
+  field_titulo_3: true
+  field_titulo_4: true
+  langcode: true

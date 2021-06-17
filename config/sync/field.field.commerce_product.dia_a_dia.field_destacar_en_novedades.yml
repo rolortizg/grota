@@ -1,0 +1,23 @@
+uuid: d8d19a99-e9e1-4bc3-a522-3a48749dc646
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.dia_a_dia
+    - field.storage.commerce_product.field_destacar_en_novedades
+id: commerce_product.dia_a_dia.field_destacar_en_novedades
+field_name: field_destacar_en_novedades
+entity_type: commerce_product
+bundle: dia_a_dia
+label: 'Destacar en novedades'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

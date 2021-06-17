@@ -1,0 +1,8 @@
+uuid: 1faf1adb-2bbe-4193-a56d-406baabb0a51
+langcode: es
+status: true
+dependencies: {  }
+id: proveedor
+label: Proveedor
+description: ''
+locked: false

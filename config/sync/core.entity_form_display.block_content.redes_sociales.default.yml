@@ -1,0 +1,167 @@
+uuid: 7831384a-bd0b-451e-8d06-48435be7a17f
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.redes_sociales
+    - field.field.block_content.redes_sociales.field_enlace_facebook
+    - field.field.block_content.redes_sociales.field_enlace_instagram
+    - field.field.block_content.redes_sociales.field_enlace_linkedin
+    - field.field.block_content.redes_sociales.field_enlace_pinterest
+    - field.field.block_content.redes_sociales.field_facebook
+    - field.field.block_content.redes_sociales.field_instagram
+    - field.field.block_content.redes_sociales.field_linkedin
+    - field.field.block_content.redes_sociales.field_pinterest
+  module:
+    - field_group
+    - field_layout
+    - file
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_instagram:
+      children:
+        - field_instagram
+        - field_enlace_instagram
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Instagram
+    group_facebook:
+      children:
+        - field_facebook
+        - field_enlace_facebook
+      parent_name: ''
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Facebook
+    group_pinterest:
+      children:
+        - field_pinterest
+        - field_enlace_pinterest
+      parent_name: ''
+      weight: 2
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Pinterest
+    group_linkedin:
+      children:
+        - field_linkedin
+        - field_enlace_linkedin
+      parent_name: ''
+      weight: 4
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Linkedin
+id: block_content.redes_sociales.default
+targetEntityType: block_content
+bundle: redes_sociales
+mode: default
+content:
+  field_enlace_facebook:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_enlace_instagram:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_enlace_linkedin:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_enlace_pinterest:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_facebook:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_instagram:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_linkedin:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_pinterest:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 5
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,8 @@
+uuid: f0fa339a-95bd-44ef-84a9-bca27a46bd76
+langcode: es
+status: true
+dependencies: {  }
+name: 'Empresas certificadoras'
+vid: empresas_certificaco
+description: 'Se muestra en Medir el impacto - Certificados (Quién lo certifica)'
+weight: -6

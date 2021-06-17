@@ -1,0 +1,376 @@
+<?php
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\grota_config\Controller\DatosTotalesController;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+use Drupal\grota_config\Controller\UsuarioController;
+
+/**
+ * Implements hook_theme().
+ */
+function grota_config_theme(){
+  return [
+    'footer' => [
+      'template' => 'footer',
+      'path' => drupal_get_path('module', 'grota_config') . '/templates',
+      'variables' => [
+        'content' => [NULL],
+      ],
+    ],
+    'filtro_block' => [
+      'template' => 'filtro_block',
+      'path' => drupal_get_path('module', 'grota_config') . '/templates',
+      'variables' => [
+        'content' => [NULL],
+      ],
+    ],
+    'moda' => [
+      'template' => 'moda',
+      'path' => drupal_get_path('module', 'grota_config') . '/templates',
+      'variables' => [
+        'content' => [NULL],
+      ],
+    ],
+    'hogar' => [
+      'template' => 'hogar',
+      'path' => drupal_get_path('module', 'grota_config') . '/templates',
+      'variables' => [
+        'content' => [NULL],
+      ],
+    ],
+    'dia_a_dia' => [
+      'template' => 'dia_a_dia',
+      'path' => drupal_get_path('module', 'grota_config') . '/templates',
+      'variables' => [
+        'content' => [NULL],
+      ],
+    ],
+    'productos' => [
+      'template' => 'productos',
+      'path' => drupal_get_path('module', 'grota_config') . '/templates',
+      'variables' => [
+        'content' => [NULL],
+      ],
+    ],
+    'productos_favoritos' => [
+      'template' => 'productos_favoritos',
+      'path' => drupal_get_path('module', 'grota_config') . '/templates',
+      'variables' => [
+        'content' => [NULL],
+      ],
+    ],
+  ];
+}
+
+function grota_config_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  if (strpos($form_id, 'commerce_order_item_add_to_cart_form_commerce') !== FALSE){
+      $session = \Drupal::request()->getSession();
+      if($session->get('color_linea_pedido', 'default') != ''){
+        $color = $session->get('color_linea_pedido', 'default');
+      }
+
+      $talla = $session->get('talla_linea_pedido', 'default');
+      $form['quantity']['widget'][0]['value']['#title_display'] = 'none';
+     // $form['quantity']['widget'][0]['value']['#prefix'] = '<p>Cantidad</p><div class="num-in"><span class="minus dis">-</span>';
+      //$form['quantity']['widget'][0]['value']['#suffix'] = '<span class="plus">+</span></div>';
+      $form['quantity']['#weight'] = -1;
+      $form['purchased_entity']['#weight'] = 1;
+      //kint($form['purchased_entity']['widget'][0]['attributes']['attribute_modelo']);
+      $total_color = count($form['purchased_entity']['widget'][0]['attributes']['attribute_color']['#options']);
+      if($total_color == 1){
+        //$form['purchased_entity']['widget'][0]['attributes']['attribute_color']['#options'] = [0 =>''];
+        $form['purchased_entity']['widget'][0]['attributes']['attribute_color']['#title_display'] = 'invisible';
+        $form['purchased_entity']['widget'][0]['attributes']['attribute_color']['#required'] = false;
+        $form['purchased_entity']['widget'][0]['attributes']['attribute_color']['#attributes'] = ['class' => ['oculto']];
+      }
+      if(isset($form['purchased_entity']['widget'][0]['attributes']['attribute_modelo'])){
+        $total_modelo = count($form['purchased_entity']['widget'][0]['attributes']['attribute_modelo']['#options']);
+        if($total_modelo == 1){
+          //$form['purchased_entity']['widget'][0]['attributes']['attribute_modelo']['#options'] = [];
+          $form['purchased_entity']['widget'][0]['attributes']['attribute_modelo']['#title_display'] = 'invisible';
+          $form['purchased_entity']['widget'][0]['attributes']['attribute_modelo']['#required'] = false;
+         // $form['purchased_entity']['widget'][0]['attributes']['attribute_modelo']['#default_value'] = '';
+          $form['purchased_entity']['widget'][0]['attributes']['attribute_modelo'] = [];
+          $form['purchased_entity']['widget'][0]['attributes']['attribute_modelo']['#attributes'] = ['class' => ['oculto']];
+        }
+      }
+
+      if(isset($form['purchased_entity']['widget'][0]['attributes']['attribute_talla'])){
+        $total_tallas = count($form['purchased_entity']['widget'][0]['attributes']['attribute_talla']['#options']);
+        if($total_tallas == 1){
+          //$form['purchased_entity']['widget'][0]['attributes']['attribute_talla']['#options'] = [];
+          $form['purchased_entity']['widget'][0]['attributes']['attribute_talla']['#title_display'] = 'invisible';
+          $form['purchased_entity']['widget'][0]['attributes']['attribute_talla']['#required'] = false;
+          // $form['purchased_entity']['widget'][0]['attributes']['attribute_modelo']['#default_value'] = '';
+          $form['purchased_entity']['widget'][0]['attributes']['attribute_talla']['#attributes'] = ['class' => ['oculto']];
+        }
+      }
+
+      if(isset($color)){
+        if($color != 'default'){
+          kint('pasa');
+          //$form['purchased_entity']['widget'][0]['attributes']['attribute_color']['#default_value'] = $color;
+        }
+      }
+    if(isset($form['purchased_entity']['widget'][0]['attributes']['attribute_talla'])){
+      if(isset($talla)){
+        if($talla != 'default'){
+          $form['purchased_entity']['widget'][0]['attributes']['attribute_talla']['#default_value'] = $talla;
+        }
+      }
+    }
+
+
+      $session->remove('color_linea_pedido');
+      $session->remove('talla_linea_pedido');
+      $form['purchased_entity']['widget'][0]['attributes']['precio'] = [];
+      $parameter = \Drupal::routeMatch()->getParameter('commerce_product');
+      $product = \Drupal\commerce_product\Entity\Product::load((int)$parameter->id());
+      if($product->variations->entity->price->number != null){
+        $precio = $product->variations->entity->price->number;
+        if($product->variations->entity->list_price->number != null){
+          $form['purchased_entity']['widget'][0]['precio']['#markup'] = '<div class="E-compra-precio-container"> <p class="E-compra-precio">'.round($precio, 2).' €</p><p>'.round($product->variations->entity->list_price->number, 2).' €</p></div>';
+        }else{
+          $form['purchased_entity']['widget'][0]['precio']['#markup'] = '<div class="E-compra-precio-container"><p class="E-compra-precio">'.round($precio, 2).' €</p></div>';
+        }
+      }
+      /*Load Product Variations*/
+      //$entity_manager = \Drupal::entityManager();
+      //$product_variation = $entity_manager->getStorage('commerce_product_variation')->load((int)$product->getVariationIds()[0]);
+
+      $form['#submit'][1] = 'eliminar_linea_pedido';
+      $form['actions']['submit']['#submit'][1] = 'eliminar_linea_pedido';
+      $form['actions']['submit']['#value'] = 'Comprar';
+    }
+
+
+  if(isset($form['#wrapper_id'])){
+    if(str_contains($form['#wrapper_id'], 'commerce-product-add-to-cart-form')){
+      $form['quantity']['widget'][0]['#prefix'] = '<p>Cantidad</p><div class="num-in"><span class="minus dis">-</span>';
+      $form['quantity']['widget'][0]['#suffix'] = '<span class="plus">+</span></div>';
+      $form['quantity']['widget'][0]['#title_display'] = 'none';
+    }
+  }
+
+
+  /*if (strpos($form_id, 'views_form_commerce_cart_form_default') !== FALSE){
+    foreach($form['edit_quantity'] as $index => $quantity){
+      if(is_array($form['edit_quantity'][$index])){
+        $form['edit_quantity'][$index]['#prefix'] = '<p>Cantidad</p><div class="num-in"><span class="minus dis">-</span>';
+        $form['edit_quantity'][$index]['#suffix'] = '<span class="plus">+</span></div>';
+      }
+    }
+  }*/
+
+  if($form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-buscador-page-1'){
+    $context = stream_context_create(
+      array(
+        "http" => array(
+          "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+        )
+      )
+    );
+    $form['field_materiales_target_id']['#type'] = 'checkboxes';
+    $opciones_form = $form['field_materiales_target_id']['#options'];
+    $opciones = [];
+    foreach($opciones_form as $index=>$opcion){
+      $term = Term::load($index);
+      if(isset($term->field_icono[0])){
+        //ksm($term->field_icono[0]->entity->uri->value);
+        $opciones[$index] = '<span class="tooltip-buscador" data-toggle="tooltip" data-placement="bottom" title="'.$term->name->value.'" style="width: 37px; height: 37px;">'.file_get_contents($term->field_icono[0]->entity->uri->value, false, $context).'</span>';
+      }
+    }
+    $form['field_materiales_target_id']['#options'] = $opciones;
+    $form['field_materiales_target_id']['#default_value'] = [];
+
+    $form['field_labor_social_target_id']['#type'] = 'checkboxes';
+    $opciones_ls = $form['field_labor_social_target_id']['#options'];
+    $opciones_labor = [];
+    foreach($opciones_ls as $index=>$opcion){
+      $term = Term::load($index);
+      if(isset($term->field_icono[0])){
+        $opciones_labor[$index] = '<span class="tooltip-buscador" data-toggle="tooltip" data-placement="bottom" title="'.$term->name->value.'" style="width: 37px; height: 37px;">'.file_get_contents($term->field_icono[0]->entity->uri->value, false, $context).'</span>';
+      }
+    }
+    $form['field_labor_social_target_id']['#options'] = $opciones_labor;
+    $form['field_labor_social_target_id']['#default_value'] = [];
+
+    $form['field_produccion_target_id']['#type'] = 'checkboxes';
+    $opciones_pro = $form['field_produccion_target_id']['#options'];
+    $opciones_produccion = [];
+    foreach($opciones_pro as $index=>$opcion){
+      $term = Term::load($index);
+      if(isset($term->field_icono[0])){
+        $opciones_produccion[$index] = '<span class="tooltip-buscador" data-toggle="tooltip" data-placement="bottom" title="'.$term->name->value.'" style="width: 37px; height: 37px;">'.file_get_contents($term->field_icono[0]->entity->uri->value, false, $context).'</span>';
+      }
+    }
+    $form['field_produccion_target_id']['#options'] = $opciones_produccion;
+    $form['field_produccion_target_id']['#default_value'] = [];
+  }
+  if(str_contains($form_id, 'views_form_commerce_cart_form')) {
+    $current_store = \Drupal::service('commerce_store.current_store');
+    $store = $current_store->getStore();
+    $cart_provider = \Drupal::service('commerce_cart.cart_provider');
+    $cart = $cart_provider->getCart("default", $store);
+    //kint($cart);
+    $form['actions']['precio'] = [
+      '#markup' =>'<div><div><p>Total: </p>IVA incluido</p></div><div><p>'.round($cart->total_price[0]->number, 2).' €</p></div></div>',
+    ];
+
+    $ahorro_impacto = 0;
+    foreach($cart->getItems() as $order_item){
+      $productId = $order_item->getPurchasedEntity()->get('product_id')->target_id;
+      $producto = \Drupal\commerce_product\Entity\Product::load($productId);
+
+      $tid = $producto->field_medicion_de_impacto[0]->target_id;
+      $term = Term::load($tid);
+      $industria = 0;
+      $grota = 0;
+      $industria_cs = 0;
+      $grota_cs = 0;
+      //kint($term);
+       if($term->field_co2_industria[0]) {
+         $industria = $term->field_co2_industria[0]->value;
+      }
+      if($term->field_co2_grota[0]) {
+        $grota = $term->field_co2_grota[0]->value;
+      }
+      if($industria && $grota){
+        $resultado = $industria - $grota;
+      }else{
+        $resultado = 0;
+      }
+
+      $ahorro_impacto = $ahorro_impacto + $resultado;
+      $coste_social = 0;
+      if($term->field_coste_social_industria[0]) {
+        $industria_cs = $term->field_coste_social_industria[0]->value;
+      }
+      if($term->field_coste_social_grota[0]) {
+        $grota_cs = $term->field_coste_social_grota[0]->value;
+      }
+      if($industria_cs && $grota_cs){
+        $resultado_cs = $industria_cs - $grota_cs;
+      }else{
+        $resultado_cs = 0;
+      }
+      $coste_social = $coste_social + $resultado_cs;
+    }
+    $form['prueba'] = [
+      '#markup' =>'<div class="box-verde"><p>Ahorro en impacto en CO2: '.$ahorro_impacto.' kg</p></div>',
+    ];
+    $form['actions']['checkout']['#value'] = 'Continuar';
+    $form['actions']['submit']['#type'] = 'hidden';
+  }
+}
+
+function grota_config_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if(isset($entity->type[0]->target_id)){
+    if($entity->type[0]->target_id == 'textil' || $entity->type[0]->target_id == 'hogar' || $entity->type[0]->target_id == 'dia_a_dia'){
+      if(isset($entity->field_medicion_de_impacto[0])){
+        $id = $entity->field_medicion_de_impacto[0]->target_id;
+        $termino = Term::load($id);
+        $grota = NULL;
+        if($termino->field_co2_grota[0]){
+          $grota = $termino->field_co2_grota[0]->value;
+        }
+        $industria = NULL;
+        if($termino->field_co2_industria[0]){
+          $industria = $termino->field_co2_industria[0]->value;
+        }
+        if($grota && $industria){
+          $porcentaje = ($grota*100)/$industria;
+          $entity->field_porcentaje[0]->value = $porcentaje;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function grota_config_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  //$current_path = \Drupal::service('path.current')->getPath();
+  //dpm($current_path);
+  if($view->id() == 'productos_relacionados'){
+    $query->where[2] = [
+      'condition' => [
+        'field' => 'commerce_product_field_data.product_id',
+        'value' => '',
+        'operator' => '!=',
+      ],
+      'args' => [],
+      'type' => 'AND',
+    ];
+  }
+}
+/**
+ * {@inheritdoc}
+ */
+function eliminar_linea_pedido(array &$form, FormStateInterface $form_state){
+  $session = \Drupal::request()->getSession();
+  $current_store = \Drupal::service('commerce_store.current_store');
+  $store = $current_store->getStore();
+  $cart_provider = \Drupal::service('commerce_cart.cart_provider');
+  $cart = $cart_provider->getCart("default", $store);
+
+  $order_id = $cart->get('order_id')->value;
+  foreach($cart->getItems() as $order_item){
+    $order = $order_item->get('order_item_id')->value;
+    $order_id_g = $session->get('order_id', 'default');
+    if($order_id_g == $order){
+      \Drupal\grota_config\Controller\ProductoController::deleteOrderItem($order, $order_id);
+    }
+  }
+
+}
+function grota_config_preprocess_region(&$variables){
+  if(isset($variables['elements']['#region'])){
+    if($variables['elements']['#region'] == 'primary_menu'){
+      $current_store = \Drupal::service('commerce_store.current_store');
+      $store = $current_store->getStore();
+      $cart_provider = \Drupal::service('commerce_cart.cart_provider');
+      $cart = $cart_provider->getCart("default", $store);
+      if(isset($cart->order_items[0])){
+        $variables['clase_carrito'] = 'cesta-con-productos';
+      }else{
+        $variables['clase_carrito'] = 'cesta-vacia';
+      }
+      $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+      if(is_object($user)){
+        $current_path = \Drupal::service('path.current')->getPath();
+        $pos = str_contains($current_path, '/user/');
+        if($pos == true){
+          $enlace = '/user/logout';
+          $clase = 'cerrar-sesion';
+        }else{
+          $enlace = '/usuario/acceso';
+          $clase = 'panel-user';
+        }
+      }else{
+        $enlace = '/usuario/acceso';
+        $clase = 'panel-user';
+      }
+      $variables['enlace'] = $enlace;
+      $variables['clase'] = $clase;
+    }
+  }
+}
+
+function grota_config_preprocess_user(&$variables){
+  $variables['datos_usuario'] = UsuarioController::datos_usuario();
+}
+function grota_config_preprocess_node(&$variables){
+  $variables['cantidad_co2'] = DatosTotalesController::total_cantidad_co2();
+  $variables['cantidad_organico'] = DatosTotalesController::total_cantidad_organico();
+  $variables['cantidad_compostable'] = DatosTotalesController::total_cantidad_compostable();
+  $variables['cantidad_biosintetico'] = DatosTotalesController::total_cantidad_biosintetico();
+  $variables['cantidad_reciclable'] = DatosTotalesController::total_cantidad_reciclable();
+  $variables['cantidad_reciclado'] = DatosTotalesController::total_cantidad_reciclado();
+  $variables['cantidad_biodegradable'] = DatosTotalesController::total_cantidad_biodegradable();
+  $variables['productos_destacados'] = \Drupal\grota_config\Controller\ProductoController::productos_destacados();
+  $variables['productos_fav'] = \Drupal\grota_config\Controller\ProductoController::productos_favoritos();
+}

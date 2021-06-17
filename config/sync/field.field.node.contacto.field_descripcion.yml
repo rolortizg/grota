@@ -1,0 +1,21 @@
+uuid: 6a252398-66aa-470c-8c93-8bb7288a19cf
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion
+    - node.type.contacto
+  module:
+    - text
+id: node.contacto.field_descripcion
+field_name: field_descripcion
+entity_type: node
+bundle: contacto
+label: Descripción
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

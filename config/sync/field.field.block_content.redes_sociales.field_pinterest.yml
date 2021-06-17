@@ -1,0 +1,27 @@
+uuid: 36c57912-82e4-49a2-ad70-9d90bef8fe03
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.redes_sociales
+    - field.storage.block_content.field_pinterest
+  module:
+    - file
+id: block_content.redes_sociales.field_pinterest
+field_name: field_pinterest
+entity_type: block_content
+bundle: redes_sociales
+label: Pinterest
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: rrss
+  file_extensions: svg
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

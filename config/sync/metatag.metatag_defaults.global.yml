@@ -1,0 +1,12 @@
+uuid: 3a7bf07d-5e49-4df8-b8cd-f68b87e9b814
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  canonical_url: '[current-page:url]'
+  description: 'Tu Marketplace Sostenible. Tenemos marcas con productos de Moda, Hogar y Día a día. Calculamos el ahorro en CO2 de tus compras. '
+  title: '[current-page:title] | [site:name]'

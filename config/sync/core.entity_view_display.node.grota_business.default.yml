@@ -1,0 +1,103 @@
+uuid: 4c62ecb4-a08b-4266-a317-c560d83f8e86
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.grota_business.field_descripcion
+    - field.field.node.grota_business.field_icono
+    - field.field.node.grota_business.field_imagen_de_fondo
+    - field.field.node.grota_business.field_metatag
+    - field.field.node.grota_business.field_proyectos
+    - field.field.node.grota_business.field_titulo
+    - field.field.node.grota_business.field_titulo_2
+    - field.field.node.grota_business.field_titulo_3
+    - node.type.grota_business
+  module:
+    - field_layout
+    - file
+    - image
+    - layout_discovery
+    - metatag
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.grota_business.default
+targetEntityType: node
+bundle: grota_business
+mode: default
+content:
+  field_descripcion:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_icono:
+    weight: 102
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_imagen_de_fondo:
+    weight: 101
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_metatag:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_proyectos:
+    type: entity_reference_entity_view
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_titulo:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_titulo_2:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_titulo_3:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

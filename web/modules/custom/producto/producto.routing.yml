@@ -1,0 +1,7 @@
+producto.editar.variacion:
+  path: /backend/producto/{commerce_product}/variacion/{commerce_product_variation}
+  defaults:
+    _controller: '\Drupal\producto\Controller\ProductoController::editarVariacion'
+    _title_callback: '\Drupal\producto\Controller\ProductoController::titleProductVariation'
+  requirements:
+    _custom_access: '\Drupal\producto\Controller\ProductoController::accessProductVariation'

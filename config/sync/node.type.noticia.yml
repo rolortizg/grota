@@ -1,0 +1,17 @@
+uuid: 8e67e527-a9f0-43ef-a214-648f7b7b61b8
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Noticia
+type: noticia
+description: 'Página de una noticia en particular (la general se compone del resúmen de todas las noticias creadas)'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

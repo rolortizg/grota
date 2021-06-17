@@ -1,0 +1,13 @@
+uuid: b5af949d-e4c2-43f1-a8cc-f05ade94757f
+langcode: es
+status: true
+dependencies: {  }
+id: destacado_home
+label: 'Destacado home'
+description: "Se utiliza debajo del box verde\r\nComponentes (icono + texto + texto y bloque con 3 líneas de texto)"
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file_1
+field_map: {  }

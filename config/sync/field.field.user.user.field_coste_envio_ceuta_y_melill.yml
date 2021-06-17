@@ -1,0 +1,24 @@
+uuid: 3e309189-75c1-4da9-8936-7c8bf1dffadf
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_coste_envio_ceuta_y_melill
+  module:
+    - user
+id: user.user.field_coste_envio_ceuta_y_melill
+field_name: field_coste_envio_ceuta_y_melill
+entity_type: user
+bundle: user
+label: 'Coste envío (Ceuta y Melilla)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

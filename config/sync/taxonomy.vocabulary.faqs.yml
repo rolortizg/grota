@@ -1,0 +1,8 @@
+uuid: 7a2ba6b8-a73f-4e0c-984b-b36318aba030
+langcode: es
+status: true
+dependencies: {  }
+name: Faqs
+vid: faqs
+description: ''
+weight: 0

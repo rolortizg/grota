@@ -1,0 +1,15 @@
+uuid: a5ab137c-6f70-47fd-a476-0d97862917c7
+langcode: es
+status: true
+dependencies:
+  enforced:
+    module:
+      - commerce_cart
+  module:
+    - commerce_order
+_core:
+  default_config_hash: BeqBf6Mm59Nebv4SsV0yvK5EspkCegPqvwnqwEBvEp0
+id: commerce_order_item.add_to_cart
+label: Comprar
+targetEntityType: commerce_order_item
+cache: true

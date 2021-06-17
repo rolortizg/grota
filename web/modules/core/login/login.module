@@ -1,0 +1,169 @@
+<?php
+
+/**
+ * @file
+ * Contains login.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function login_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the login module.
+    case 'help.page.login':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom login') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $theme = Drupal::theme()->getActiveTheme()->getName();
+  
+  if ($form_id == 'user_login_form') {
+    unset($form['name']['#description']);
+    unset($form['pass']['#description']);
+    $form['name']['#title_display'] = 'invisible';
+    $form['name']['#placeholder'] = t('Email');
+    $form['name']['#attributes']['data-toggle'] = 'tooltip';
+    $form['name']['#attributes']['title'] = $form['name']['#placeholder'];
+
+    $form['pass']['#title_display'] = 'invisible';
+    $form['pass']['#placeholder'] = t('Password');
+    $form['pass']['#attributes']['data-toggle'] = 'tooltip';
+    $form['pass']['#attributes']['title'] = $form['pass']['#placeholder'];
+
+    $form['actions']['submit']['#attributes']['class'] = ['button js-form-submit form-submit btn'];
+  }
+
+  if ($form_id == 'user_pass'){
+    unset($form['name']['#description']);
+    $form['name']['#title_display'] = 'invisible';
+    $form['name']['#placeholder'] = t('Email');
+    $form['name']['#attributes']['data-toggle'] = 'tooltip';
+    $form['name']['#attributes']['title'] = $form['name']['#placeholder'];
+    unset($form['mail']);
+    $form['actions']['submit']['#value'] = t('Send password');
+    $form['actions']['submit']['#attributes']['class'] = ['button js-form-submit form-submit btn'];
+    $form['#validate'][0] = '::validateForm';
+    $form['#submit'][0] = '::submitForm';
+
+  }
+
+  if ($form_id == 'user_register_form' && $theme != 'gin'){
+    unset($form['account']['mail']['#description']);
+    unset($form['account']['pass']['#description']);
+
+    $form['field_nombre']['widget'][0]['value']['#placeholder'] = 'Nombre';
+    $form['field_nombre']['widget'][0]['value']['#title_display'] = 'invisible';
+    $form['field_nombre']['widget'][0]['value']['#attributes']['data-toggle'] = 'tooltip';
+    $form['field_nombre']['widget'][0]['value']['#attributes']['title'] = $form['field_nombre']['widget'][0]['value']['#placeholder'];
+
+    $form['field_apellidos']['widget'][0]['value']['#placeholder'] = 'Apellidos';
+    $form['field_apellidos']['widget'][0]['value']['#title_display'] = 'invisible';
+    $form['field_apellidos']['widget'][0]['value']['#attributes']['data-toggle'] = 'tooltip';
+    $form['field_apellidos']['widget'][0]['value']['#attributes']['title'] = $form['field_apellidos']['widget'][0]['value']['#placeholder'];
+
+    $form['account']['mail']['#title_display'] = 'invisible';
+    $form['account']['mail']['#placeholder'] = t('Email');
+    $form['account']['mail']['#attributes']['autocomplete'] = 'off';
+    $form['account']['mail']['#attributes']['data-toggle'] = 'tooltip';
+    $form['account']['mail']['#attributes']['title'] = $form['account']['mail']['#placeholder'];
+    $form['account']['mail']['#weight'] = 1;
+
+    $form['account']['pass']['#weight'] = 3;
+
+    $form['account']['confirm_mail'] = $form['account']['mail'];
+    $form['account']['confirm_mail']['#placeholder'] = t('Confirm Email');
+    $form['account']['confirm_mail']['#element_validate'] = ['_login_form_register_mail_validate'];
+    $form['account']['confirm_mail']['#weight'] = 2;
+    $form['account']['confirm_mail']['#attributes']['data-toggle'] = 'tooltip';
+    $form['account']['confirm_mail']['#attributes']['title'] = $form['account']['confirm_mail']['#placeholder'];
+    $form['texto']['#markup'] = '<p>En GRÖTA trataremos los datos introducidos en el formulario para gestionar su alta. Puede ejercer los derechos establecidos en los artículos 15 a 22 del Reglamento (UE) 2016/679 mediante el envío de un mensaje de correo electrónico a <a href="mailto:hello@grota.eco">hello@grota.eco.</a> Para más información consulte nuestra <a href="/politica-de-privacidad"> Política de Privacidad.</a></p>';
+    $form['politica']['#type'] = 'checkbox';
+    $form['politica']['#title'] = 'He leído y acepto la Política de Privacidad.';
+    $form['politica']['#required'] = true;
+    $form['actions']['submit']['#attributes']['class'] = ['button js-form-submit form-submit btn disabled'];
+
+  }
+
+  if ($form_id == 'user_pass_reset') {
+    $form['actions']['submit']['#attributes']['class'] = ['button js-form-submit form-submit btn'];
+  }
+}
+
+function _login_form_register_mail_validate(array $element, FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+  $mail = $values['mail'];
+  $confirm_mail =  $values['confirm_mail'];
+  if ($mail != $confirm_mail) {
+    $form_state->setError($element, t("Emails don't match"));
+  }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function login_element_info_alter(array &$types)
+{
+  if (isset($types['password_confirm'])) {
+    $types['password_confirm']['#process'][] = 'login_process_password_confirm';
+  }
+}
+
+function login_process_password_confirm($element)
+{
+  $element['pass1']['#title_display'] = 'invisible';
+  $element['pass1']['#attributes']['placeholder'] = t('Password');
+  $element['pass1']['#attributes']['data-toggle'] = 'tooltip';
+  $element['pass1']['#attributes']['title'] = $element['pass1']['#attributes']['placeholder'];
+  $element['pass2']['#title_display'] = 'invisible';
+  $element['pass2']['#attributes']['placeholder'] = t('Confirm password');
+  $element['pass2']['#attributes']['data-toggle'] = 'tooltip';
+  $element['pass2']['#attributes']['title'] = $element['pass2']['#attributes']['placeholder'];
+
+  return $element;
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function login_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_alter' && isset($implementations['login'])) {
+    $group = $implementations['login'];
+    unset($implementations['login']);
+    $implementations['login'] = $group;
+  }
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function login_preprocess_html(&$variables) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name == 'user.login') {
+    $variables['attributes']['class'][] = 'path-user';
+  }
+
+
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function login_preprocess_page(&$variables) {
+  $registro = \Drupal::config('user.settings')->get('register');
+  $variables['create_accounts'] = $registro != 'admin_only';
+
+}
+

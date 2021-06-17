@@ -1,0 +1,15 @@
+{% if page.highlighted %}
+  {{ page.highlighted }}
+{% endif %}
+<div class="fullscreen E-fondo-login G-fondo--full E-fondo-norepeat G-flex G-flex--vertical G-dis-v--middle" style="overflow-y: auto;">
+  <div id="auth_box" class="G-formulario G-formulario-login G-max--320 G-margen--auto G-padding--xm G-txt--cen">
+    {{ page.header }}
+    {{ page.content.system_main}}
+    <a class="E-login-btn E-hover-secundario G-color--primario G-fondo--blanco G-borde--primario G-txt--cen G-txt--fina G-txt--xxs G-txt--sinsubrayado G-margen--xxl G-margen--lr-0 G-margen--top-0" style="display: block;" href="{{ path('user.login') }}">{{ 'Login'|t }}</a>
+    <p class="G-color--primario G-txt--cen G-txt--seminegrita G-txt--xxs G-margen--xs G-margen--lr-0 G-margen--top-0 E-font-montserrat">Si lo prefieres te puedes registrar con:</p>
+    <div class="G-flex G-dis-h--cen G-dis-v--middle">
+      <a class="E-hover-secundario G-color--blanco G-txt--sinsubrayado G-borde--redondeado-xs G-txt--xm G-margen--xs G-margen--tb-0 G-margen--left-0" style="padding: 6px 30px;background-color:#E66348; " href="{{ path('social_auth_google.redirect_to_google') }}">Google</a>
+      <a class="E-hover-secundario G-color--blanco G-txt--sinsubrayado G-borde--redondeado-xs G-txt--xm " style="padding: 6px 30px;background-color: #4C6FA7;" href="{{ path('social_auth_facebook.redirect_to_fb') }}">Facebook</a>
+    </div>
+  </div>
+</div>

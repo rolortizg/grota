@@ -1,0 +1,8 @@
+uuid: 9ad870d7-e72e-4fe4-bc63-f2182d969f7e
+langcode: es
+status: true
+dependencies: {  }
+name: 'Familias principales'
+vid: familias_principales
+description: ''
+weight: 0

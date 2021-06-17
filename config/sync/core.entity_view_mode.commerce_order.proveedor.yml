@@ -1,0 +1,10 @@
+uuid: a50e835f-122a-4793-bad1-2ff11bfd2704
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_order
+id: commerce_order.proveedor
+label: Proveedor
+targetEntityType: commerce_order
+cache: true

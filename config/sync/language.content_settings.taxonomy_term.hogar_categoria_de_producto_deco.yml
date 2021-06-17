@@ -1,0 +1,11 @@
+uuid: e1718cf2-d328-40c5-8ed7-efe2aac06bfc
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hogar_categoria_de_producto_deco
+id: taxonomy_term.hogar_categoria_de_producto_deco
+target_entity_type_id: taxonomy_term
+target_bundle: hogar_categoria_de_producto_deco
+default_langcode: site_default
+language_alterable: false

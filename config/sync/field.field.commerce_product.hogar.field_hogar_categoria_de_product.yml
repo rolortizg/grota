@@ -1,0 +1,29 @@
+uuid: d92bec17-828b-458a-803a-298bd8f64e9f
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.hogar
+    - field.storage.commerce_product.field_hogar_categoria_de_product
+    - taxonomy.vocabulary.hogar_categoria_de_producto_deco
+id: commerce_product.hogar.field_hogar_categoria_de_product
+field_name: field_hogar_categoria_de_product
+entity_type: commerce_product
+bundle: hogar
+label: 'Hogar - Categoría de producto'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      hogar_categoria_de_producto_deco: hogar_categoria_de_producto_deco
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

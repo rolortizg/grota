@@ -1,0 +1,302 @@
+uuid: 7f2a45a3-cafb-4ec3-bf0e-129e474414f2
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.hogar
+    - field.field.commerce_product.hogar.field_categoria_de_producto
+    - field.field.commerce_product.hogar.field_comentario_de_grota
+    - field.field.commerce_product.hogar.field_descripcion
+    - field.field.commerce_product.hogar.field_destacar_en_fav
+    - field.field.commerce_product.hogar.field_destacar_en_novedades
+    - field.field.commerce_product.hogar.field_destacar_en_sostenibles
+    - field.field.commerce_product.hogar.field_especificaciones
+    - field.field.commerce_product.hogar.field_hogar_categoria_de_product
+    - field.field.commerce_product.hogar.field_imagen
+    - field.field.commerce_product.hogar.field_imagen_producto
+    - field.field.commerce_product.hogar.field_labor_social
+    - field.field.commerce_product.hogar.field_marca
+    - field.field.commerce_product.hogar.field_material_biodegradable
+    - field.field.commerce_product.hogar.field_material_biosintetico
+    - field.field.commerce_product.hogar.field_material_compostable
+    - field.field.commerce_product.hogar.field_material_organico
+    - field.field.commerce_product.hogar.field_material_reciclable
+    - field.field.commerce_product.hogar.field_material_reciclado
+    - field.field.commerce_product.hogar.field_materiales
+    - field.field.commerce_product.hogar.field_medicion_de_impacto
+    - field.field.commerce_product.hogar.field_metatag
+    - field.field.commerce_product.hogar.field_porcentaje
+    - field.field.commerce_product.hogar.field_produccion
+    - field.field.commerce_product.hogar.field_producto_para
+    - field.field.commerce_product.hogar.field_productos
+    - field.field.commerce_product.hogar.field_proveedor
+  module:
+    - commerce_product
+    - field_layout
+    - image
+    - layout_discovery
+    - metatag
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: commerce_product.hogar.default
+targetEntityType: commerce_product
+bundle: hogar
+mode: default
+content:
+  field_categoria_de_producto:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_comentario_de_grota:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_descripcion:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_destacar_en_fav:
+    weight: 25
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_destacar_en_novedades:
+    weight: 26
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_destacar_en_sostenibles:
+    weight: 33
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_especificaciones:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hogar_categoria_de_product:
+    weight: 27
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_imagen:
+    weight: 17
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_imagen_producto:
+    weight: 24
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_labor_social:
+    weight: 18
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_marca:
+    weight: 19
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_material_biodegradable:
+    weight: 29
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_material_biosintetico:
+    weight: 30
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_material_compostable:
+    weight: 31
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_material_organico:
+    weight: 28
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_material_reciclable:
+    weight: 34
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_material_reciclado:
+    weight: 32
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_materiales:
+    weight: 20
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_medicion_de_impacto:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_metatag:
+    weight: 37
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_porcentaje:
+    weight: 35
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_produccion:
+    weight: 23
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_producto_para:
+    weight: 21
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_productos:
+    weight: 36
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_proveedor:
+    weight: 22
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  variations:
+    type: commerce_add_to_cart
+    weight: 10
+    region: content
+    label: above
+    settings:
+      combine: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  stores: true
+  uid: true

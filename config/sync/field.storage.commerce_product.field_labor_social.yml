@@ -1,0 +1,20 @@
+uuid: cf44d395-5342-4a91-879b-118fc3583c29
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - taxonomy
+id: commerce_product.field_labor_social
+field_name: field_labor_social
+entity_type: commerce_product
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

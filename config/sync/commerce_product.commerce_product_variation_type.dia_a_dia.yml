@@ -1,0 +1,11 @@
+uuid: ca01e925-5423-4aed-a352-6e9004cc0d38
+langcode: es
+status: true
+dependencies: {  }
+id: dia_a_dia
+label: 'Día a día'
+orderItemType: default
+generateTitle: true
+traits:
+  - purchasable_entity_shippable
+locked: false

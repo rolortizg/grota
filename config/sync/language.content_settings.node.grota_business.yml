@@ -1,0 +1,11 @@
+uuid: 1a979ba9-1715-4c94-ad95-53a96b44c5d6
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.grota_business
+id: node.grota_business
+target_entity_type_id: node
+target_bundle: grota_business
+default_langcode: site_default
+language_alterable: false

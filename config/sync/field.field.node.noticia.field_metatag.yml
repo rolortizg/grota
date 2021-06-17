@@ -1,0 +1,21 @@
+uuid: dfc60391-0c86-40ed-ac4e-e7229825b241
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.noticia
+  module:
+    - metatag
+id: node.noticia.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: noticia
+label: 'Meta etiquetas'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

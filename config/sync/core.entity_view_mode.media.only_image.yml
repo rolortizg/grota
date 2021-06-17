@@ -1,0 +1,10 @@
+uuid: 79e5498d-3e9b-41dc-ae8d-1c205dfb9826
+langcode: es
+status: true
+dependencies:
+  module:
+    - media
+id: media.only_image
+label: 'Only Image'
+targetEntityType: media
+cache: true

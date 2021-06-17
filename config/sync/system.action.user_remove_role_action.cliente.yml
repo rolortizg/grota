@@ -1,0 +1,14 @@
+uuid: af42120d-b9a7-4672-89c4-b00004210a3a
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cliente
+  module:
+    - user
+id: user_remove_role_action.cliente
+label: 'Elimina el rol Cliente al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: cliente

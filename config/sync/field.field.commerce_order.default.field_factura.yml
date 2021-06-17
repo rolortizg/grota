@@ -1,0 +1,27 @@
+uuid: a43fbda5-7e5b-4911-bccd-b144f729cf50
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - field.storage.commerce_order.field_factura
+  module:
+    - file
+id: commerce_order.default.field_factura
+field_name: field_factura
+entity_type: commerce_order
+bundle: default
+label: Factura
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: facturas
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a header region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+
+{% if content %}
+  {% if(region == 'primary_menu') %}
+    {{ content }}
+    <a class="E-buscador" href="/buscador">Buscador</a>
+    <a class="E-perfil {{ clase }}" href="{{ enlace }}">Iniciar sesión</a>
+    <div class="cart--cart-block">
+      <a class="{{ clase_carrito }}" href="/cart">Cesta</a>
+    </div>
+
+    {% else %}
+      {{ content }}
+  {% endif %}
+{% endif %}

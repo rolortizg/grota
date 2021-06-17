@@ -1,0 +1,373 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if(product_entity.field_medicion_de_impacto.0.entity.field_co2_industria.0) %}
+  {% set indusCo2 = product_entity.field_medicion_de_impacto.0.entity.field_co2_industria.value %}
+{% endif %}
+{% if(product_entity.field_medicion_de_impacto.0.entity.field_co2_grota.0) %}
+  {% set grotaCo2 = product_entity.field_medicion_de_impacto.0.entity.field_co2_grota.value %}
+{% endif %}
+
+{% if(product_entity.field_medicion_de_impacto.0.entity.field_coste_social_industria.0) %}
+  {% set indusCost = product_entity.field_medicion_de_impacto.0.entity.field_coste_social_industria.value %}
+{% endif %}
+{% if(product_entity.field_medicion_de_impacto.0.entity.field_coste_social_grota.0) %}
+  {% set grotaCost =product_entity.field_medicion_de_impacto.0.entity.field_coste_social_grota.value %}
+{% endif %}
+
+{# {{ product['_field_layout']['content'].field_proveedor.0['#options'].entity.field_logotipo }} #}
+{% if(indusCo2 and grotaCo2 ) %}
+  {% set saveingCo2 =  indusCo2 - grotaCo2 %}
+  {% set ahorro = (grotaCo2/indusCo2)*100 %}
+  {% set resultado = 100 - ahorro %}
+{% else %}
+  {% set saveingCo2 =  '' %}
+  {% set ahorro = '' %}
+  {% set resultado = '' %}
+{% endif %}
+
+{% if(indusCost and grotaCost) %}
+  {% set saveingCost =  indusCost - grotaCost %}
+{% else %}
+  {% set saveingCost =  '' %}
+{% endif %}
+{% set tipo = '' %}
+{% if(product_entity.type.value[0]['target_id'] == 'textil') %}
+  {% set tipo = 'moda' %}
+{% endif %}
+{% if(product_entity.type.value[0]['target_id'] == 'hogar') %}
+  {% set tipo = 'hogar' %}
+{% endif %}
+{% if(product_entity.type.value[0]['target_id'] == 'dia_a_dia') %}
+  {% set tipo = 'dia-a-dia' %}
+{% endif %}
+<div class="G-fondo--blanco G-max--100">
+  <div class="G-margen--auto G-txt--cen" style="padding: 110px 20px 150px;max-width: 1000px;">
+
+    <a href="/{{ tipo }}"
+       class="E-flecha-regresar G-txt--cen G-color--terciario G-txt--xs E-font-montserrat G-txt--sinsubrayado G-margen--xxsupergigante G-margen--lr-0 G-margen--top-0">{{ 'Volver a categoría' }}</a>
+    <div class="G-flex G-dis-h--cen G-dis-v--top E-categoria-producto">
+
+      <div
+        class="G-flex--1 G-flex G-flex-h--repartidos G-dis-v--middle G-margen--supergigante G-margen--tb-0">
+        {% if(product_entity.field_imagen_producto.0) %}
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              {% for key, imagen in product_entity.field_imagen_producto %}
+                <div class="carousel-item {% if(key == 0) %} active {% endif %}">
+                  <img class="d-block w-100" src="{{ file_url(imagen.entity.uri.value) }}">
+                </div>
+              {% endfor %}
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        {% else %}
+          {% if(product_entity.variations.0) %}
+            {% set aux=false %}
+            {% for variation in product_entity.variations %}
+              {% if(aux == false) %}
+                {% if(variation.entity.field_foto_del_color.0) %}
+                  {% set aux = true %}
+                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      {% for key, imagen in variation.entity.field_foto_del_color %}
+                        <div class="carousel-item {% if(key == 0) %} active {% endif %}">
+                          <img class="d-block w-100" src="{{ file_url(imagen.entity.uri.value) }}">
+                        </div>
+                      {% endfor %}
+
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            {% if(aux == false) %}
+              <img class="d-block w-100" src="/themes/custom/frontend/images/imagen-pordefecto.jpg"/>
+            {% endif %}
+          {% else %}
+            <img class="d-block w-100" src="/themes/custom/frontend/images/imagen-pordefecto.jpg"/>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      <div class="G-flex--1">
+        <h1 class=" G-margen--xxs G-margen--lr-0 G-margen--top-0 G-txt--xxl G-color--primario G-txt--negrita G-txt--izq"
+            style="line-height: 1;"> {{ product_entity.title.value }} </h1>
+        {% if(product_entity.field_materiales.0 or product_entity.field_labor_social.0 or product_entity.field_produccion.0) %}
+          <ul class="G-listado G-flex E-simbolos E-simbolos--product">
+            {% if(product_entity.field_materiales.0) %}
+              {% for key, material in product_entity.field_materiales %}
+                {% if(material.entity.field_icono.0) %}
+                  <li
+                    class="G-borde--circular G-fondo--primario G-size--w-xxl G-size--h-xxl G-flex G-dis-h--cen G-dis-v--middle G-margen--xs G-margen--tb-0 G-margen--left-0"
+                    style="box-shadow: 0 1px 0 2px rgba(147, 184, 125, 0.15);">
+                    <span data-toggle="tooltip" data-placement="bottom" title="{{ material.entity.name.value }}" style="width: 37px; height: 37px;">
+                    {{ source(file_url(material.entity.field_icono.entity.uri.value), ignore_missing = true) }}
+                    </span>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            {% if(product_entity.field_labor_social.0) %}
+              {% for i, ls in product_entity.field_labor_social %}
+                {% if(ls.entity.field_icono.0) %}
+                  <li
+                    class="G-borde--circular G-fondo--blanco G-size--w-xl G-size--h-xl G-flex G-dis-h--cen G-dis-v--middle G-margen--s G-margen--tb-0 G-margen--left-0"
+                    style="box-shadow: 0 1px 0 2px rgba(147, 184, 125, 0.15);">
+                    <span data-toggle="tooltip" data-placement="bottom" title="{{ ls.entity.name.value }}" style="width: 37px; height: 37px;">
+                    {{ source(file_url(ls.entity.field_icono.entity.uri.value), ignore_missing = true) }}
+                    </span>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+
+            {% if(product_entity.field_produccion.0) %}
+              {% for i, produccion in product_entity.field_produccion %}
+                {% if(produccion.entity.field_icono.0) %}
+                  <li
+                    class="G-borde--circular G-fondo--blanco G-size--w-xl G-size--h-xl G-flex G-dis-h--cen G-dis-v--middle G-margen--s G-margen--tb-0 G-margen--left-0"
+                    style="box-shadow: 0 1px 0 2px rgba(147, 184, 125, 0.15);">
+                    <span data-toggle="tooltip" data-placement="bottom" title="{{ produccion.entity.name.value }}" style="width: 37px; height: 37px;">
+                    {{ source(file_url(produccion.entity.field_icono.entity.uri.value), ignore_missing = true) }}
+                    </span>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </ul>
+        {% endif %}
+
+        <div class="E-txt-producto E-txt--18 E-font-montserrat G-color--terciario G-txt--izq G-margen--xxl G-margen--lr-0">
+          {% if(product_entity.field_descripcion.0) %}
+          <div>{{ product_entity.field_descripcion.0.value|raw }}</div>
+          {% endif %}
+        </div>
+
+        <div style="max-width: 300px;" class="E-box-producto G-pos--relativo">
+          <p class="G-txt--xxm G-txt--cen G-margen--top-0 G-color--primario" style="line-height: 1">Tu ahorro en CO2</p>
+          <div class="G-flex G-flex-h--repartidos G-dis-v--middle" style="padding: 0 10px">
+            <p class="G-margen--0 E-txt--18 G-color--cta G-flex--1 G-txt--izq">Industria</p>
+            <p class="G-margen--0 G-txt--s E-font-montserrat G-color--secundario G-flex--1 G-txt--cen">AHORRO</p>
+            <div class="G-flex G-size--h-xm G-flex--1 G-dis-h--der">
+              <img style="width: 72px;" src="/themes/custom/frontend/assets/icons/logo.svg" alt="">
+            </div>
+          </div>
+          <div class="G-fondo--auxiliar G-borde--redondeado-xxs G-max--100 G-flex G-flex-h--repartidos G-dis-v--middle"
+               style="padding: 8px 10px;">
+            <div>
+              <p class="G-margen--0 G-color--blanco G-txt--xxm E-font-montserrat G-txt--cen">{{ indusCo2 }}kg</p>
+              <p class="G-margen--top-0 G-color--blanco G-txt--xs E-font-montserrat E-op-m G-txt--cen">{{ 'CO2' }}</p>
+            </div>
+            <div>
+              <p class="G-margen--0 G-color--blanco G-txt--xxm E-font-montserrat G-txt--cen">{{ grotaCo2 }}kg</p>
+              <p class="G-margen--top-0 G-color--blanco G-txt--xs E-font-montserrat E-op-m G-txt--cen">{{ 'CO2' }}</p>
+            </div>
+          </div>
+          <div class="G-pos--absoluto G-pos--izq G-pos--der" style="bottom: -77px;">
+            <div class="G-fondo--blanco G-padding--xs E-max--110 G-margen--auto" style="border-radius: 12px 12px 0 0;">
+              <p class="G-margen--0 G-color--secundario G-txt--xxm E-font-montserrat G-txt--cen G-txt--negrita">
+                -{{ saveingCo2 }} kg</p>
+            </div>
+            <div
+              class="G-fondo--secundario G-borde--redondeado-xs G-borde--blanco G-padding--s G-max--150 G-margen--auto">
+              <p class="G-margen--0 G-color--blanco G-txt--xxs G-txt--cen">{{ 'Ahorro impacto de' }}</p>
+              {% if resultado %}
+              <p
+                class="G-margen--0 G-color--blanco G-txt--xxm G-txt--cen E-font-montserrat E-subicono-porcentaje-producto-blanco">{{ resultado|round(0, 'ceil') }}
+                %</p>
+              {% endif %}
+            </div>
+            <a target="_blank" href="/medir-el-impacto#"
+               class="G-margen--0 G-color--secundario G-txt--xs G-txt--cen E-font-montserrat"
+               style="text-decoration: underline">{{ '¿Cómo lo medimos?' }}</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--
+{{ indusCost }}
+{{ 'coste social'|t }}
+
+{{ saveingCo2 }}
+{{ 'CO2' }}
+{{ grotaCost }}
+{{ 'coste social'|t }}
+-->
+
+
+<div id="trademark" class="G-fondo--blanco G-max--100">
+  <div class="E-max--940 G-margen--auto G-flex G-flex--vertical" style="padding: 0 20px 120px;">
+    <ul class="nav nav-tabs E-tabs-detalle-producto">
+      <li><a class="active" data-toggle="tab" href="#sobremarca"><img src="/themes/custom/frontend/assets/icons/sobre-la-marca2.svg" /> Sobre la marca</a></li>
+      <li><a data-toggle="tab" href="#especif"><img src="/themes/custom/frontend/assets/icons/especificaciones2.svg" />Especificaciones</a></li>
+      <li><a data-toggle="tab" href="#coment"><img src="/themes/custom/frontend/assets/icons/comentario-grota2.svg" />Comentario de Gröta</a></li>
+    </ul>
+    <div
+      class="tab-content E-marca-resp G-padding--xsupergigante G-padding--tb-0 G-fondo--blanco G-sombra-box--si-m G-max--100" style="border-radius: 0 0 12px 12px;z-index: 10;margin-top: -2px;">
+      <div id="sobremarca" class="tab-pane in active">
+        {% if(product_entity.field_proveedor.0) %}
+          <div class="G-margen--auto G-max--150 G-flex G-dis-h--cen G-dis-v--middle" style="padding-top: 30px;">
+            {% if(product_entity.field_proveedor.0.entity.field_logotipo.0) %}
+              <img class="E-max--wyh G-size--h-supergigante"
+                   style="object-fit: contain;max-width: 100px"
+                   src="{{ file_url(product_entity.field_proveedor.0.entity.field_logotipo.0.entity.uri.value) }} ">
+
+            {% endif %}
+          </div>
+
+          <div class="E-txt--18 E-font-montserrat E-txt-trademark G-color--terciario G-txt--cen G-margen--xxl G-margen--lr-0">
+            {% if(product_entity.field_proveedor.0.entity.field_descripcion.0) %}
+              <p>{{ product_entity.field_proveedor.0.entity.field_resumen_proveedor.0.value }}</p>
+            {% endif %}
+          </div>
+
+        {% endif %}
+        <div class="G-flex G-dis-h--cen G-flex--wrap">
+          {% if(product_entity.field_proveedor.0.entity.field_certificados_proveedor.0) %}
+            {% for cert in product_entity.field_proveedor.0.entity.field_certificados_proveedor %}
+              {% if(cert.entity.field_icono.0) %}
+                <img style="object-fit: contain" class="G-size--h-xxsupergigante G-size--w-xxsupergigante G-margen--xxs" src="{{ file_url(cert.entity.field_icono.entity.uri.value) }}"/>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="G-flex G-dis-h--cen G-flex--wrap G-pos--relativo" style="bottom: -20px;">
+          {% if product_entity.field_proveedor.0.entity.id  %}
+          <a
+            style=" padding: 8px 19px;margin-bottom: 10px;" target="_blank"
+            class="E-hover-primario G-fondo--primario G-color--blanco G-borde--redondeado-xs E-txt--18 G-txt--sinsubrayado G-txt--cen"
+            href="{{ path('entity.node.canonical', {node: product_entity.field_proveedor.0.entity.id}) }}">Más detalles
+            sobre la marca</a>
+          {% endif %}
+          {% if(product_entity.field_proveedor.0.entity.field_tallas.0) %}
+
+            {% if(product_entity.field_proveedor.0.entity.field_tallas.0.entity.filemime.value == 'application/pdf') %}
+              <a target="_blank"
+                 style=" padding: 8px 19px;margin-left: 5px;color: white;margin-bottom: 10px;"
+                 class="E-hover-primario G-fondo--primario G-color--blanco G-borde--redondeado-xs E-txt--18 G-txt--sinsubrayado G-txt--cen"
+                 href="{{ file_url(product_entity.field_proveedor.0.entity.field_tallas.0.entity.uri.value) }}">Guía de
+                tallas</a>
+              {% else %}
+                <a style=" padding: 8px 19px;margin-left: 5px;color: white;margin-bottom: 10px;" class="E-hover-primario G-fondo--primario G-color--blanco G-borde--redondeado-xs E-txt--18 G-txt--sinsubrayado G-txt--cen" data-toggle="modal" data-target="#guiaDeTallasModal">
+                  Guía de tallas
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="guiaDeTallasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">
+                            <img class="G-size--h-xm G-size--w-xm" src="/themes/custom/frontend/assets/icons/x-gruesa.svg"/>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="{{ file_url(product_entity.field_proveedor.0.entity.field_tallas.0.entity.uri.value) }}" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {% endif %}
+
+          {% endif %}
+
+        </div>
+
+      </div>
+      <div id="especif" class="tab-pane fade">
+        <div class="E-txt-trademark " style="padding-top: 20px;padding-bottom: 20px">{{ product_entity.field_especificaciones.0.value|raw }}</div>
+      </div>
+      <div id="coment" class="tab-pane fade">
+        {% if(product_entity.field_comentario_de_grota.0) %}
+          <div class="E-txt-trademark" style="padding-top: 20px;padding-bottom: 20px">{{ product_entity.field_comentario_de_grota.0.value|raw }}</div>
+        {% endif %}
+
+      </div>
+
+      <!--
+      <ul class="G-listado G-flex G-dis-h--cen G-dis-v--middle G-flex--wrap">
+        <li class="G-padding--xm G-max--150 G-flex G-dis-h--cen G-dis-v--middle">
+          <img class="E-max--wyh" src="src/icons/exclusivos/stamp.svg" alt="">
+        </li>
+      </ul>
+
+      <div class="G-txt--cen G-pos--relativo G-flex G-dis-h--cen G-dis-v--top G-flex--wrap" style="bottom: -20px;">
+        <a href="20-proveedor - detalle.html" class="G-fondo--primario G-color--blanco G-borde--redondeado-xs E-txt--18 G-txt--sinsubrayado G-txt--cen G-margen--xxs G-margen--top-0" style="padding: 7px 30px;">Más detalles sobre la marca</a>
+        <a href="20-proveedor - detalle.html" class="G-fondo--primario G-color--blanco G-borde--redondeado-xs E-txt--18 G-txt--sinsubrayado G-txt--cen" style="padding: 7px 20px;">Guía de tallas</a>
+      </div>
+      -->
+
+      {# <div class="sellos">
+      {% if sellos %}
+        <ul>
+            {% for sello in sellos %}
+                <li> {{ sello }} </li>
+            {% endfor %}
+        </ul>
+      {% endif %}
+      </div> #}
+
+    </div>
+  </div>
+</div>
+
+{% if(product_entity.field_productos.0) %}
+  <div class="G-fondo--blanco G-max--100">
+    <div class="E-max--1277 G-margen--auto" style="padding: 0 20px 300px;">
+      <h3 class="G-margen--xl G-margen--lr-0 G-margen--top-0 G-padding--xxs G-padding--lr-0 G-padding--top-0 G-txt--xxl G-color--primario G-txt--negrita G-txt--cen E-linea-titulo G-pos--relativo" style="line-height: 1;">Relacionados</h3>
+      {% set ids = '0' %}
+      {% for product in product_entity.field_productos %}
+        {% set ids = ids ~ '+' ~ product.entity.product_id.value %}
+      {% endfor %}
+      {{ drupal_view('productos_relacionados', 'block_1', ids) }}
+    </div>
+  </div>
+{% endif %}
+
+<div class="G-fondo--secundario G-max--100 G-pos--fijo G-pos--bottom G-pos--izq G-pos--der" style="z-index: 999;">
+  <div class="E-max--860 G-margen--auto G-flex G-dis-h--cen G-dis-v--middle E-compra-fijo" style="padding: 10px 20px">
+    {{ product['_field_layout']['content'].variations }}
+  </div>
+</div>

@@ -1,0 +1,283 @@
+uuid: 4da7b392-6e56-48b9-acb0-e1d18ad9c14b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.inicio.field_ahorro_en_material_sosteni
+    - field.field.node.inicio.field_banner_principal
+    - field.field.node.inicio.field_destacado_home
+    - field.field.node.inicio.field_imagen
+    - field.field.node.inicio.field_imagen_de_fondo
+    - field.field.node.inicio.field_imagen_de_fondo_2
+    - field.field.node.inicio.field_titulo
+    - field.field.node.inicio.field_titulo_2
+    - field.field.node.inicio.field_titulo_3
+    - field.field.node.inicio.field_titulo_4
+    - field.field.node.inicio.field_titulo_5
+    - field.field.node.inicio.field_titulo_6
+    - field.field.node.inicio.field_total_biodegradable
+    - field.field.node.inicio.field_total_biosintetico
+    - field.field.node.inicio.field_total_co2
+    - field.field.node.inicio.field_total_compostable
+    - field.field.node.inicio.field_total_organico
+    - field.field.node.inicio.field_total_reciclable
+    - field.field.node.inicio.field_total_reciclado
+    - image.style.thumbnail
+    - node.type.inicio
+  module:
+    - field_group
+    - field_layout
+    - image
+    - inline_entity_form
+    - layout_discovery
+    - path
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_destacados_mas_sostenibles:
+      children:
+        - field_titulo
+        - field_imagen_de_fondo
+      parent_name: ''
+      weight: 2
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Destacados mas sostenibles'
+    group_nuestros_favoritos:
+      children:
+        - field_titulo_2
+        - field_imagen_de_fondo_2
+      parent_name: ''
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Nuestros favoritos'
+    group_ultimas_novedades:
+      children:
+        - field_titulo_3
+      parent_name: ''
+      weight: 4
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Últimas novedades'
+    group_familias_principales:
+      children:
+        - field_titulo_4
+      parent_name: ''
+      weight: 5
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Familias principales'
+    group_box_verde:
+      children:
+        - field_titulo_5
+        - field_ahorro_en_material_sosteni
+      parent_name: ''
+      weight: 6
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Box verde'
+    group_gran_compromiso_con_medio_:
+      children:
+        - field_titulo_6
+        - field_imagen
+      parent_name: ''
+      weight: 8
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Gran compromiso con medio ambiente'
+id: node.inicio.default
+targetEntityType: node
+bundle: inicio
+mode: default
+content:
+  field_ahorro_en_material_sosteni:
+    type: inline_entity_form_complex
+    weight: 8
+    settings:
+      form_mode: default
+      revision: false
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+    third_party_settings: {  }
+    region: content
+  field_banner_principal:
+    type: inline_entity_form_complex
+    weight: 1
+    settings:
+      form_mode: default
+      revision: false
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+    third_party_settings: {  }
+    region: content
+  field_destacado_home:
+    type: inline_entity_form_complex
+    weight: 7
+    settings:
+      form_mode: default
+      revision: false
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+    third_party_settings: {  }
+    region: content
+  field_imagen:
+    weight: 27
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_imagen_de_fondo:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_imagen_de_fondo_2:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_titulo:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_2:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_3:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_4:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_5:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_6:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_total_biodegradable: true
+  field_total_biosintetico: true
+  field_total_co2: true
+  field_total_compostable: true
+  field_total_organico: true
+  field_total_reciclable: true
+  field_total_reciclado: true
+  langcode: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

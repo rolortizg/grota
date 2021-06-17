@@ -1,0 +1,52 @@
+uuid: db300df1-0ad6-4c47-b1a4-1d94a7fc52e6
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.nosotros.field_descripcion
+    - field.field.node.nosotros.field_descripcion_2
+    - field.field.node.nosotros.field_descripcion_3
+    - field.field.node.nosotros.field_enlace
+    - field.field.node.nosotros.field_icono
+    - field.field.node.nosotros.field_imagen_de_
+    - field.field.node.nosotros.field_imagen_de_fondo
+    - field.field.node.nosotros.field_imagen_descripcion
+    - field.field.node.nosotros.field_metatag
+    - field.field.node.nosotros.field_miembro_del_equipo
+    - field.field.node.nosotros.field_titulo
+    - field.field.node.nosotros.field_titulo_2
+    - node.type.nosotros
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.nosotros.teaser
+targetEntityType: node
+bundle: nosotros
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_descripcion: true
+  field_descripcion_2: true
+  field_descripcion_3: true
+  field_enlace: true
+  field_icono: true
+  field_imagen_de_: true
+  field_imagen_de_fondo: true
+  field_imagen_descripcion: true
+  field_metatag: true
+  field_miembro_del_equipo: true
+  field_titulo: true
+  field_titulo_2: true
+  langcode: true

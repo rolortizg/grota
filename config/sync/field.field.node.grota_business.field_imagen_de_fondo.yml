@@ -1,0 +1,38 @@
+uuid: 3ce474fc-10c9-46e9-8f11-f67cce739fa5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_imagen_de_fondo
+    - node.type.grota_business
+  module:
+    - image
+id: node.grota_business.field_imagen_de_fondo
+field_name: field_imagen_de_fondo
+entity_type: node
+bundle: grota_business
+label: 'Imagen de fondo'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: imagen-fondo
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

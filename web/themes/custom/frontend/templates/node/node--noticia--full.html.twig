@@ -1,0 +1,18 @@
+<div class="E-fondo-azul E-fondo-norepeat E-fondo--subcabecera-xs G-fondo--full G-flex G-flex--vertical G-dis-v--middle G-dis-h--cen G-pos--relativo" style="background-image: url('{{ file_url(node.field_imagen_de_fondo.entity.fileuri) }}')">
+  <div class="E-max--670 G-margen--auto G-txt--cen G-padding--xm G-padding--tb-0" style="z-index: 2;">
+    {% if node.field_titulo.value %}
+      <p class="G-txt--xxgigante G-txt--negrita G-color--blanco G-sombra-txt--si-s G-txt--cen G-margen--0">{{ node.field_titulo.value }}</p>
+    {% endif %}
+  </div>
+</div>
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--940 G-margen--auto" style="padding: 0 20px 115px;">
+    <div class="G-fondo--blanco G-max--100 G-borde--redondeado-xs G-sombra-box--si-m G-pos--relativo E-blog-detalle-resp" style="padding: 100px;margin-top: -64px;">
+      {% if node.body.value %}
+        <div class="E-font-montserrat E-txt--18 G-color--terciario">
+          {{ node.body.value|raw }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

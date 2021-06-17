@@ -1,0 +1,105 @@
+uuid: 0b560af3-0465-46b2-83c8-e5df61700f38
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.media.destacado_home.field_media_file_1
+    - field.field.media.destacado_home.field_subtitulo
+    - field.field.media.destacado_home.field_titulo_2
+    - field.field.media.destacado_home.field_titulo_3
+    - field.field.media.destacado_home.field_titulo_4
+    - field.field.media.destacado_home.field_titulo_5
+    - media.type.destacado_home
+  module:
+    - field_group
+    - field_layout
+    - file
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_box_verde:
+      children:
+        - field_titulo_3
+        - field_titulo_4
+        - field_titulo_5
+      parent_name: ''
+      weight: 20
+      format_type: details
+      region: content
+      format_settings:
+        description: ''
+        open: true
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Box verde'
+id: media.destacado_home.default
+targetEntityType: media
+bundle: destacado_home
+mode: default
+content:
+  field_media_file_1:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_subtitulo:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_2:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_3:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_4:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_5:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

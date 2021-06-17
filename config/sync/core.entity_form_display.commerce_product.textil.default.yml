@@ -1,0 +1,319 @@
+uuid: aad2ea38-7a70-4d88-9a68-420d117e9ce0
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.textil
+    - field.field.commerce_product.textil.field_categoria_de_producto
+    - field.field.commerce_product.textil.field_comentario_de_grota
+    - field.field.commerce_product.textil.field_descripcion
+    - field.field.commerce_product.textil.field_destacar_en_fav
+    - field.field.commerce_product.textil.field_destacar_en_novedades
+    - field.field.commerce_product.textil.field_destacar_en_sostenibles
+    - field.field.commerce_product.textil.field_especificaciones
+    - field.field.commerce_product.textil.field_imagen
+    - field.field.commerce_product.textil.field_imagen_producto
+    - field.field.commerce_product.textil.field_labor_social
+    - field.field.commerce_product.textil.field_marca
+    - field.field.commerce_product.textil.field_material_biodegradable
+    - field.field.commerce_product.textil.field_material_biosintetico
+    - field.field.commerce_product.textil.field_material_compostable
+    - field.field.commerce_product.textil.field_material_organico
+    - field.field.commerce_product.textil.field_material_reciclable
+    - field.field.commerce_product.textil.field_material_reciclado
+    - field.field.commerce_product.textil.field_materiales
+    - field.field.commerce_product.textil.field_medicion_de_impacto
+    - field.field.commerce_product.textil.field_metatag
+    - field.field.commerce_product.textil.field_porcentaje
+    - field.field.commerce_product.textil.field_produccion
+    - field.field.commerce_product.textil.field_producto_para
+    - field.field.commerce_product.textil.field_productos
+    - field.field.commerce_product.textil.field_proveedor
+    - field.field.commerce_product.textil.field_textil_categoria_del_produ
+    - image.style.thumbnail
+  module:
+    - field_group
+    - field_layout
+    - image
+    - inline_entity_form
+    - layout_discovery
+    - metatag
+    - path
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_detalles_del_producto:
+      children:
+        - field_imagen_producto
+        - field_descripcion
+        - field_especificaciones
+        - field_comentario_de_grota
+        - field_proveedor
+        - field_categoria_de_producto
+        - field_textil_categoria_del_produ
+        - field_destacar_en_fav
+        - field_destacar_en_novedades
+        - field_destacar_en_sostenibles
+        - field_productos
+        - field_marca
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Detalles del producto'
+    group_sellos:
+      children:
+        - field_labor_social
+        - field_produccion
+        - field_materiales
+      parent_name: ''
+      weight: 2
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Sellos
+    group_medici:
+      children:
+        - field_medicion_de_impacto
+      parent_name: ''
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Medición del impacto'
+    group_materiales:
+      children:
+        - field_material_organico
+        - field_material_biosintetico
+        - field_material_biodegradable
+        - field_material_compostable
+        - field_material_reciclado
+        - field_material_reciclable
+      parent_name: ''
+      weight: 4
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Materiales
+id: commerce_product.textil.default
+targetEntityType: commerce_product
+bundle: textil
+mode: default
+content:
+  field_categoria_de_producto:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_comentario_de_grota:
+    weight: 16
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_descripcion:
+    weight: 14
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_destacar_en_fav:
+    weight: 20
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_destacar_en_novedades:
+    weight: 21
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_destacar_en_sostenibles:
+    weight: 22
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_especificaciones:
+    weight: 15
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_imagen_producto:
+    weight: 13
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_labor_social:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_material_biodegradable:
+    weight: 12
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_material_biosintetico:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_material_compostable:
+    weight: 13
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_material_organico:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_material_reciclable:
+    weight: 15
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_material_reciclado:
+    weight: 14
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_materiales:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_medicion_de_impacto:
+    weight: 17
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
+    region: content
+  field_metatag:
+    weight: 24
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_produccion:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_productos:
+    weight: 23
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_proveedor:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_textil_categoria_del_produ:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_imagen: true
+  field_marca: true
+  field_porcentaje: true
+  field_producto_para: true
+  langcode: true
+  stores: true
+  uid: true
+  variations: true

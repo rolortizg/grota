@@ -1,0 +1,52 @@
+uuid: 3e9cd32d-b671-41c0-9129-e834947ddade
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.medicion_de_impacto.field_co2_grota
+    - field.field.taxonomy_term.medicion_de_impacto.field_co2_industria
+    - field.field.taxonomy_term.medicion_de_impacto.field_coste_social_grota
+    - field.field.taxonomy_term.medicion_de_impacto.field_coste_social_industria
+    - taxonomy.vocabulary.medicion_de_impacto
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: taxonomy_term.medicion_de_impacto.default
+targetEntityType: taxonomy_term
+bundle: medicion_de_impacto
+mode: default
+content:
+  field_co2_grota:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_co2_industria:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  field_coste_social_grota: true
+  field_coste_social_industria: true
+  langcode: true
+  path: true
+  status: true

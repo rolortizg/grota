@@ -1,0 +1,23 @@
+uuid: 7a6d3954-f14f-4ea5-aac1-515aa9f7ed9d
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.textil
+    - field.storage.commerce_product.field_material_organico
+id: commerce_product.textil.field_material_organico
+field_name: field_material_organico
+entity_type: commerce_product
+bundle: textil
+label: 'Material orgánico'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

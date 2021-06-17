@@ -1,0 +1,27 @@
+uuid: 557dc703-266f-46cb-aa76-60827c59ac58
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file
+    - media.type.icono_titulo_subtitulo
+  module:
+    - file
+id: media.icono_titulo_subtitulo.field_media_file
+field_name: field_media_file
+entity_type: media
+bundle: icono_titulo_subtitulo
+label: Icono
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: iconos
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

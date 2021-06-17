@@ -1,0 +1,21 @@
+uuid: 7e0866a1-8173-4108-b30b-8f6913d1349b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion
+    - node.type.medir_el_impacto
+  module:
+    - text
+id: node.medir_el_impacto.field_descripcion
+field_name: field_descripcion
+entity_type: node
+bundle: medir_el_impacto
+label: Descripción
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

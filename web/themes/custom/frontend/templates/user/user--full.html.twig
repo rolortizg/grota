@@ -1,0 +1,175 @@
+<!-- Falta imagen, por defecto todas iguales? -->
+<div class="E-fondo--perfil E-fondo--subcabecera-xs G-fondo--full G-flex G-flex--vertical G-dis-v--middle G-dis-h--cen G-pos--relativo E-fondo-azul">
+  <div class="E-max--1000 G-margen--auto G-txt--cen G-padding--xm G-padding--tb-0" style="z-index: 5;">
+    <p class="G-txt--xxgigante G-txt--negrita G-color--blanco G-sombra-txt--si-s G-txt--cen G-margen--0 G-pos--relativo E-linea-titulo-white G-padding--xxs G-padding--lr-0 G-padding--top-0" style="line-height: 1;">{{ user.field_nombre.value }} {{ user.field_apellidos.value }}</p>
+  </div>
+</div>
+<nav class="E-max--860 G-margen--auto G-pos--relativo G-txt--cen" style="padding: 0 20px 0;">
+  <div class="nav nav-tabs G-tabs-perfil" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-resumen-tab" data-toggle="tab" href="#nav-resumen" role="tab" aria-controls="nav-resumen" aria-selected="true">Resumen</a>
+    <a class="nav-item nav-link" id="nav-datos-tab" data-toggle="tab" href="#nav-datos" role="tab" aria-controls="nav-datos" aria-selected="false">Mis datos</a>
+    <a class="nav-item nav-link" id="nav-pedidos-tab" data-toggle="tab" href="#nav-pedidos" role="tab" aria-controls="nav-pedidos" aria-selected="false">Mis pedidos</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active E-max--860 G-margen--auto G-pos--relativo G-txt--cen " id="nav-resumen" role="tabpanel" aria-labelledby="nav-resumen-tab" style="padding: 0 20px 120px;">
+    <div class="G-flex G-flex--vertical G-dis-v--middle">
+      <p class="G-txt--l G-txt--negrita G-color--primario G-txt--cen G-margen--top-0">Has ahorrado este impacto medioambiental</p>
+      <div class="G-margen--auto G-pos--relativo">
+        <div class="E-box-impacto G-flex">
+          <p class="G-margen--0 E-txt--18 G-color--cta G-flex--1 G-txt--cen">Industria</p>
+          <p class="G-margen--0 G-flex G-dis-v--middle G-dis-h--cen G-txt--s E-font-montserrat G-color--secundario G-flex--1 ">AHORRO</p>
+          <div class="G-flex G-size--h-xm G-flex--1 G-dis-h--cen">
+            <img style="width: 72px;" src="/themes/custom/frontend/assets/icons/logo.svg" alt="">
+          </div>
+        </div>
+        <div class="G-fondo--auxiliar G-borde--redondeado-xxs G-max--100 G-flex G-flex-h--repartidos E-box-impacto" style="align-items: baseline;padding: 8px 12px 0">
+          <div class="G-flex--1">
+            <p class="G-margen--0 G-color--blanco G-txt--xxm E-font-montserrat G-txt--cen" style="white-space: nowrap;">{{ datos_usuario['industria'] }} kg</p>
+            <p class="G-margen--0 G-color--blanco G-txt--xs E-font-montserrat E-op-m G-txt--cen">{{ 'CO2' }}</p>
+          </div>
+          <div class="G-pos--relativo G-flex--1" style="top: 0;padding: 0 20px;filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.2));">
+            <div class=" G-margen--auto G-borde--redondeado-xs E-pico-abajo-secundario G-pos--relativo" style="z-index: 1;padding: 12px 12px;width: 100%;">
+              <p class="G-margen--top-0 G-color--secundario G-txt--xxm E-font-montserrat G-txt--cen G-txt--negrita" style="margin-bottom: 33px;white-space: nowrap;">-{{ datos_usuario['ahorro'] }} kg</p>
+            </div>
+          </div>
+          <div class="G-flex--1" style="white-space: nowrap;">
+            <p class="G-margen--0 G-color--blanco G-txt--xxm E-font-montserrat G-txt--cen">{{ datos_usuario['grota'] }} kg</p>
+            <p class="G-margen--0 G-color--blanco G-txt--xs E-font-montserrat E-op-m G-txt--cen">{{ 'CO2' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% set total_materiales_sostenibles = datos_usuario['materiales_sostenibles']|length %}
+    {% if(total_materiales_sostenibles > 0) %}
+      <div class="G-fondo--blanco G-max--100 G-borde--redondeado-xxs G-sombra-box--si-xl">
+        <p class="G-txt--xxm G-txt--negrita G-color--primario G-txt--cen G-margen--xgigante G-margen--lr-0 G-margen--bottom-0">Has comprado estos materiales sostenibles</p>
+        <ul class="G-listado G-flex G-dis-h--cen G-flex--wrap E-iconos-materiales-sostenibles">
+          {% for key, mat_sos in datos_usuario['materiales_sostenibles'] %}
+            {% if(key == 'biodegradable') %}
+            <li class="G-padding--xm">
+              {{ source(file_url('public://iconos/bio.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--xxl G-color--primario G-txt--negrita G-txt--cen G-margen--0">
+                {% if(mat_sos < 1000) %}
+                  {{ mat_sos|round(2, 'ceil') }} g
+                  {% else %}
+                    {{ (mat_sos/1000)|round(2, 'ceil') }} kg
+                {% endif %}
+              </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--terciario G-margen--0">Bio degradable</p>
+            </li>
+            {% elseif(key == 'biosintetico') %}
+            <li class="G-padding--xm">
+              {{ source(file_url('public://iconos/materiales-biosinteticos_0.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--xxl G-color--primario G-txt--negrita G-txt--cen G-margen--0">
+                {% if(mat_sos < 1000) %}
+                  {{ mat_sos|round(2, 'ceil') }} g
+                {% else %}
+                  {{ (mat_sos/1000)|round(2, 'ceil') }} kg
+                {% endif %}
+              </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--terciario G-margen--0">Bio sintético</p>
+            </li>
+            {% elseif(key == 'compostable') %}
+            <li class="G-padding--xm">
+              {{ source(file_url('public://iconos/materialescompostables_3.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--xxl G-color--primario G-txt--negrita G-txt--cen G-margen--0">
+                {% if(mat_sos < 1000) %}
+                  {{ mat_sos|round(2, 'ceil') }} g
+                {% else %}
+                  {{ (mat_sos/1000)|round(2, 'ceil') }} kg
+                {% endif %}
+              </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--terciario G-margen--0">Compostable</p>
+            </li>
+            {% elseif(key == 'organico') %}
+            <li class="G-padding--xm">
+              {{ source(file_url('public://iconos/materiales-organicos_0.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--xxl G-color--primario G-txt--negrita G-txt--cen G-margen--0">
+                {% if(mat_sos < 1000) %}
+                  {{ mat_sos|round(2, 'ceil') }} g
+                {% else %}
+                  {{ (mat_sos/1000)|round(2, 'ceil') }} kg
+                {% endif %}
+              </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--terciario G-margen--0">Orgánico</p>
+            </li>
+            {% elseif(key == 'reciclable') %}
+            <li class="G-padding--xm">
+              {{ source(file_url('public://iconos/productos-reciclables_0.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--xxl G-color--primario G-txt--negrita G-txt--cen G-margen--0">
+                {% if(mat_sos < 1000) %}
+                  {{ mat_sos|round(2, 'ceil') }} g
+                {% else %}
+                  {{ (mat_sos/1000)|round(2, 'ceil') }} kg
+                {% endif %}
+              </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--terciario G-margen--0">Reciclable</p>
+            </li>
+            {% else %}
+            <li class="G-padding--xm">
+              {{ source(file_url('public://iconos/empaquetado-ecologico_0.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--xxl G-color--primario G-txt--negrita G-txt--cen G-margen--0">
+                {% if(mat_sos < 1000) %}
+                  {{ mat_sos|round(2, 'ceil') }} g
+                {% else %}
+                  {{ (mat_sos/1000)|round(2, 'ceil') }} kg
+                {% endif %}
+              </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--terciario G-margen--0">Reciclado</p>
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+    <a href="/medir-el-impacto" target="_blank" class="G-margen--0 G-color--primario G-txt--xs G-txt--cen E-font-montserrat" style="text-decoration: underline">¿Cómo lo medimos?</a>
+    <p class="G-txt--xxm G-txt--negrita G-color--primario G-txt--cen G-margen--top-0" style="margin-top: 60px">Has comprado productos con los siguientes símbolos</p>
+    {% set total_labor_social = datos_usuario['labor_social']|length %}
+    {% if(total_labor_social > 0) %}
+    <div class="G-padding--m G-padding--bottom-0 G-fondo--blanco G-max--100 G-borde--redondeado-xxs G-sombra-box--si-xl G-margen--xxs G-margen--lr-0 G-margen--top-0">
+      <p class="G-margen--0 G-color--primario E-font-montserrat G-txt--xm G-txt--cen G-txt--negrita">Labor Social:</p>
+      <ul class="G-listado G-flex G-dis-h--cen G-dis-v--middle G-flex--wrap E-listado-resumen-simbolos">
+        {% for labor in datos_usuario['labor_social'] %}
+          <li class="G-padding--m E-max--110 G-flex G-dis-h--cen G-dis-v--middle {% if(labor['mostrar'] == true) %} active {% endif %}">
+            {{ source(file_url(labor['icono']), ignore_missing = true) }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% set total_produccion = datos_usuario['produccion']|length %}
+    {% if(total_produccion > 0) %}
+    <div class="G-padding--m G-padding--bottom-0 G-fondo--blanco G-max--100 G-borde--redondeado-xxs G-sombra-box--si-xl G-margen--xxs G-margen--lr-0 G-margen--top-0">
+      <p class="G-margen--0 G-color--primario E-font-montserrat G-txt--xm G-txt--cen G-txt--negrita">Producción:</p>
+      <ul class="G-listado G-flex G-dis-h--cen G-dis-v--middle G-flex--wrap E-listado-resumen-simbolos">
+        {% for produccion in datos_usuario['produccion'] %}
+          <li class="G-padding--m E-max--110 G-flex G-dis-h--cen G-dis-v--middle {% if(produccion['mostrar'] == true) %} active {% endif %}">
+            {{ source(file_url(produccion['icono']), ignore_missing = true) }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% set total_materiales = datos_usuario['materiales']|length %}
+    {% if(total_materiales > 0) %}
+    <div class="G-padding--m G-padding--bottom-0 G-fondo--blanco G-max--100 G-borde--redondeado-xxs G-sombra-box--si-xl G-margen--xxs G-margen--lr-0 G-margen--top-0">
+      <p class="G-margen--0 G-color--primario E-font-montserrat G-txt--xm G-txt--cen G-txt--negrita">Materiales:</p>
+      <ul class="G-listado G-flex G-dis-h--cen G-dis-v--middle G-flex--wrap E-listado-resumen-simbolos">
+        {% for material in datos_usuario['materiales'] %}
+          <li class="G-padding--m E-max--110 G-flex G-dis-h--cen G-dis-v--middle {% if(material['mostrar'] == true) %} active {% endif %}">
+            {{ source(file_url(material['icono']), ignore_missing = true) }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  </div>
+  <div class="tab-pane fade E-mis-datos-perfil" id="nav-datos" role="tabpanel" aria-labelledby="nav-datos-tab">
+    {{ drupal_form('Drupal\\panel_usuario\\Form\\misDatosForm') }}
+  </div>
+  <div class="tab-pane fade" id="nav-pedidos" role="tabpanel" aria-labelledby="nav-pedidos-tab">
+    {{ drupal_view('commerce_user_orders', 'block_1', user.uid.value) }}
+  </div>
+</div>
+</div>

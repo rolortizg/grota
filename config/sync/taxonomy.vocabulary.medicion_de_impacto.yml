@@ -1,0 +1,8 @@
+uuid: ec6ddd17-7336-4398-b53b-142707199567
+langcode: es
+status: true
+dependencies: {  }
+name: 'Medición de impacto'
+vid: medicion_de_impacto
+description: ''
+weight: -2

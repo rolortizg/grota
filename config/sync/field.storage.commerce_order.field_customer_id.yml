@@ -1,0 +1,25 @@
+uuid: 4e741679-c8cf-43da-8f6f-932fc5dc43eb
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - field_permissions
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: commerce_order.field_customer_id
+field_name: field_customer_id
+entity_type: commerce_order
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

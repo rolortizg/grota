@@ -1,0 +1,65 @@
+uuid: 8b3461c8-6622-4251-be92-0e2085bbd7d3
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.noticia.body
+    - field.field.node.noticia.field_imagen_de_fondo
+    - field.field.node.noticia.field_metatag
+    - field.field.node.noticia.field_titulo
+    - node.type.noticia
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+    - metatag
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.noticia.default
+targetEntityType: node
+bundle: noticia
+mode: default
+content:
+  body:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_imagen_de_fondo:
+    weight: 103
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_metatag:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_titulo:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

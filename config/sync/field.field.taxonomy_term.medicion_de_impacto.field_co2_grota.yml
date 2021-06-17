@@ -1,0 +1,25 @@
+uuid: 2b1daf13-eab0-47ea-92fa-d35438391558
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_co2_grota
+    - taxonomy.vocabulary.medicion_de_impacto
+id: taxonomy_term.medicion_de_impacto.field_co2_grota
+field_name: field_co2_grota
+entity_type: taxonomy_term
+bundle: medicion_de_impacto
+label: 'CO2 - Grota'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

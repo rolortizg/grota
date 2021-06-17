@@ -1,0 +1,21 @@
+uuid: 3ae7687c-a841-4be5-8feb-c234558c04c9
+langcode: es
+status: false
+dependencies:
+  module:
+    - commerce_cart
+  theme:
+    - frontend
+id: cestadelacompra
+theme: frontend
+region: primary_menu
+weight: -2
+provider: null
+plugin: commerce_cart
+settings:
+  id: commerce_cart
+  label: 'Cesta de la compra'
+  provider: commerce_cart
+  label_display: '0'
+  dropdown: true
+visibility: {  }

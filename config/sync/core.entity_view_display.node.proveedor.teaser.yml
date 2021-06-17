@@ -1,0 +1,52 @@
+uuid: 7febd0d0-62e6-4c1b-a354-d3bce674c96e
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.proveedor.field_certificados_proveedor
+    - field.field.node.proveedor.field_descripcion
+    - field.field.node.proveedor.field_descripcion_2
+    - field.field.node.proveedor.field_imagen
+    - field.field.node.proveedor.field_logotipo
+    - field.field.node.proveedor.field_metatag
+    - field.field.node.proveedor.field_proveedor
+    - field.field.node.proveedor.field_resumen_proveedor
+    - field.field.node.proveedor.field_tallas
+    - field.field.node.proveedor.field_titulo
+    - field.field.node.proveedor.field_titulo_2
+    - field.field.node.proveedor.field_titulo_3
+    - node.type.proveedor
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.proveedor.teaser
+targetEntityType: node
+bundle: proveedor
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_certificados_proveedor: true
+  field_descripcion: true
+  field_descripcion_2: true
+  field_imagen: true
+  field_logotipo: true
+  field_metatag: true
+  field_proveedor: true
+  field_resumen_proveedor: true
+  field_tallas: true
+  field_titulo: true
+  field_titulo_2: true
+  field_titulo_3: true
+  langcode: true

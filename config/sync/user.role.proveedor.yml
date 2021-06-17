@@ -1,0 +1,23 @@
+uuid: cf5259f3-7206-4ec7-9b31-50853e3153e5
+langcode: es
+status: true
+dependencies: {  }
+id: proveedor
+label: Proveedor
+weight: 3
+is_admin: null
+permissions:
+  - 'create field_coste_de_envio'
+  - 'create field_total_pedido_envio_gratis_'
+  - 'edit field_coste_de_envio'
+  - 'edit field_total_pedido_envio_gratis_'
+  - 'edit own field_coste_de_envio'
+  - 'edit own field_total_pedido_envio_gratis_'
+  - 'manage dia_a_dia commerce_product_variation'
+  - 'manage hogar commerce_product_variation'
+  - 'manage textil commerce_product_variation'
+  - 'view commerce_order'
+  - 'view field_coste_de_envio'
+  - 'view field_total_pedido_envio_gratis_'
+  - 'view own field_coste_de_envio'
+  - 'view own field_total_pedido_envio_gratis_'

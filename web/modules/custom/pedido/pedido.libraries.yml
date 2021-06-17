@@ -1,0 +1,4 @@
+checkout:
+  version: 1.x
+  js:
+    js/checkout.js: {}

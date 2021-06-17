@@ -1,0 +1,50 @@
+<div class="E-fondo-azul G-pos--relativo E-fondo-norepeat G-fondo--full G-flex G-flex--vertical G-dis-v--middle G-dis-h--cen" style="background-image: url('{{ file_url(node.field_imagen_de_fondo.entity.fileuri) }}')">
+  <div class="E-max--670 G-margen--auto G-txt--cen" style="padding: 227px 20px 60px;z-index: 2;">
+    <img class="G-margen--xgigante G-margen--lr-0 G-margen--top-0" style="max-width: 296px;width: 100%;" src="{{ file_url(node.field_icono.entity.fileuri) }}" alt="">
+    {% if node.field_descripcion.value %}
+    <div class="E-font-montserrat G-txt--fina E-txt--18 G-color--blanco">{{ node.field_descripcion.value|raw }}</div>
+    {% endif %}
+    <a href="#" class="G-size--w-l G-size--h-l" style="margin-top: 94px;">
+      <img class="E-max--wyh" src="../themes/custom/frontend/assets/icons/arrows-white-bottom.svg" alt="">
+    </a>
+  </div>
+</div>
+
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--1277 G-margen--auto" style="padding: 50px 20px 140px;">
+    {% if node.field_titulo.value %}
+    <p class="G-margen--xl G-margen--lr-0 G-margen--top-0 G-padding--xm G-padding--lr-0 G-padding--top-0 G-txt--xxl G-color--primario G-txt--negrita G-txt--cen E-linea-titulo G-pos--relativo" style="line-height: 1;">{{ node.field_titulo.value }}</p>
+    {% endif %}
+    {% if node.field_proyectos.0 %}
+      <ul class="G-listado G-flex G-dis-h--cen G-flex--wrap">
+        {% for key,item in node.field_proyectos %}
+          <li class="G-padding--m G-max--375">
+            <a href="#" class="G-max--375 G-max-v--100 G-fondo--blanco G-sombra-box--si-m G-txt--sinsubrayado G-borde--redondeado-xs G-pos--relativo">
+              <img style="height: 251px;width: 100%;object-fit: cover;border-radius: 8px 8px 0 0;" src="{{ file_url(item.entity.field_media_image_1.entity.fileuri) }}" alt="">
+              <div class="G-padding--xm">
+                <p class="G-margen--0 G-padding--xxs G-padding--lr-0 G-padding--top-0 G-txt--l G-color--primario G-txt--negrita G-txt--cen E-linea-titulo G-pos--relativo" style="line-height: 1;">{{ item.entity.name.value }}</p>
+                <p class="E-font-montserrat E-txt--18 G-color--terciario G-margen--bottom-0 G-txt--cen">{{ item.entity.field_subtitulo.value }}</p>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</div>
+
+<div class="E-fondo--proyecto G-fondo--full G-max--100">
+  <div class="E-max--1277 G-margen--auto G-flex G-flex-h--repartidos E-proyecto-resp" style="padding: 0 20px 98px;">
+    <div style="padding-right: 85px;">
+      {% if node.field_titulo_2.value %}
+        <p class="G-margen--0 G-txt--xxl G-color--primario G-txt--negrita" style="line-height: 1;">{{ node.field_titulo_2.value }}</p>
+      {% endif %}
+      {% if node.field_titulo_3.value %}
+        <p  class="E-font-montserrat G-txt--xm G-color--primario G-margen--bottom-0">{{ node.field_titulo_3.value }}</p>
+      {% endif %}
+    </div>
+    <div class="G-max--420 G-fondo--blanco G-sombra-box--si-m G-borde--redondeado-xxs G-padding--xxgigante G-formulario">
+      {{ drupal_entity('webform', 'contact') }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+uuid: 2f5ba243-e3f4-427e-9111-233f542d92d1
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.nosotros
+  module:
+    - metatag
+id: node.nosotros.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: nosotros
+label: 'Meta etiquetas'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

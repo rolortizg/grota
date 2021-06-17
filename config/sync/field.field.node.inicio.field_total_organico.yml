@@ -1,0 +1,25 @@
+uuid: f3fd4a54-1506-4fba-854c-1c28004b7968
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_total_organico
+    - node.type.inicio
+id: node.inicio.field_total_organico
+field_name: field_total_organico
+entity_type: node
+bundle: inicio
+label: 'Total organico'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,27 @@
+uuid: d4201a95-28e4-4f61-81c7-14333988a57d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_icono
+    - node.type.nosotros
+  module:
+    - file
+id: node.nosotros.field_icono
+field_name: field_icono
+entity_type: node
+bundle: nosotros
+label: Icono
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: iconos
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

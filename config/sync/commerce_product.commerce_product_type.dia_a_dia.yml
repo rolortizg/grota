@@ -1,0 +1,12 @@
+uuid: 5dbea51b-ff0d-4713-b24d-a26602b29755
+langcode: es
+status: true
+dependencies: {  }
+id: dia_a_dia
+label: 'Día a día'
+description: ''
+variationType: dia_a_dia
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

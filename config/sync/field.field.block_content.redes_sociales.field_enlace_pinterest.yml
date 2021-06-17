@@ -1,0 +1,23 @@
+uuid: d9edb2a1-0b8a-499f-9cbd-99b6583f1d5a
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.redes_sociales
+    - field.storage.block_content.field_enlace_pinterest
+  module:
+    - link
+id: block_content.redes_sociales.field_enlace_pinterest
+field_name: field_enlace_pinterest
+entity_type: block_content
+bundle: redes_sociales
+label: 'Enlace pinterest'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

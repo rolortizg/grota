@@ -1,0 +1,8 @@
+uuid: 51a9e70a-b8b8-47b5-b1a0-5685a144caab
+langcode: es
+status: true
+dependencies: {  }
+name: 'Textil - Categorías del producto (hombre, mujer)'
+vid: textil_tipo_de_publico
+description: 'Atributo de tipo de producto Textil'
+weight: -4

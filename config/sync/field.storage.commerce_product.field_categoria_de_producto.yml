@@ -1,0 +1,20 @@
+uuid: 2ce0b90b-2ea3-439f-a5e7-da227d10894e
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - taxonomy
+id: commerce_product.field_categoria_de_producto
+field_name: field_categoria_de_producto
+entity_type: commerce_product
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

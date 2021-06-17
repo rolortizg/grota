@@ -1,0 +1,23 @@
+uuid: 9716850c-9614-4c28-9c78-28c6f798c700
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.redes_sociales
+    - field.storage.block_content.field_enlace_instagram
+  module:
+    - link
+id: block_content.redes_sociales.field_enlace_instagram
+field_name: field_enlace_instagram
+entity_type: block_content
+bundle: redes_sociales
+label: 'Enlace instagram'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

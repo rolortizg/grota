@@ -1,0 +1,111 @@
+uuid: 06e66e31-ccf8-453c-aaf8-966ae71e8c12
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.redes_sociales
+    - field.field.block_content.redes_sociales.field_enlace_facebook
+    - field.field.block_content.redes_sociales.field_enlace_instagram
+    - field.field.block_content.redes_sociales.field_enlace_linkedin
+    - field.field.block_content.redes_sociales.field_enlace_pinterest
+    - field.field.block_content.redes_sociales.field_facebook
+    - field.field.block_content.redes_sociales.field_instagram
+    - field.field.block_content.redes_sociales.field_linkedin
+    - field.field.block_content.redes_sociales.field_pinterest
+  module:
+    - field_layout
+    - file
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: block_content.redes_sociales.default
+targetEntityType: block_content
+bundle: redes_sociales
+mode: default
+content:
+  field_enlace_facebook:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_enlace_instagram:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_enlace_linkedin:
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_enlace_pinterest:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_facebook:
+    weight: 4
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_instagram:
+    weight: 0
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_linkedin:
+    weight: 6
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_pinterest:
+    weight: 2
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden:
+  langcode: true

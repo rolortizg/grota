@@ -1,0 +1,34 @@
+
+<div class="G-flex G-dis-h--cen G-dis-v--middle">
+  {% if(elements['#block_content'].field_instagram.0) %}
+    {% if(elements['#block_content'].field_enlace_instagram.0) %}
+      <a target="_blank" class="G-size--w-xxl G-size--h-xxl G-margen--s G-margen--tb-0 G-margen--left-0" href="{{ elements['#block_content'].field_enlace_instagram.0.uri }}">
+        <img class="E-max--wyh" src="{{ file_url(elements['#block_content'].field_instagram.0.entity.uri.value) }}" />
+      </a>
+    {% endif %}
+  {% endif %}
+
+  {% if(elements['#block_content'].field_pinterest.0) %}
+    {% if(elements['#block_content'].field_enlace_pinterest.0) %}
+      <a target="_blank" class="G-size--w-xxl G-size--h-xxl G-margen--s G-margen--tb-0 G-margen--left-0" href="{{ elements['#block_content'].field_enlace_pinterest.0.uri }}">
+        <img class="E-max--wyh" src="{{ file_url(elements['#block_content'].field_pinterest.0.entity.uri.value) }}" />
+      </a>
+    {% endif %}
+  {% endif %}
+
+  {% if(elements['#block_content'].field_facebook.0) %}
+    {% if(elements['#block_content'].field_enlace_facebook.0) %}
+      <a target="_blank" class="G-size--w-xxl G-size--h-xxl G-margen--s G-margen--tb-0 G-margen--left-0" href="{{ elements['#block_content'].field_enlace_facebook.0.uri }}">
+        <img class="E-max--wyh" src="{{ file_url(elements['#block_content'].field_facebook.0.entity.uri.value) }}" />
+      </a>
+    {% endif %}
+  {% endif %}
+
+  {% if(elements['#block_content'].field_linkedin.0) %}
+    {% if(elements['#block_content'].field_enlace_linkedin.0) %}
+      <a target="_blank" class="G-size--w-xxl G-size--h-xxl G-margen--s G-margen--tb-0 G-margen--left-0" href="{{ elements['#block_content'].field_enlace_linkedin.0.uri }}">
+        <img class="E-max--wyh" src="{{ file_url(elements['#block_content'].field_linkedin.0.entity.uri.value) }}" />
+      </a>
+    {% endif %}
+  {% endif %}
+</div>

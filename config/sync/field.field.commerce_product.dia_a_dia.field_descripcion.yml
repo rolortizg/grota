@@ -1,0 +1,21 @@
+uuid: c27990ed-e124-41b2-81df-41afd96a76c5
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.dia_a_dia
+    - field.storage.commerce_product.field_descripcion
+  module:
+    - text
+id: commerce_product.dia_a_dia.field_descripcion
+field_name: field_descripcion
+entity_type: commerce_product
+bundle: dia_a_dia
+label: Especificaciones
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

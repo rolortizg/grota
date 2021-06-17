@@ -1,0 +1,11 @@
+uuid: 6af0f97f-151f-4afa-bd9e-f919c7278495
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.produccion
+id: taxonomy_term.produccion
+target_entity_type_id: taxonomy_term
+target_bundle: produccion
+default_langcode: site_default
+language_alterable: false

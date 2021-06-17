@@ -1,0 +1,20 @@
+langcode: es
+cookie_name: grota
+cookie_expires: '365'
+cookie_domain: ''
+cookie_secure: '0'
+cookie_same_site: Lax
+open_settings_hash: modificarCookies
+show_deny_all: 1
+settings_as_link: 0
+group_consent: 1
+cookie_docs: 1
+lib_load_from_cdn: 1
+lib_scroll_limit: '1'
+lib_timeout: '0'
+use_default_styles: 1
+use_callback: 0
+callback_method: post
+callback_url: /cookies/callback.json
+_core:
+  default_config_hash: cnXP5Yy6Vdi2Tan9qgJ63EjAybQGepuaabpNcm43l6o

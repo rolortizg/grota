@@ -1,0 +1,8 @@
+uuid: 680be520-c033-4c68-a1f5-bb027d1de123
+langcode: es
+status: true
+dependencies: {  }
+name: 'Textil - Categoría de producto (parte de arriba, abajo, complementos)'
+vid: categoria_de_producto
+description: 'Atributo de tipo de producto Textil'
+weight: -5

@@ -1,0 +1,10 @@
+uuid: 6bcb590c-3bb6-407a-b6e3-da9f678222b4
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.cliente
+label: Cliente
+targetEntityType: user
+cache: true

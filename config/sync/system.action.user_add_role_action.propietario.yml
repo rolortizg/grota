@@ -1,0 +1,14 @@
+uuid: d43f0d50-74b3-4c58-8815-3cc2317f5d47
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.propietario
+  module:
+    - user
+id: user_add_role_action.propietario
+label: 'Añade el rol Propietario al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: propietario

@@ -1,0 +1,18 @@
+uuid: f2c03f0b-b2b9-4909-aa94-bc40835f7d32
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.pagina_textual
+id: node.pagina_textual.title
+field_name: title
+entity_type: node
+bundle: pagina_textual
+label: 'Titulo URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

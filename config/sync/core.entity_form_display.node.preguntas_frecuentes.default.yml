@@ -1,0 +1,127 @@
+uuid: 504a7ee3-c9d5-4310-9778-6dd36f595f11
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.preguntas_frecuentes.field_descripcion
+    - field.field.node.preguntas_frecuentes.field_faqs
+    - field.field.node.preguntas_frecuentes.field_imagen_de_fondo
+    - field.field.node.preguntas_frecuentes.field_metatag
+    - field.field.node.preguntas_frecuentes.field_pregunta_respuesta
+    - field.field.node.preguntas_frecuentes.field_titulo
+    - image.style.thumbnail
+    - node.type.preguntas_frecuentes
+  module:
+    - field_group
+    - field_layout
+    - image
+    - inline_entity_form
+    - layout_discovery
+    - metatag
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_cabecera:
+      children:
+        - field_titulo
+        - field_descripcion
+        - field_faqs
+        - field_imagen_de_fondo
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Cabecera
+    group_contenido:
+      children: {  }
+      parent_name: ''
+      weight: 2
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Contenido
+id: node.preguntas_frecuentes.default
+targetEntityType: node
+bundle: preguntas_frecuentes
+mode: default
+content:
+  field_descripcion:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_faqs:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      form_mode: default
+      revision: false
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      allow_duplicate: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_imagen_de_fondo:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_metatag:
+    weight: 26
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_titulo:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_pregunta_respuesta: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

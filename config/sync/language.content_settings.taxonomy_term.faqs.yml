@@ -1,0 +1,11 @@
+uuid: 647bc0ed-8215-46ff-b7ec-171764161f9d
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.faqs
+id: taxonomy_term.faqs
+target_entity_type_id: taxonomy_term
+target_bundle: faqs
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,11 @@
+uuid: a1bbb6b7-a19b-46f0-b701-f9525099c144
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.dia_a_dia
+id: commerce_product_variation.dia_a_dia
+target_entity_type_id: commerce_product_variation
+target_bundle: dia_a_dia
+default_langcode: site_default
+language_alterable: false

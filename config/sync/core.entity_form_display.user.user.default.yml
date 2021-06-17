@@ -1,0 +1,121 @@
+uuid: b3329579-22c9-4104-90b3-3698c2c732ea
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_apellidos
+    - field.field.user.user.field_coste_de_envio
+    - field.field.user.user.field_coste_envio_ceuta_y_melill
+    - field.field.user.user.field_coste_envio_islas_
+    - field.field.user.user.field_coste_envio_islas_baleares
+    - field.field.user.user.field_nombre
+    - field.field.user.user.field_proveedor
+    - field.field.user.user.field_telefono
+    - field.field.user.user.field_total_pedido_envio_gratis_
+  module:
+    - field_layout
+    - layout_discovery
+    - path
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_apellidos:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_coste_de_envio:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_coste_envio_ceuta_y_melill:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_coste_envio_islas_:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_coste_envio_islas_baleares:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_nombre:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_proveedor:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_telefono:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_total_pedido_envio_gratis_:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  language:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  commerce_remote_id: true
+  customer_profiles: true
+  factura_profiles: true
+  langcode: true
+  timezone: true

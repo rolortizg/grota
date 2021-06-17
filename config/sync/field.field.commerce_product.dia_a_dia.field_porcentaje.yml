@@ -1,0 +1,25 @@
+uuid: a2776a5a-7e8d-430e-868e-d846520ff60a
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.dia_a_dia
+    - field.storage.commerce_product.field_porcentaje
+id: commerce_product.dia_a_dia.field_porcentaje
+field_name: field_porcentaje
+entity_type: commerce_product
+bundle: dia_a_dia
+label: Porcentaje
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

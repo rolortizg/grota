@@ -1,0 +1,28 @@
+uuid: e8ff5135-720f-48da-b00e-960dde8a3ebf
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_imagen_descripcion
+    - media.type.imagen_descripcion
+    - node.type.nosotros
+id: node.nosotros.field_imagen_descripcion
+field_name: field_imagen_descripcion
+entity_type: node
+bundle: nosotros
+label: 'Imagen + Descripción'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      imagen_descripcion: imagen_descripcion
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: d67d33a3-2ee7-41a2-9198-3183a5ac0678
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.hogar
+    - field.storage.commerce_product.field_material_organico
+id: commerce_product.hogar.field_material_organico
+field_name: field_material_organico
+entity_type: commerce_product
+bundle: hogar
+label: 'Material orgánico'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

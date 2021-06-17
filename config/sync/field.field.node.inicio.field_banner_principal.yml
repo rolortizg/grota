@@ -1,0 +1,28 @@
+uuid: 19255291-d25a-44af-9568-6cbd63779bbe
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_principal
+    - media.type.banner_home
+    - node.type.inicio
+id: node.inicio.field_banner_principal
+field_name: field_banner_principal
+entity_type: node
+bundle: inicio
+label: 'Banner principal'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      banner_home: banner_home
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

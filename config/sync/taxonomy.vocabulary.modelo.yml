@@ -1,0 +1,8 @@
+uuid: 91d76a54-2e00-407e-a7ee-68589e07c088
+langcode: es
+status: true
+dependencies: {  }
+name: Modelo
+vid: modelo
+description: ''
+weight: 0

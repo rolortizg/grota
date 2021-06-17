@@ -1,0 +1,21 @@
+uuid: 06d1bfc9-5e58-4814-90eb-a7ef4795da44
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_descripcion
+    - media.type.banner_home
+  module:
+    - text
+id: media.banner_home.field_descripcion
+field_name: field_descripcion
+entity_type: media
+bundle: banner_home
+label: Descripción
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

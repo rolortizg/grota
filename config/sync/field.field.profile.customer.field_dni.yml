@@ -1,0 +1,19 @@
+uuid: ad8fd603-11a9-43af-ae63-9b5ace268a23
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_dni
+    - profile.type.customer
+id: profile.customer.field_dni
+field_name: field_dni
+entity_type: profile
+bundle: customer
+label: DNI/CIF
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

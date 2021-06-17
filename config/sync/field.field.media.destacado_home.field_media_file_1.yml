@@ -1,0 +1,27 @@
+uuid: e69d466d-ca8a-487a-b942-41ec9f06fff4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file_1
+    - media.type.destacado_home
+  module:
+    - file
+id: media.destacado_home.field_media_file_1
+field_name: field_media_file_1
+entity_type: media
+bundle: destacado_home
+label: Icono
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: iconos
+  file_extensions: svg
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,19 @@
+uuid: 816ef3f4-6ff5-46c3-9906-ebfc00e3b1a5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titulo
+    - node.type.grota_business
+id: node.grota_business.field_titulo
+field_name: field_titulo
+entity_type: node
+bundle: grota_business
+label: Título
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

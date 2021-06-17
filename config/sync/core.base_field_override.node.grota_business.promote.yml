@@ -1,0 +1,22 @@
+uuid: 4aa74c48-3243-4e73-8295-f28b141e38f9
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.grota_business
+id: node.grota_business.promote
+field_name: promote
+entity_type: node
+bundle: grota_business
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

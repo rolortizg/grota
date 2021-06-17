@@ -1,0 +1,25 @@
+uuid: a16c1ea9-4bb6-47a5-842c-1a0cdcd1c2a5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_co2_industria
+    - taxonomy.vocabulary.medicion_de_impacto
+id: taxonomy_term.medicion_de_impacto.field_co2_industria
+field_name: field_co2_industria
+entity_type: taxonomy_term
+bundle: medicion_de_impacto
+label: 'CO2 - Industria'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

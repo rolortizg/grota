@@ -1,0 +1,42 @@
+uuid: db0a9865-671f-4e48-bb62-c1827173c891
+langcode: es
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contacto.field_descripcion
+    - field.field.node.contacto.field_formulario
+    - field.field.node.contacto.field_imagen_de_fondo
+    - field.field.node.contacto.field_metatag
+    - field.field.node.contacto.field_titulo
+    - field.field.node.contacto.field_titulo_2
+    - field.field.node.contacto.field_titulo_3
+    - node.type.contacto
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.contacto.teaser
+targetEntityType: node
+bundle: contacto
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_descripcion: true
+  field_formulario: true
+  field_imagen_de_fondo: true
+  field_metatag: true
+  field_titulo: true
+  field_titulo_2: true
+  field_titulo_3: true
+  langcode: true

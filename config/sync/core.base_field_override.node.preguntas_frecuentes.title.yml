@@ -1,0 +1,18 @@
+uuid: 22c34076-e4da-4d1a-8cc6-8e6a84bf6afb
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.preguntas_frecuentes
+id: node.preguntas_frecuentes.title
+field_name: title
+entity_type: node
+bundle: preguntas_frecuentes
+label: 'Título URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

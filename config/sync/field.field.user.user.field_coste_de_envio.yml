@@ -1,0 +1,24 @@
+uuid: 7500eb09-3fb1-4a3f-82aa-2b85c7e7425a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_coste_de_envio
+  module:
+    - user
+id: user.user.field_coste_de_envio
+field_name: field_coste_de_envio
+entity_type: user
+bundle: user
+label: 'Coste de envío'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

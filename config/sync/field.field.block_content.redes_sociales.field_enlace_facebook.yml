@@ -1,0 +1,23 @@
+uuid: ac92ce25-108d-4ab9-9cd2-049278043aae
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.redes_sociales
+    - field.storage.block_content.field_enlace_facebook
+  module:
+    - link
+id: block_content.redes_sociales.field_enlace_facebook
+field_name: field_enlace_facebook
+entity_type: block_content
+bundle: redes_sociales
+label: 'Enlace facebook'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

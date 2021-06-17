@@ -1,0 +1,48 @@
+uuid: f80fa6bf-732b-405f-805b-6b0f10953902
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.labor_social.field_icono
+    - field.field.taxonomy_term.labor_social.field_su
+    - taxonomy.vocabulary.labor_social
+  module:
+    - field_layout
+    - file
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: taxonomy_term.labor_social.default
+targetEntityType: taxonomy_term
+bundle: labor_social
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_icono:
+    weight: 1
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_su:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

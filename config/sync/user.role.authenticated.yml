@@ -1,0 +1,19 @@
+uuid: cc35ed63-9742-4c3d-bf66-13fb761ae3e1
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Usuario autenticado'
+weight: 1
+is_admin: false
+permissions:
+  - 'access checkout'
+  - 'access content'
+  - 'manage own commerce_payment_method'
+  - 'use text format html_basico'
+  - 'view commerce_product'
+  - 'view media'
+  - 'view own commerce_order'
+  - 'view textil commerce_product'

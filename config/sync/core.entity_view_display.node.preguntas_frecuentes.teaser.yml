@@ -1,0 +1,40 @@
+uuid: 3b44021b-8ac1-470a-a7db-7bf95a51c906
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.preguntas_frecuentes.field_descripcion
+    - field.field.node.preguntas_frecuentes.field_faqs
+    - field.field.node.preguntas_frecuentes.field_imagen_de_fondo
+    - field.field.node.preguntas_frecuentes.field_metatag
+    - field.field.node.preguntas_frecuentes.field_pregunta_respuesta
+    - field.field.node.preguntas_frecuentes.field_titulo
+    - node.type.preguntas_frecuentes
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.preguntas_frecuentes.teaser
+targetEntityType: node
+bundle: preguntas_frecuentes
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_descripcion: true
+  field_faqs: true
+  field_imagen_de_fondo: true
+  field_metatag: true
+  field_pregunta_respuesta: true
+  field_titulo: true
+  langcode: true

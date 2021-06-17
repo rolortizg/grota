@@ -1,0 +1,18 @@
+uuid: c2421199-7845-43ea-ac43-a22332020dd1
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+    parent: 'footer:'
+name: 'Preguntas frecuentes'
+type: preguntas_frecuentes
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

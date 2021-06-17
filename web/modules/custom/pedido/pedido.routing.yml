@@ -1,0 +1,7 @@
+pedido.editar.item:
+  path: /backend/pedido/{commerce_order}/item/{commerce_order_item}
+  defaults:
+    _controller: '\Drupal\pedido\Controller\OrderItemController::editOrderItem'
+    _title_callback: '\Drupal\pedido\Controller\OrderItemController::titleOrderItem'
+  requirements:
+    _custom_access: '\Drupal\pedido\Controller\OrderItemController::accessOrderItem'

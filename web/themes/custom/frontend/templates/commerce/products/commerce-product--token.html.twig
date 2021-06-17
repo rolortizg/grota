@@ -1,0 +1,191 @@
+{% if(product_entity.field_medicion_de_impacto.0.entity.field_co2_industria.0) %}
+  {% set indusCo2 = product_entity.field_medicion_de_impacto.0.entity.field_co2_industria.value %}
+{% endif %}
+{% if(product_entity.field_medicion_de_impacto.0.entity.field_co2_grota.0) %}
+  {% set grotaCo2 = product_entity.field_medicion_de_impacto.0.entity.field_co2_grota.value %}
+{% endif %}
+
+{% if(indusCo2 and grotaCo2 ) %}
+  {% set saveingCo2 =  indusCo2 - grotaCo2 %}
+  {% set ahorro = (grotaCo2*100)/indusCo2 %}
+{% else%}
+  {% set saveingCo2 =  '' %}
+  {% set ahorro = '' %}
+{% endif %}
+<div class="G-padding--m G-max-v--100" style="min-height: 424px;">
+  <div class="G-flex G-flex--vertical G-dis-h--der G-max--100 G-max-v--100 G-padding--m G-fondo--blanco G-txt--sinsubrayado G-borde--redondeado-xxs G-pos--relativo" style="box-shadow: 0 -1px 20px 0 rgba(0, 0, 0, 0.1);">
+    <div class="G-flex G-dis-h--der G-dis-v--middle G-pos--absoluto E-position--elementos-producto">
+      {% if(product_entity.field_materiales.0 or product_entity.field_labor_social.0 or product_entity.field_produccion.0) %}
+        <ul class="G-listado G-flex G-dis-h--izq">
+          {% if(product_entity.field_materiales.0) %}
+            {% for i, material in product_entity.field_materiales %}
+              {% if(material.entity.field_icono.0) %}
+                <li class="G-borde--circular G-fondo--blanco G-size--w-xl G-size--h-xl G-flex G-dis-h--cen G-dis-v--middle G-margen--s G-margen--tb-0 G-margen--left-0" style="box-shadow: 0 1px 0 2px rgba(147, 184, 125, 0.15);">
+                   <span data-toggle="tooltip" data-placement="bottom" title="{{ material.entity.name.value }}" style="width: 37px; height: 37px;">
+                  {{ source(file_url(material.entity.field_icono.entity.uri.value), ignore_missing = true) }}
+                   </span>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if(product_entity.field_labor_social.0) %}
+            {% for i, ls in product_entity.field_labor_social %}
+              {% if(ls.entity.field_icono.0) %}
+                <li class="G-borde--circular G-fondo--blanco G-size--w-xl G-size--h-xl G-flex G-dis-h--cen G-dis-v--middle G-margen--s G-margen--tb-0 G-margen--left-0" style="box-shadow: 0 1px 0 2px rgba(147, 184, 125, 0.15);">
+                   <span data-toggle="tooltip" data-placement="bottom" title="{{ ls.entity.name.value }}" style="width: 37px; height: 37px;">
+                  {{ source(file_url(ls.entity.field_icono.entity.uri.value), ignore_missing = true) }}
+                   </span>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if(product_entity.field_produccion.0) %}
+            {% for i, produccion in product_entity.field_produccion %}
+              {% if(produccion.entity.field_icono.0) %}
+                <li class="G-borde--circular G-fondo--blanco G-size--w-xl G-size--h-xl G-flex G-dis-h--cen G-dis-v--middle G-margen--s G-margen--tb-0 G-margen--left-0" style="box-shadow: 0 1px 0 2px rgba(147, 184, 125, 0.15);">
+                   <span data-toggle="tooltip" data-placement="bottom" title="{{ produccion.entity.name.value }}" style="width: 37px; height: 37px;">
+                  {{ source(file_url(produccion.entity.field_icono.entity.uri.value), ignore_missing = true) }}
+                   </span>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </ul>
+      {% endif %}
+      {% if(product_entity.field_medicion_de_impacto.0) %}
+        {% if(product_entity.field_medicion_de_impacto.entity.field_co2_grota.0.value) and (product_entity.field_medicion_de_impacto.entity.field_co2_industria.0.value) %}
+          {% set res = (product_entity.field_medicion_de_impacto.entity.field_co2_grota.0.value / product_entity.field_medicion_de_impacto.entity.field_co2_industria.0.value) * 100  %}
+          {% set resultado = 100 - res %}
+          <div data-toggle="modal" data-target="#exampleModalLong-{{ product_entity.id }}" class="G-flex" style="z-index: 10;">
+            <div class="E-subicono-porcentaje-producto G-borde--secundario G-fondo--blanco G-borde--redondeado-xs G-margen--0 G-txt--m E-font-montserrat G-txt--negrita G-color--primario">
+              <p class="G-margen--0 G-color--secundario" style="overflow: hidden;max-width: 6ch;">{{ resultado|round(0, 'ceil') }}</p>
+              <span class="G-txt--xs G-color--primario" style="margin-left: 4px;">%</span>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModalLong-{{ product_entity.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button style="margin: 0;" type="button" class="close G-pos--absoluto G-pos--der G-pos--top" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                      <img class="G-size--h-xm G-size--w-xm" src="/themes/custom/frontend/assets/icons/x-gruesa.svg"/>
+                    </span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>{{ product_entity.title.value }}</p>
+                  {% if(product_entity.field_materiales.0) %}
+                    <ul class="G-listado G-flex G-dis-h--izq">
+                    {% if(product_entity.field_materiales.0) %}
+                      {% for i, material in product_entity.field_materiales %}
+                        {% if(material.entity.field_icono.0) %}
+                          <li class="G-borde--circular G-fondo--blanco G-size--w-xl G-size--h-xl G-flex G-dis-h--cen G-dis-v--middle G-margen--s G-margen--tb-0 G-margen--left-0" style="box-shadow: 0 1px 0 2px rgba(147, 184, 125, 0.15);">
+                            {{ source(file_url(material.entity.field_icono.entity.uri.value), ignore_missing = true) }}
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    {% endif %}
+                      {% if(product_entity.field_labor_social.0) %}
+                        {% for i, ls in product_entity.field_labor_social %}
+                          {% if(ls.entity.field_icono.0) %}
+                            <li class="G-borde--circular G-fondo--blanco G-size--w-xl G-size--h-xl G-flex G-dis-h--cen G-dis-v--middle G-margen--s G-margen--tb-0 G-margen--left-0" style="box-shadow: 0 1px 0 2px rgba(147, 184, 125, 0.15);">
+                              {{ source(file_url(ls.entity.field_icono.entity.uri.value), ignore_missing = true) }}
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+                      {% endif %}
+
+                      {% if(product_entity.field_produccion.0) %}
+                        {% for i, produccion in product_entity.field_produccion %}
+                          {% if(produccion.entity.field_icono.0) %}
+
+                            <li class="G-borde--circular G-fondo--blanco G-size--w-xl G-size--h-xl G-flex G-dis-h--cen G-dis-v--middle G-margen--s G-margen--tb-0 G-margen--left-0" style="box-shadow: 0 1px 0 2px rgba(147, 184, 125, 0.15);">
+                               <span data-toggle="tooltip" data-placement="bottom" title="{{ produccion.entity.name.value }}" style="width: 37px; height: 37px;">
+                              {{ source(file_url(produccion.entity.field_icono.entity.uri.value), ignore_missing = true) }}
+                               </span>
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+                      {% endif %}
+                    </ul>
+                  {% endif %}
+                  {% if(product_entity.field_medicion_de_impacto.entity.field_co2_grota.0.value) and (product_entity.field_medicion_de_impacto.entity.field_co2_industria.0.value) %}
+                    {% set res = (product_entity.field_medicion_de_impacto.entity.field_co2_grota.0.value /product_entity.field_medicion_de_impacto.entity.field_co2_industria.0.value) *100  %}
+                    {% set resultado = 100 - res %}
+                  {% else %}
+                    {% set resultado = '' %}
+                    {% endif %}
+                  <div style="max-width: 300px;" class="E-box-producto G-pos--relativo">
+                    <div class="G-flex G-flex-h--repartidos G-dis-v--middle" style="padding: 0 10px">
+                      <p class="G-margen--0 E-txt--18 G-color--cta G-flex--1 G-txt--izq">Industria</p>
+                      <p class="G-margen--0 G-txt--s E-font-montserrat G-color--secundario G-flex--1 G-txt--cen">AHORRO</p>
+                      <div class="G-flex G-size--h-xm G-flex--1 G-dis-h--der"><img src="/themes/custom/frontend/assets/icons/logo.svg" alt=""></div>
+                    </div>
+                    <div class="G-fondo--auxiliar G-borde--redondeado-xxs G-max--100 G-flex G-flex-h--repartidos G-dis-v--middle" style="padding: 8px 10px;">
+                      <div>
+                        <p class="G-margen--0 G-color--blanco G-txt--xxm E-font-montserrat G-txt--cen">{{ indusCo2 }}kg</p>
+                        <p class="G-margen--top-0 G-color--blanco G-txt--xs E-font-montserrat E-op-m G-txt--cen">{{ 'CO2' }}</p>
+                      </div>
+                      <div>
+                        <p class="G-margen--0 G-color--blanco G-txt--xxm E-font-montserrat G-txt--cen">{{ grotaCo2 }}kg</p>
+                        <p class="G-margen--top-0 G-color--blanco G-txt--xs E-font-montserrat E-op-m G-txt--cen">{{ 'CO2' }}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="G-pos--absoluto G-pos--izq G-pos--der" style="bottom: -77px;">
+                    <div class="G-fondo--blanco G-padding--xs E-max--110 G-margen--auto" style="border-radius: 12px 12px 0 0;">
+                      <p class="G-margen--0 G-color--secundario G-txt--xxm E-font-montserrat G-txt--cen G-txt--negrita">-{{ saveingCo2 }} kg</p>
+                    </div>
+                    <div class="G-flex G-flex--vertical G-dis-v--middle G-fondo--secundario G-borde--redondeado-xs G-borde--blanco G-padding--s G-max--150 G-margen--auto">
+                      <p class="G-margen--0 G-color--blanco G-txt--xxs G-txt--cen">{{ 'Ahorro impacto de' }}</p>
+                      <p class="G-margen--0 G-color--blanco G-txt--xxm G-txt--cen E-font-montserrat E-subicono-porcentaje-producto-blanco">{{ resultado|round(0, 'ceil') }} %</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+    <a class="G-max-v--100 G-flex G-flex--vertical" href="{{ path("entity.commerce_product.canonical", {'commerce_product' : product_entity.id}) }}">
+    {% if(product_entity.field_imagen_producto.0) %}
+      <div class="G-margen--auto G-flex G-dis-h--cen G-dis-v--middle">
+        <img src="{{ file_url(product_entity.field_imagen_producto.0.entity.uri.value|image_style('286x286')) }}" alt="">
+      </div>
+    {% else %}
+      {% if(product_entity.variations.0) %}
+        {% set aux=false %}
+        {% for variation in product_entity.variations %}
+          {% if(aux == false) %}
+            {% if(variation.entity.field_foto_del_color.0) %}
+              {% set aux = true %}
+                    <div class="G-margen--auto G-flex G-dis-h--cen G-dis-v--middle">
+                      <img src="{{ file_url(variation.entity.field_foto_del_color.0.entity.uri.value|image_style('286x286')) }}" alt="">
+                    </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% if(aux == false) %}
+          <div class="G-margen--auto G-flex G-dis-h--cen G-dis-v--middle">
+            <img style="width: 286px;" class="d-block" src="/themes/custom/frontend/images/imagen-pordefecto.jpg"/>
+          </div>
+        {% endif %}
+      {% else %}
+      <div class="G-margen--auto G-flex G-dis-h--cen G-dis-v--middle">
+        <img style="width: 286px;" class="d-block" src="/themes/custom/frontend/images/imagen-pordefecto.jpg"/>
+      </div>
+      {% endif %}
+{% endif %}
+    <div class="G-flex G-flex-h--repartidos G-dis-v--middle G-margen--xm G-margen--lr-0 G-margen--bottom-0">
+      <p style="line-height: 1.2;" class=" G-margen--xs G-margen--tb-0 G-margen--left-0 G-color--primario G-txt--negrita G-txt--xm G-txt--izq E-nombre-producto">{{ product_entity.title.value }}</p>
+      {% if(product_entity.variations) %}
+      <p class="G-margen--0 G-color--primario G-txt--negrita G-txt--l G-txt--der E-fuente-secundaria">{{ product_entity.variations.entity.price.value[0]['number']|round(2) }}€</p>
+      {% endif %}
+    </div>
+    </a>
+  </div>
+
+</div>

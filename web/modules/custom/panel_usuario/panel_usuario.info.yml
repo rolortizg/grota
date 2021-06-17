@@ -1,0 +1,7 @@
+type: module
+name: 'Panel usuario'
+description: 'Panel usuario'
+package: 'Núcleo personalizado'
+core_version_requirement: ^9
+dependencies:
+  - drupal:views

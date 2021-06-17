@@ -1,0 +1,16 @@
+uuid: 7725241c-068b-4053-a397-2d67f903e17e
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Usuario anónimo'
+weight: 0
+is_admin: false
+permissions:
+  - 'access checkout'
+  - 'access content'
+  - 'view commerce_product'
+  - 'view media'
+  - 'view textil commerce_product'

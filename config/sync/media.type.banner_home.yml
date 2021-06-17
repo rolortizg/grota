@@ -1,0 +1,13 @@
+uuid: ea43fc1f-2a1e-42bd-a24a-4ac0188557e3
+langcode: es
+status: true
+dependencies: {  }
+id: banner_home
+label: 'Banner home'
+description: 'Se utiliza en la cabecera de la sección de inicio'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_2
+field_map: {  }

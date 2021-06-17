@@ -1,0 +1,29 @@
+uuid: 30418bb5-96b5-4599-91df-eb12e0ff6398
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.hogar
+    - field.storage.commerce_product.field_materiales
+    - taxonomy.vocabulary.materiales
+id: commerce_product.hogar.field_materiales
+field_name: field_materiales
+entity_type: commerce_product
+bundle: hogar
+label: Materiales
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      materiales: materiales
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,27 @@
+uuid: ce61a1dc-1fb6-4ece-a542-a5bf43123a33
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.noticia
+  module:
+    - text
+id: node.noticia.body
+field_name: body
+entity_type: node
+bundle: noticia
+label: Descripción
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    summary: 'Añade un resúmen para la página de noticias general'
+    value: ''
+    format: html_basico
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,18 @@
+uuid: 64b415e6-4c59-485c-a08f-1e7a65e28faa
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.medir_el_impacto
+id: node.medir_el_impacto.title
+field_name: title
+entity_type: node
+bundle: medir_el_impacto
+label: 'Título URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

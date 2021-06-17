@@ -1,0 +1,22 @@
+uuid: 75d0731b-a76d-4913-a87b-5b25c96b2c4c
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.proveedor
+id: node.proveedor.promote
+field_name: promote
+entity_type: node
+bundle: proveedor
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

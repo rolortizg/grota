@@ -1,0 +1,23 @@
+uuid: ae00f49d-95cc-4759-9537-118c8a0dfc25
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.default
+    - field.storage.commerce_order_item.field_estado
+  module:
+    - options
+id: commerce_order_item.default.field_estado
+field_name: field_estado
+entity_type: commerce_order_item
+bundle: default
+label: Estado
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: pendiente
+default_value_callback: ''
+settings: {  }
+field_type: list_string

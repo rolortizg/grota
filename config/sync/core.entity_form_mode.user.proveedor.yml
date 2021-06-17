@@ -1,0 +1,10 @@
+uuid: ae523da1-ba8f-4651-93c5-7a20a33ad106
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.proveedor
+label: Proveedor
+targetEntityType: user
+cache: true

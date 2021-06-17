@@ -1,0 +1,4 @@
+admin_web.entidades:
+  title: 'Entidades'
+  route_name: admin_web.entidades
+  parent: system.admin_structure

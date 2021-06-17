@@ -1,0 +1,23 @@
+uuid: a5d8cd2f-a763-4d35-873d-375b1743e3d3
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_enlace
+    - media.type.banner_home
+  module:
+    - link
+id: media.banner_home.field_enlace
+field_name: field_enlace
+entity_type: media
+bundle: banner_home
+label: Enlace
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

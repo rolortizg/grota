@@ -1,0 +1,8 @@
+
+<div>
+{% if(node.field_logotipo.0) %}
+  <a href="{{ path('entity.node.canonical', {node: node.id}) }}">
+    <img src="{{ file_url(node.field_logotipo.0.entity.uri.value) }}" />
+  </a>
+{% endif %}
+</div>

@@ -1,0 +1,19 @@
+uuid: 3a4ab506-b998-4eca-8850-ebdc55e4cfe9
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titulo
+    - node.type.nuestros_proveedores
+id: node.nuestros_proveedores.field_titulo
+field_name: field_titulo
+entity_type: node
+bundle: nuestros_proveedores
+label: Título
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

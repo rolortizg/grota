@@ -1,0 +1,61 @@
+uuid: 72112c2c-598c-4fb8-8c99-a8318d289a68
+langcode: es
+status: true
+dependencies:
+  config:
+    - filter.format.html_basico
+  module:
+    - ckeditor
+format: html_basico
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formato
+          items:
+            - Bold
+            - Italic
+            - Underline
+            - Strike
+        -
+          name: Enlaces
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Listas
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name: Herramientas
+          items:
+            - Source
+            - Maximize
+        -
+          name: Texto
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyBlock
+            - JustifyRight
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: ''
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

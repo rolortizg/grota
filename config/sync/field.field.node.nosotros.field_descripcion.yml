@@ -1,0 +1,21 @@
+uuid: 228b5ae7-679d-4634-afa7-d03e33f456ca
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion
+    - node.type.nosotros
+  module:
+    - text
+id: node.nosotros.field_descripcion
+field_name: field_descripcion
+entity_type: node
+bundle: nosotros
+label: Descripción
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

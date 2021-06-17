@@ -1,0 +1,46 @@
+uuid: 37355b65-2f6e-42e0-be9e-d72faa5c31ba
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.contacto.field_descripcion
+    - field.field.node.contacto.field_formulario
+    - field.field.node.contacto.field_imagen_de_fondo
+    - field.field.node.contacto.field_metatag
+    - field.field.node.contacto.field_titulo
+    - field.field.node.contacto.field_titulo_2
+    - field.field.node.contacto.field_titulo_3
+    - node.type.contacto
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+    - webform
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.contacto.full
+targetEntityType: node
+bundle: contacto
+mode: full
+content:
+  field_formulario:
+    weight: 1
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+hidden:
+  field_descripcion: true
+  field_imagen_de_fondo: true
+  field_metatag: true
+  field_titulo: true
+  field_titulo_2: true
+  field_titulo_3: true
+  langcode: true
+  links: true

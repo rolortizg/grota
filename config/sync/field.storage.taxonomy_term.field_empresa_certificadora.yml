@@ -1,0 +1,19 @@
+uuid: 305a19ee-9259-4e30-a183-67ae9492c0a4
+langcode: es
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_empresa_certificadora
+field_name: field_empresa_certificadora
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

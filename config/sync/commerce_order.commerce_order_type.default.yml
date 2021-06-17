@@ -1,0 +1,30 @@
+uuid: da0f7b29-81eb-46c4-9ed2-5c5f122e137d
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_cart
+    - commerce_checkout
+    - commerce_shipping
+    - pedido
+third_party_settings:
+  commerce_cart:
+    cart_form_view: commerce_cart_form
+    cart_block_view: commerce_cart_block
+    cart_expiration: {  }
+  commerce_checkout:
+    checkout_flow: shipping
+  commerce_shipping:
+    shipment_type: default
+_core:
+  default_config_hash: bROz7kd1J83kDf06qdZztYFSezi6UrfwftyJo53rNt4
+label: Default
+id: default
+workflow: pedido.estados
+numberPattern: order_default
+refresh_mode: customer
+refresh_frequency: 300
+sendReceipt: true
+receiptBcc: pacho@grota.eco
+traits: {  }
+locked: false

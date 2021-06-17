@@ -1,0 +1,32 @@
+uuid: 03e5d885-8531-451c-8138-d1b0d71bcee3
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.textil_tipo_de_publico
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: taxonomy_term.textil_tipo_de_publico.default
+targetEntityType: taxonomy_term
+bundle: textil_tipo_de_publico
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true
+  status: true

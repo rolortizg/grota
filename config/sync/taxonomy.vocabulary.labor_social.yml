@@ -1,0 +1,8 @@
+uuid: 2aaada08-2920-4c41-9f32-46558336ac8e
+langcode: es
+status: true
+dependencies: {  }
+name: 'Labor social'
+vid: labor_social
+description: 'Se muestra en Medir el impacto - Labor social'
+weight: -10

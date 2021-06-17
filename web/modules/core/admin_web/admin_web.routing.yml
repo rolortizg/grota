@@ -1,0 +1,14 @@
+admin_web.entidades:
+  path: '/admin/structure/entidades'
+  defaults:
+    _controller: '\Drupal\admin_web\Controller\AdminWebController::entidadesPage'
+    _title: 'Entidades'
+  requirements:
+    _permission: 'administer entities'
+admin_web.cookies:
+  path: '/cookies/callback.json'
+  defaults:
+    _controller: '\Drupal\admin_web\Controller\CookieController::callback'
+    _title: 'callback'
+  requirements:
+    _permission: 'access content'

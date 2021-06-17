@@ -1,0 +1,11 @@
+uuid: aac34580-dbc9-4aea-b7d9-ee4960ad30d0
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.hogar
+id: commerce_product.hogar
+target_entity_type_id: commerce_product
+target_bundle: hogar
+default_langcode: site_default
+language_alterable: false

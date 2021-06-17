@@ -1,0 +1,29 @@
+uuid: 6ae4af5e-fa94-4eb0-91c5-31c9b33a1ceb
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_empresa_certificadora
+    - taxonomy.vocabulary.certificados
+    - taxonomy.vocabulary.empresas_certificaco
+id: taxonomy_term.certificados.field_empresa_certificadora
+field_name: field_empresa_certificadora
+entity_type: taxonomy_term
+bundle: certificados
+label: 'Quién lo certifica'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      empresas_certificaco: empresas_certificaco
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

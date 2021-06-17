@@ -1,0 +1,8 @@
+uuid: d4d93f03-69c2-4b7d-ad06-adc75229738f
+langcode: es
+status: true
+dependencies: {  }
+name: 'Hogar - Categoría de producto (Decoración y muebles, cocina)'
+vid: hogar_categoria_de_producto_deco
+description: ''
+weight: 0

@@ -1,0 +1,23 @@
+uuid: b24d70c0-1678-4106-a1fc-2d6571a88641
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - field_permissions
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: commerce_product.field_productos
+field_name: field_productos
+entity_type: commerce_product
+type: entity_reference
+settings:
+  target_type: commerce_product
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

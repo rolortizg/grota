@@ -1,0 +1,14 @@
+format: html_basico
+name: Grota
+mail: pedidos@grota.eco
+linkonly: false
+textonly: false
+sitestyle: true
+simple_address: false
+preserve_class: false
+advanced:
+  incoming: false
+  key: Sb9UH9ajl423sG369B_0zZuN4cqy9-JWYA74f6AhpfY
+_core:
+  default_config_hash: rLKGzzC9TqjbEZiBoiyMpOSyZgldADa5SzvbA2gQDxE
+langcode: es

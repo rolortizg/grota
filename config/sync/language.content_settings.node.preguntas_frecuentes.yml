@@ -1,0 +1,11 @@
+uuid: acb6daea-15c3-46bf-b1d0-97b864d2e685
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.preguntas_frecuentes
+id: node.preguntas_frecuentes
+target_entity_type_id: node
+target_bundle: preguntas_frecuentes
+default_langcode: site_default
+language_alterable: false

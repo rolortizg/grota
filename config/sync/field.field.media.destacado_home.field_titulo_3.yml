@@ -1,0 +1,19 @@
+uuid: a563c372-b6b3-41c9-87a0-447d6d86e75f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_titulo_3
+    - media.type.destacado_home
+id: media.destacado_home.field_titulo_3
+field_name: field_titulo_3
+entity_type: media
+bundle: destacado_home
+label: 'Título 3'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,8 @@
+uuid: c0cbd608-bdd5-4a82-b26f-c9833cd66808
+langcode: es
+status: true
+dependencies: {  }
+name: Certificados
+vid: certificados
+description: 'Se muestra en Medir el impacto - Certificados'
+weight: -7

@@ -1,0 +1,44 @@
+uuid: 5a4337cc-3b8f-484f-a03b-f5f8c9d7aaec
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.grota_business.field_descripcion
+    - field.field.node.grota_business.field_icono
+    - field.field.node.grota_business.field_imagen_de_fondo
+    - field.field.node.grota_business.field_metatag
+    - field.field.node.grota_business.field_proyectos
+    - field.field.node.grota_business.field_titulo
+    - field.field.node.grota_business.field_titulo_2
+    - field.field.node.grota_business.field_titulo_3
+    - node.type.grota_business
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.grota_business.teaser
+targetEntityType: node
+bundle: grota_business
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_descripcion: true
+  field_icono: true
+  field_imagen_de_fondo: true
+  field_metatag: true
+  field_proyectos: true
+  field_titulo: true
+  field_titulo_2: true
+  field_titulo_3: true
+  langcode: true

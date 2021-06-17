@@ -1,0 +1,39 @@
+uuid: 67395f4e-263e-45c8-bde9-1132d1939a9b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pregunta_respuesta
+    - node.type.preguntas_frecuentes
+  module:
+    - double_field
+id: node.preguntas_frecuentes.field_pregunta_respuesta
+field_name: field_pregunta_respuesta
+entity_type: node
+bundle: preguntas_frecuentes
+label: 'Listado de FAQs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  first:
+    label: Pregunta
+    required: true
+    list: false
+    allowed_values: {  }
+    max: null
+    min: null
+    on_label: 'On'
+    off_label: 'Off'
+  second:
+    label: Respuesta
+    required: true
+    list: false
+    allowed_values: {  }
+    max: null
+    min: null
+    on_label: 'On'
+    off_label: 'Off'
+field_type: double_field

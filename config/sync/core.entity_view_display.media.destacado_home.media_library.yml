@@ -1,0 +1,48 @@
+uuid: 9548d2eb-1aa4-4322-9b09-90624aa375d9
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.destacado_home.field_media_file_1
+    - field.field.media.destacado_home.field_subtitulo
+    - field.field.media.destacado_home.field_titulo_2
+    - field.field.media.destacado_home.field_titulo_3
+    - field.field.media.destacado_home.field_titulo_4
+    - field.field.media.destacado_home.field_titulo_5
+    - image.style.medium
+    - media.type.destacado_home
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: media.destacado_home.media_library
+targetEntityType: media
+bundle: destacado_home
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_file_1: true
+  field_subtitulo: true
+  field_titulo_2: true
+  field_titulo_3: true
+  field_titulo_4: true
+  field_titulo_5: true
+  langcode: true
+  name: true
+  uid: true

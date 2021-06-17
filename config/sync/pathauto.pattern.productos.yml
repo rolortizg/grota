@@ -1,0 +1,25 @@
+uuid: c1432f39-d5c8-4e9d-b890-fb473d6604f4
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - ctools
+id: productos
+label: Productos
+type: 'canonical_entities:commerce_product'
+pattern: '[commerce_product:type]/[commerce_product:title]'
+selection_criteria:
+  757a8bb5-cc49-4eb8-a469-e1ecf664c5e7:
+    id: 'entity_bundle:commerce_product'
+    bundles:
+      dia_a_dia: dia_a_dia
+      hogar: hogar
+      textil: textil
+    negate: false
+    context_mapping:
+      commerce_product: commerce_product
+    uuid: 757a8bb5-cc49-4eb8-a469-e1ecf664c5e7
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,23 @@
+uuid: 1b0ce554-fd0f-4de9-bbe0-2302fd9b9160
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.hogar
+    - field.storage.commerce_product.field_material_biosintetico
+id: commerce_product.hogar.field_material_biosintetico
+field_name: field_material_biosintetico
+entity_type: commerce_product
+bundle: hogar
+label: 'Material biosintético'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

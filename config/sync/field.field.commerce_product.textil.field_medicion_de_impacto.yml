@@ -1,0 +1,29 @@
+uuid: bd35a663-1fee-4952-9e49-ea64e3054986
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.textil
+    - field.storage.commerce_product.field_medicion_de_impacto
+    - taxonomy.vocabulary.medicion_de_impacto
+id: commerce_product.textil.field_medicion_de_impacto
+field_name: field_medicion_de_impacto
+entity_type: commerce_product
+bundle: textil
+label: 'Medición de impacto'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      medicion_de_impacto: medicion_de_impacto
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

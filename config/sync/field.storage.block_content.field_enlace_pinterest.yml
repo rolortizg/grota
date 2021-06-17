@@ -1,0 +1,23 @@
+uuid: f7007c93-0271-406f-9815-f3a93845bdb1
+langcode: es
+status: true
+dependencies:
+  module:
+    - block_content
+    - field_permissions
+    - link
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: block_content.field_enlace_pinterest
+field_name: field_enlace_pinterest
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

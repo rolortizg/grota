@@ -1,0 +1,11 @@
+uuid: ff536fcb-ce54-49a2-aa9e-168e6f8f64d1
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.textil
+id: commerce_product_variation.textil
+target_entity_type_id: commerce_product_variation
+target_bundle: textil
+default_langcode: site_default
+language_alterable: false

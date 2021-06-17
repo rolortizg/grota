@@ -1,0 +1,69 @@
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--940 G-margen--auto G-txt--cen G-pos--relativo" style="padding: 140px 20px 120px;">
+    {% if node.field_titulo.value %}
+      <p class="G-txt--xxl G-color--primario G-txt--negrita G-margen--supergigante G-margen--lr-0 G-margen--top-0 G-txt--cen">{{ node.field_titulo.value }}</p>
+    {% endif %}
+
+    {% if node.field_imagen_descripcion.0 %}
+      <ul class="G-listado E-historia">
+        {% for key,item in node.field_imagen_descripcion %}
+          <li class="G-flex">
+            <img class="G-max--50 E-op-m E-filtro-bw G-flex--1" style="object-fit: contain;" src="{{ file_url(item.entity.field_media_image.entity.fileuri) }}" alt="">
+            {% if item.entity.field_descripcion.value %}
+              <div class="G-pos--relativo G-max--50 E-font-montserrat G-color--primario G-flex--1">
+                {{ item.entity.field_descripcion.value | raw  }}
+              </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% for key,item in node.field_icono %}
+      <img class="E-historia-logo G-margen--xxl G-margen--lr-0 G-margen--bottom-0" style="max-width: 480px;width: 100%;" src="{{ file_url(item.entity.fileuri) }}" alt="">
+    {% endfor %}
+  </div>
+</div>
+
+<div class="E-fondo--nosotros G-max--100 G-fondo--full E-fondo-norepeat" style="background-image: url('{{ file_url(node.field_imagen_de_.entity.fileuri) }}'), linear-gradient(80deg, rgba(147,184,125,1) 0%, rgba(147,184,125,1) 100%);background-size: 250px, cover;">
+  <div class="E-max--940 G-margen--auto G-flex G-dis-h--cen" style="padding:90px 28px;">
+    {% if node.field_descripcion.value %}
+      <div class="E-p-nomargen E-font-montserrat G-txt--m G-color--blanco G-margen--0 E-nosotros-resp G-txt--jus" style="column-count: 2;column-gap: 26px;">
+        {{ node.field_descripcion.value|raw }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--860 G-margen--auto" style="padding:90px 20px;">
+    {% if node.field_titulo_2.value %}
+      <p class="G-txt--xxl G-color--primario G-txt--negrita G-margen--xxs G-margen--lr-0 G-margen--top-0 G-txt--cen">{{ node.field_titulo_2.value }}</p>
+    {% endif %}
+    {% if node.field_descripcion_2.value %}
+      <div class="E-font-montserrat G-txt--xm G-color--primario G-margen--gigante G-margen--lr-0 G-margen--top-0 G-txt--cen">
+        {{ node.field_descripcion_2.value|raw }}
+      </div>
+    {% endif %}
+    {% if node.field_miembro_del_equipo.0 %}
+      <ul class="G-listado G-flex G-dis-h--cen G-flex--wrap">
+        {% for key,item in node.field_miembro_del_equipo %}
+          <li class="G-padding--xxm G-txt--cen" style="max-width: 180px;">
+            <div class="E-img-nosotros G-fondo--full G-borde--circular" style="background-image: url('{{ file_url(item.entity.field_media_image_1.entity.fileuri) }}')"></div>
+            <p style="line-height: 1.2" class="E-txt--18 G-color--primario G-margen--xs G-margen--lr-0 G-margen--bottom-0 G-txt--cen">{{ item.entity.name.value }}</p>
+            <p class="E-font-montserrat G-txt--xxs G-color--terciario G-margen--0 G-txt--cen">{{ item.entity.field_subtitulo.value }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</div>
+
+<div class="E-fondo-norepeat G-fondo--full G-max--100" style="background-image: url('{{ file_url(node.field_imagen_de_fondo.entity.fileuri) }}')">
+  <div class="E-max--860 G-margen--auto G-txt--cen" style="padding:90px 20px 400px;">
+    {% if node.field_descripcion_3.value %}
+      <div class="G-txt--xgigante G-txt--negrita G-color--blanco G-sombra-txt--si-s G-txt--cen G-margen--l G-margen--lr-0 G-margen--top-0 E-titulo-resp" style="line-height: 1;">{{ node.field_descripcion_3.value|raw }}</div>
+    {% endif %}
+    <a href="{{ node.field_enlace.url }}" class="E-hover-secundario G-fondo--blanco G-color--secundario G-borde--redondeado-xs G-txt--xxs G-txt--sinsubrayado G-txt--cen" style="padding: 7px 15px;">{{ node.field_enlace.title }}</a>
+  </div>
+</div>

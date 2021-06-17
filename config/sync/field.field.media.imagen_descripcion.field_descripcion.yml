@@ -1,0 +1,21 @@
+uuid: 8df4b80e-3cab-43af-b252-be88725a3a66
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_descripcion
+    - media.type.imagen_descripcion
+  module:
+    - text
+id: media.imagen_descripcion.field_descripcion
+field_name: field_descripcion
+entity_type: media
+bundle: imagen_descripcion
+label: Descripción
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

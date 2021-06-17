@@ -1,0 +1,27 @@
+uuid: 6317d2ce-7cba-4c3b-9074-01335ea36a7f
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.redes_sociales
+    - field.storage.block_content.field_instagram
+  module:
+    - file
+id: block_content.redes_sociales.field_instagram
+field_name: field_instagram
+entity_type: block_content
+bundle: redes_sociales
+label: Instagram
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: rrss
+  file_extensions: svg
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

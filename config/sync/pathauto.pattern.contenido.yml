@@ -1,0 +1,30 @@
+uuid: a5c2d9d7-9748-483b-9d82-5e3282bcf151
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: contenido
+label: Contenido
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  f5cdd093-7511-4858-b316-9eff3713841d:
+    id: node_type
+    bundles:
+      contacto: contacto
+      grota_business: grota_business
+      medir_el_impacto: medir_el_impacto
+      nosotros: nosotros
+      noticia: noticia
+      nuestros_proveedores: nuestros_proveedores
+      pagina_textual: pagina_textual
+      preguntas_frecuentes: preguntas_frecuentes
+      proveedor: proveedor
+    negate: false
+    context_mapping:
+      node: node
+    uuid: f5cdd093-7511-4858-b316-9eff3713841d
+selection_logic: and
+weight: -5
+relationships: {  }

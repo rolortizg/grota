@@ -1,0 +1,11 @@
+uuid: 09b471bd-275d-4d0e-bb37-4c8053d6fc85
+langcode: es
+status: true
+dependencies: {  }
+id: textil
+label: Moda
+orderItemType: default
+generateTitle: true
+traits:
+  - purchasable_entity_shippable
+locked: false

@@ -1,0 +1,19 @@
+uuid: af550ef8-cadb-480e-933d-407b2cbd7fec
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_subtitulo
+    - media.type.destacado_home
+id: media.destacado_home.field_subtitulo
+field_name: field_subtitulo
+entity_type: media
+bundle: destacado_home
+label: Título
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,14 @@
+uuid: be423e26-c1d1-4aeb-b9b4-9c3dd4c6262a
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.cliente
+  module:
+    - user
+id: user_add_role_action.cliente
+label: 'Añade el rol Cliente al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: cliente

@@ -1,0 +1,30 @@
+uuid: 52b63760-f8f5-4d16-b40a-7f2feef9e0f8
+langcode: es
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - node
+id: node.field_logotipo
+field_name: field_logotipo
+entity_type: node
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

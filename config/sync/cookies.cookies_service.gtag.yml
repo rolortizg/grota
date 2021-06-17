@@ -1,0 +1,11 @@
+uuid: 8ee24df5-f5e3-4c27-be08-3266f2a27650
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 500XshI88hbc-4kElU2ulgAYDxLUMZUn9__MhefzLz0
+id: gtag
+label: 'Google Tag Manager'
+group: cookies_de_rendimiento
+url: 'https://policies.google.com/privacy'
+consent: true

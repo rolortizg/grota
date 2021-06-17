@@ -1,0 +1,18 @@
+uuid: 28e88de7-e378-44ee-a5a5-a55b84aebb1a
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+    parent: 'footer:'
+name: 'Página textual'
+type: pagina_textual
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

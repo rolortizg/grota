@@ -1,0 +1,38 @@
+uuid: 96f5e27a-59de-42a2-ac06-d6d71dcb0001
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_image_2
+    - media.type.banner_home
+  module:
+    - image
+id: media.banner_home.field_media_image_2
+field_name: field_media_image_2
+entity_type: media
+bundle: banner_home
+label: 'Imagen de fondo'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: imagen-fondo
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

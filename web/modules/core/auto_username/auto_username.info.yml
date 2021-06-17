@@ -1,0 +1,8 @@
+name: Automatic User Names
+type: module
+description: "Genera nombre de usuario automáticos"
+configure: auto_username.admin_config
+dependencies:
+  - token:token
+package: 'Núcleo personalizado'
+core_version_requirement: ^9

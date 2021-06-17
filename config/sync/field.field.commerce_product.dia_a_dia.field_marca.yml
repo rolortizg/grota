@@ -1,0 +1,29 @@
+uuid: 8cf15204-acdc-41e4-8f69-462dd0a2eaa4
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.dia_a_dia
+    - field.storage.commerce_product.field_marca
+    - taxonomy.vocabulary.marca
+id: commerce_product.dia_a_dia.field_marca
+field_name: field_marca
+entity_type: commerce_product
+bundle: dia_a_dia
+label: Marca
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      marca: marca
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

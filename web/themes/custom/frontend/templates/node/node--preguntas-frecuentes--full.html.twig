@@ -1,0 +1,33 @@
+<div class="E-fondo-norepeat E-fondo-azul E-fondo--subcabecera-xs G-fondo--full G-flex G-flex--vertical G-dis-v--middle G-dis-h--cen G-pos--relativo" style="background-image: url('{{ file_url(node.field_imagen_de_fondo.entity.fileuri) }}')">
+  <div class="E-max--670 G-margen--auto G-padding--xm G-padding--tb-0" style="z-index: 2;">
+    {% if node.field_titulo.value %}
+      <p class="G-txt--xxgigante G-txt--negrita G-color--blanco G-sombra-txt--si-s G-txt--cen G-margen--xxsupergigante G-margen--lr-0 G-margen--bottom-0" style="line-height: 1;">{{ node.field_titulo.value }}</p>
+    {% endif %}
+    {% if node.field_descripcion.value %}
+      <div class="E-txt--18 E-font-montserrat G-txt--cen G-color--blanco G-margen--xxs G-margen--lr-0 G-margen--bottom-0">{{ node.field_descripcion.value|raw }}</div>
+    {% endif %}
+  </div>
+</div>
+<div class="G-fondo--blanco">
+  <div class="E-max--940 G-margen--auto" id="accordion" style="padding:50px 20px 120px ">
+    {% if(node.field_faqs.0) %}
+      {% for i, faq in node.field_faqs  %}
+        <div class="card">
+          <div class="card-header" id="heading-{{ i }}">
+            <h5 class="G-margen--0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-{{ i }}" aria-expanded="false" aria-controls="collapse-{{ i }}">
+                {{ faq.entity.name.value }}
+              </button>
+            </h5>
+          </div>
+          <div id="collapse-{{ i }}" class="collapse" aria-labelledby="heading-{{ i }}" data-parent="#accordion">
+            <div class="card-body">
+              {{ faq.entity.description.value|raw }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+

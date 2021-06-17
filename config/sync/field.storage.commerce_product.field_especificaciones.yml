@@ -1,0 +1,23 @@
+uuid: 67379919-dade-45ef-847d-4c1acdb4aaf6
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - field_permissions
+    - text
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: commerce_product.field_especificaciones
+field_name: field_especificaciones
+entity_type: commerce_product
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,86 @@
+uuid: 760e32cb-0749-47f1-a0f5-4c995453e21b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.nuestros_proveedores.field_descripcion
+    - field.field.node.nuestros_proveedores.field_metatag
+    - field.field.node.nuestros_proveedores.field_titulo
+    - node.type.nuestros_proveedores
+  module:
+    - field_group
+    - field_layout
+    - layout_discovery
+    - metatag
+    - path
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_contenido:
+      children:
+        - field_titulo
+        - field_descripcion
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Contenido
+id: node.nuestros_proveedores.default
+targetEntityType: node
+bundle: nuestros_proveedores
+mode: default
+content:
+  field_descripcion:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_metatag:
+    weight: 26
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_titulo:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

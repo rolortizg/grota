@@ -1,0 +1,32 @@
+uuid: 89da8206-2f36-4cd1-9a31-c30101663fc0
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.empresas_certificaco
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: taxonomy_term.empresas_certificaco.default
+targetEntityType: taxonomy_term
+bundle: empresas_certificaco
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true
+  status: true

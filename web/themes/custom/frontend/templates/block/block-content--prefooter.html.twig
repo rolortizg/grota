@@ -1,0 +1,14 @@
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--1277 G-margen--auto G-flex G-dis-h--cen G-dis-v--middle" style="padding: 15px 20px;">
+    {% if(elements['#block_content'].field_texto.0) %}
+      <p class="G-color--terciario G-txt--xs E-font-montserrat G-margen--0">{{ elements['#block_content'].field_texto.0.value }}</p>
+    {% endif %}
+    {% if(elements['#block_content'].field_enlace_multiple.0) %}
+      <div class="G-flex">
+        {% for enlace in elements['#block_content'].field_enlace_multiple %}
+          {{ link(enlace.title, enlace.uri, { 'class':[' G-txt--cen G-color--terciario G-txt--xs E-font-montserrat G-txt--sinsubrayado G-margen--xxs G-margen--tb-0 G-margen--left-0'], 'target': ['_blank']} ) }}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>

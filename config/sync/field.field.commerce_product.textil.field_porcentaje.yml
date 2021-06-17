@@ -1,0 +1,25 @@
+uuid: fa761b0c-0bd5-47d6-ae7c-59dfd9be75b4
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.textil
+    - field.storage.commerce_product.field_porcentaje
+id: commerce_product.textil.field_porcentaje
+field_name: field_porcentaje
+entity_type: commerce_product
+bundle: textil
+label: Porcentaje
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

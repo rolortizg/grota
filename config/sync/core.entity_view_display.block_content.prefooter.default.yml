@@ -1,0 +1,44 @@
+uuid: 07928193-905d-447e-8c26-13250088c5e5
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.prefooter
+    - field.field.block_content.prefooter.field_enlace_multiple
+    - field.field.block_content.prefooter.field_texto
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: block_content.prefooter.default
+targetEntityType: block_content
+bundle: prefooter
+mode: default
+content:
+  field_enlace_multiple:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_texto:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

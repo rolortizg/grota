@@ -1,0 +1,17 @@
+{% if(term.field_enlace.0) %}
+  {% set enlace = term.field_enlace.0.uri %}
+{% else %}
+  {% set enlace = '' %}
+{% endif %}
+{% set href = enlace|split(':') %}
+<a class="G-max--100 G-padding--m G-fondo--degra-abajo G-txt--sinsubrayado G-borde--redondeado-s" href="{{ href[1] }}">
+  {% if(term.field_logotipo.0) %}
+  {% set estilo = term.field_logotipo.0.entity.uri.value %}
+  {% else %}
+  {% set estilo = '' %}
+  {% endif %}
+  <div class=" G-flex G-dis-h--cen G-dis-v--middle G-pos--absoluto G-pos--bottom" style="left: -25px;max-width: 300px">
+    <div class="E-fondo-norepeat" style="background-image: url({{ file_url(estilo) }});height: 360px;width: 320px;background-position: center;background-size: contain;"></div>
+  </div>
+  <p class="E-subicono-flecha G-flex G-dis-h--der G-txt--xl G-color--primario G-txt--negrita G-txt--der G-margen--0">{{ term.name.value }}</p>
+</a>

@@ -1,0 +1,10 @@
+name: Grota Config
+description: Internal configurations of Grota.
+package: Grota
+type: module
+core_version_requirement: 9.x
+
+# Information added by Drupal.org packaging script on 2020-06-21
+version: '9.x'
+project: 'grota'
+

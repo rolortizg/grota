@@ -1,0 +1,19 @@
+uuid: 1215b457-9dbd-48b8-95e0-4794ac22b5d2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_coste_social_grota
+    - taxonomy.vocabulary.medicion_de_impacto
+id: taxonomy_term.medicion_de_impacto.field_coste_social_grota
+field_name: field_coste_social_grota
+entity_type: taxonomy_term
+bundle: medicion_de_impacto
+label: 'Coste social - grota'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

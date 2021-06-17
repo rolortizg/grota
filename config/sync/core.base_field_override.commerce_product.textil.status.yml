@@ -1,0 +1,22 @@
+uuid: 7c951559-e4fd-4c00-add7-b73eecdfb030
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.textil
+id: commerce_product.textil.status
+field_name: status
+entity_type: commerce_product
+bundle: textil
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

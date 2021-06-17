@@ -1,0 +1,226 @@
+uuid: 735802c1-c569-4b3c-9f7b-c24ff5f6b39d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.inicio.field_ahorro_en_material_sosteni
+    - field.field.node.inicio.field_banner_principal
+    - field.field.node.inicio.field_destacado_home
+    - field.field.node.inicio.field_imagen
+    - field.field.node.inicio.field_imagen_de_fondo
+    - field.field.node.inicio.field_imagen_de_fondo_2
+    - field.field.node.inicio.field_titulo
+    - field.field.node.inicio.field_titulo_2
+    - field.field.node.inicio.field_titulo_3
+    - field.field.node.inicio.field_titulo_4
+    - field.field.node.inicio.field_titulo_5
+    - field.field.node.inicio.field_titulo_6
+    - field.field.node.inicio.field_total_biodegradable
+    - field.field.node.inicio.field_total_biosintetico
+    - field.field.node.inicio.field_total_co2
+    - field.field.node.inicio.field_total_compostable
+    - field.field.node.inicio.field_total_organico
+    - field.field.node.inicio.field_total_reciclable
+    - field.field.node.inicio.field_total_reciclado
+    - node.type.inicio
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.inicio.default
+targetEntityType: node
+bundle: inicio
+mode: default
+content:
+  field_ahorro_en_material_sosteni:
+    type: entity_reference_entity_view
+    weight: 107
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_banner_principal:
+    type: entity_reference_entity_view
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_destacado_home:
+    type: entity_reference_entity_view
+    weight: 112
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_imagen:
+    weight: 111
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_imagen_de_fondo:
+    weight: 108
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_imagen_de_fondo_2:
+    weight: 109
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_titulo:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_titulo_2:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_titulo_3:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_titulo_4:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_titulo_5:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_titulo_6:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_total_biodegradable:
+    weight: 119
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_total_biosintetico:
+    weight: 116
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_total_co2:
+    weight: 113
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_total_compostable:
+    weight: 115
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_total_organico:
+    weight: 114
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_total_reciclable:
+    weight: 117
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_total_reciclado:
+    weight: 118
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

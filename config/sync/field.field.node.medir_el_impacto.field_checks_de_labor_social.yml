@@ -1,0 +1,29 @@
+uuid: 1ec0fa10-0056-4121-8837-47dcd763a833
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_checks_de_labor_social
+    - node.type.medir_el_impacto
+    - taxonomy.vocabulary.produccion
+id: node.medir_el_impacto.field_checks_de_labor_social
+field_name: field_checks_de_labor_social
+entity_type: node
+bundle: medir_el_impacto
+label: 'Checks de Producción'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      produccion: produccion
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,11 @@
+uuid: e6dd9470-dbfb-4ca3-8f64-2447cabeef76
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.labor_social
+id: taxonomy_term.labor_social
+target_entity_type_id: taxonomy_term
+target_bundle: labor_social
+default_langcode: site_default
+language_alterable: false

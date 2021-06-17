@@ -1,0 +1,32 @@
+uuid: 72260496-3ec8-4c39-82bf-9e37f18fc82b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_proveedor
+    - node.type.proveedor
+id: node.proveedor.field_proveedor
+field_name: field_proveedor
+entity_type: node
+bundle: proveedor
+label: Proveedor
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: role
+      role:
+        proveedor: proveedor
+        propietario: '0'
+        cliente: '0'
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,21 @@
+<div class="E-fondo-norepeat E-fondo-azul G-pos--relativo G-fondo--full G-flex G-flex--vertical G-dis-v--middle G-dis-h--cen" style="background-image: url('{{ file_url(node.field_imagen_de_fondo.entity.fileuri) }}')">
+  <div class="E-max--670 G-margen--auto G-txt--cen G-formulario" style="padding: 227px 30px 100px;z-index: 2;">
+    {% if node.field_titulo.value %}
+      <p class="G-txt--xxgigante G-txt--negrita G-color--blanco G-sombra-txt--si-s G-txt--cen G-margen--0">{{ node.field_titulo.value }}</p>
+    {% endif %}
+    {% if node.field_descripcion.value %}
+      <div class="G-color--blanco E-txt--18 G-txt--cen E-font-montserrat G-margen--xxm G-margen--lr-0">{{ node.field_descripcion.value|raw }}</div>
+    {% endif %}
+    <div class="G-max--375 G-margen--auto ">
+      {{ drupal_entity('webform', 'contact') }}
+    </div>
+    <div class="G-flex G-dis-h--cen E-separador-difuminado-xl E-separador-sombra G-pos--relativo" style="overflow: hidden;z-index: 2;padding: 10px 0 73px;margin-top: 47px;">
+      <div>
+        <p class="G-color--blanco G-txt--xm G-txt--cen E-font-montserrat G-margen--0 G-txt--negrita">Email: </p>
+        {% if node.field_titulo_2.value %}
+          <p class="G-color--blanco E-txt--18 G-txt--cen E-font-montserrat G-margen--0">{{ node.field_titulo_2.value }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

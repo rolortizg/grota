@@ -1,0 +1,29 @@
+uuid: c7b390f6-bac3-43bc-9097-158695db39a3
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.hogar
+    - field.storage.commerce_product.field_produccion
+    - taxonomy.vocabulary.produccion
+id: commerce_product.hogar.field_produccion
+field_name: field_produccion
+entity_type: commerce_product
+bundle: hogar
+label: Producción
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      produccion: produccion
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

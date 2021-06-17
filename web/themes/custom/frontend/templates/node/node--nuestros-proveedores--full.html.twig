@@ -1,0 +1,13 @@
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--940 G-margen--auto" style="padding: 160px 20px 60px;">
+    {% if node.field_titulo.value %}
+      <p class="G-margen--xxs G-margen--lr-0 G-margen--top-0 G-txt--xxl G-color--primario G-txt--negrita G-txt--cen" style="line-height: 1;">{{ node.field_titulo.value }}</p>
+    {% endif %}
+    {% if node.field_descripcion.value %}
+      <div class="E-font-montserrat G-color--primario G-txt--xm G-txt--cen G-margen--0">
+        {{ node.field_descripcion.value|raw }}
+      </div>
+    {% endif %}
+  </div>
+  {{ drupal_view('logo_proveedores', 'block_1') }}
+</div>

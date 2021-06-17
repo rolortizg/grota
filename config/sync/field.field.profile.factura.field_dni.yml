@@ -1,0 +1,19 @@
+uuid: e49af2f4-1afd-498c-a9ef-12d9480e5fa5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_dni
+    - profile.type.factura
+id: profile.factura.field_dni
+field_name: field_dni
+entity_type: profile
+bundle: factura
+label: DNI/CIF
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

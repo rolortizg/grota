@@ -1,0 +1,103 @@
+<?php
+
+/**
+ * Implements hook_views_query_alter().
+ *
+ * @param \Drupal\views\ViewExecutable $view
+ * @param \Drupal\views\Plugin\views\query\QueryPluginBase $query
+ */
+function proveedor_views_query_alter(\Drupal\views\ViewExecutable $view, \Drupal\views\Plugin\views\query\QueryPluginBase $query) {
+  switch($view->storage->id()){
+    case 'backend_pedidos';
+      $query->addField('commerce_order', 'order_id', '', ['function' => 'groupby']);
+      $query->addGroupBy('commerce_order.order_id');
+      break;
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_page_title().
+ */
+function gin_preprocess_page_title(&$variables) {
+  /** @var \Drupal\Core\Url $url */
+  $url = \Drupal::service('path.validator')->getUrlIfValid(Drupal::service('path.current')->getPath());
+  if ($url instanceof \Drupal\Core\Url) {
+    $route_name = $url->getRouteName();
+    $param = $url->getRouteParameters();
+
+    switch ($route_name) {
+      case 'view.backend_detalle_pedido.detalle_pedido':
+        if (isset($param['arg_0'])) {
+          $order = \Drupal\commerce_order\Entity\Order::load($param['arg_0']);
+          if ($order instanceof \Drupal\commerce_order\Entity\Order) {
+            $variables['title'] = 'Pedido #' . $order->getOrderNumber();
+          }
+        }
+        break;
+      case 'view.backend_productos_variaciones.variaciones':
+        if (isset($param['arg_0'])) {
+          $producto = \Drupal\commerce_product\Entity\Product::load($param['arg_0']);
+          if ($producto instanceof \Drupal\commerce_product\Entity\Product) {
+            $variables['title'] = $producto->label();
+          }
+        }
+        break;
+    }
+  }
+
+}
+
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * @param array $attachments
+ */
+function proveedor_page_attachments(array &$attachments) {
+  $theme = Drupal::theme()->getActiveTheme()->getName();
+  $account = Drupal::currentUser();
+  $proveedor = FALSE;
+  $user = \Drupal\user\Entity\User::load($account->id());
+  if ($user instanceof \Drupal\user\Entity\User) {
+    if ($user->hasRole('proveedor')) {
+      $proveedor = TRUE;
+    }
+  }
+
+  if ($theme == 'gin' && $proveedor) {
+    $attachments['#attached']['library'][] = 'proveedor/gin';
+  }
+}
+
+/**
+ * Implements hook_entity_form_display_alter().
+ *
+ * @param \Drupal\Core\Entity\Display\EntityFormDisplayInterface $form_display
+ * @param array $context
+ */
+function proveedor_entity_form_display_alter(\Drupal\Core\Entity\Display\EntityFormDisplayInterface &$form_display, array $context) {
+  if($context['entity_type'] == 'user' && $context['bundle'] == 'user'){
+    $perfil = NULL;
+
+    $user = \Drupal::routeMatch()->getParameter('user');
+    if ($user instanceof \Drupal\user\UserInterface) {
+      if ($user->hasRole('proveedor')) {
+        $perfil = 'user.user.proveedor';
+      }
+      else {
+        $perfil = 'user.user.cliente';
+      }
+    }
+
+    if (\Drupal::routeMatch()->getRouteName() == 'proveedor.perfil') {
+      $perfil = 'user.user.proveedor';
+    }
+
+    if ($perfil) {
+      $storage = \Drupal::service('entity_type.manager')->getStorage('entity_form_display');
+      $form_display = $storage->load($perfil);
+    }
+
+  }
+}

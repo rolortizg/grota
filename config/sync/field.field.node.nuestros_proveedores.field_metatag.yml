@@ -1,0 +1,21 @@
+uuid: b85b5426-dfc6-41c2-90ca-a7479ac37f65
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.nuestros_proveedores
+  module:
+    - metatag
+id: node.nuestros_proveedores.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: nuestros_proveedores
+label: 'Meta etiquetas'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

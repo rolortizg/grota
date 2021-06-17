@@ -1,0 +1,6 @@
+type: module
+name: Mensajes
+description: 'Mensajes de estado a través de la librería Noty'
+configure: mensajes.settings_form
+package: 'Núcleo personalizado'
+core_version_requirement: ^9

@@ -1,0 +1,15 @@
+uuid: 751a6ae3-1634-49c9-b654-93019549b1d3
+name: Grota
+mail: pedidos@grota.eco
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/17
+admin_compact_mode: false
+weight_select_max: 100
+langcode: es
+default_langcode: es
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+mail_notification: ''

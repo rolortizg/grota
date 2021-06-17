@@ -1,0 +1,9 @@
+uuid: a35e5769-a266-44d6-ad58-e056bccd2e71
+langcode: es
+status: true
+dependencies: {  }
+id: cookies_de_rendimiento
+label: 'Cookies de rendimiento'
+weight: 2
+title: 'Cookies de rendimiento'
+details: 'Estas cookies nos permiten contar las visitas y fuentes de tráfico para poder evaluar el rendimiento de nuestro sitio y mejorarlo. Nos ayudan a saber qué páginas son las más o las menos visitadas, y cómo los visitantes navegan por el sitio. Toda la información que recogen estas cookies es agregada y, por lo tanto, es anónima. Si no permite utilizar estas cookies, no sabremos cuándo visitó nuestro sitio y no podremos evaluar si funcionó correctamente.'

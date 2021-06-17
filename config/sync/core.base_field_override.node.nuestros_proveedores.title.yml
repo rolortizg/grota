@@ -1,0 +1,18 @@
+uuid: 91fc5b50-3fed-4dae-98df-844c8dba7fde
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.nuestros_proveedores
+id: node.nuestros_proveedores.title
+field_name: title
+entity_type: node
+bundle: nuestros_proveedores
+label: 'Título URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

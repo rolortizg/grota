@@ -1,0 +1,237 @@
+uuid: 548f2863-1e70-4af4-bad3-390cc909a923
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.nosotros.field_descripcion
+    - field.field.node.nosotros.field_descripcion_2
+    - field.field.node.nosotros.field_descripcion_3
+    - field.field.node.nosotros.field_enlace
+    - field.field.node.nosotros.field_icono
+    - field.field.node.nosotros.field_imagen_de_
+    - field.field.node.nosotros.field_imagen_de_fondo
+    - field.field.node.nosotros.field_imagen_descripcion
+    - field.field.node.nosotros.field_metatag
+    - field.field.node.nosotros.field_miembro_del_equipo
+    - field.field.node.nosotros.field_titulo
+    - field.field.node.nosotros.field_titulo_2
+    - image.style.thumbnail
+    - node.type.nosotros
+  module:
+    - field_group
+    - field_layout
+    - file
+    - image
+    - inline_entity_form
+    - layout_discovery
+    - link
+    - metatag
+    - path
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_historia:
+      children:
+        - field_titulo
+        - field_imagen_descripcion
+        - field_icono
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Historia
+    group_fondo_verde:
+      children:
+        - field_descripcion
+        - field_imagen_de_
+      parent_name: ''
+      weight: 2
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Fondo verde'
+    group_equipo:
+      children:
+        - field_titulo_2
+        - field_descripcion_2
+        - field_miembro_del_equipo
+      parent_name: ''
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Miembros del equipo'
+    group_footer:
+      children:
+        - field_descripcion_3
+        - field_enlace
+        - field_imagen_de_fondo
+      parent_name: ''
+      weight: 4
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Footer
+id: node.nosotros.default
+targetEntityType: node
+bundle: nosotros
+mode: default
+content:
+  field_descripcion:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_descripcion_2:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_descripcion_3:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_enlace:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_icono:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_imagen_de_:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_imagen_de_fondo:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_imagen_descripcion:
+    type: inline_entity_form_complex
+    weight: 3
+    settings:
+      form_mode: default
+      revision: false
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+    third_party_settings: {  }
+    region: content
+  field_metatag:
+    weight: 26
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_miembro_del_equipo:
+    type: inline_entity_form_complex
+    weight: 9
+    settings:
+      form_mode: default
+      revision: false
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+    third_party_settings: {  }
+    region: content
+  field_titulo:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_2:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

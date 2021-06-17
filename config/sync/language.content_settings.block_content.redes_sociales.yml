@@ -1,0 +1,11 @@
+uuid: f7a79c1e-3d38-4c73-99f7-72202aefc9f0
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.redes_sociales
+id: block_content.redes_sociales
+target_entity_type_id: block_content
+target_bundle: redes_sociales
+default_langcode: site_default
+language_alterable: false

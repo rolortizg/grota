@@ -1,0 +1,27 @@
+uuid: 0b06d8e2-1453-4f4c-bc99-f7c9509da645
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icono
+    - taxonomy.vocabulary.certificados
+  module:
+    - file
+id: taxonomy_term.certificados.field_icono
+field_name: field_icono
+entity_type: taxonomy_term
+bundle: certificados
+label: Icono
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: iconos
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,25 @@
+uuid: d230cc85-d6bc-473b-92d2-6bcec76e814b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_total_compostable
+    - node.type.inicio
+id: node.inicio.field_total_compostable
+field_name: field_total_compostable
+entity_type: node
+bundle: inicio
+label: 'Total compostable'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

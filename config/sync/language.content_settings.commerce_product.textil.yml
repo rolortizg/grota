@@ -1,0 +1,11 @@
+uuid: 72403429-ff87-4f77-b0ab-cff8c272b16a
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.textil
+id: commerce_product.textil
+target_entity_type_id: commerce_product
+target_bundle: textil
+default_langcode: site_default
+language_alterable: false

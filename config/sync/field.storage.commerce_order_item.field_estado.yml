@@ -1,0 +1,34 @@
+uuid: 93f0391a-c9e2-440e-a7ff-3e2fbd5371ee
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - field_permissions
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: commerce_order_item.field_estado
+field_name: field_estado
+entity_type: commerce_order_item
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: pendiente
+      label: Pendiente
+    -
+      value: enviado
+      label: Enviado
+    -
+      value: devuelto
+      label: Devuelto
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

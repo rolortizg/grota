@@ -1,0 +1,38 @@
+uuid: 80dfbc7b-141d-408e-bb3d-16d41bc9eed5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_logotipo
+    - taxonomy.vocabulary.marca
+  module:
+    - image
+id: taxonomy_term.marca.field_logotipo
+field_name: field_logotipo
+entity_type: taxonomy_term
+bundle: marca
+label: Logotipo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '80 KB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: true
+  title_field_required: true
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

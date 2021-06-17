@@ -1,0 +1,23 @@
+uuid: ae8dc9be-f9e3-4a1a-ad5d-aa579e7df7a4
+langcode: es
+status: true
+dependencies:
+  module:
+    - block_content
+    - field_permissions
+    - link
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: block_content.field_enlace_multiple
+field_name: field_enlace_multiple
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

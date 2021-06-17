@@ -1,0 +1,27 @@
+uuid: a5d1d648-69a3-4f95-bed9-d561919db073
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icono
+    - taxonomy.vocabulary.materiales
+  module:
+    - file
+id: taxonomy_term.materiales.field_icono
+field_name: field_icono
+entity_type: taxonomy_term
+bundle: materiales
+label: Icono
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: iconos
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

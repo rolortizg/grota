@@ -1,0 +1,11 @@
+uuid: 729d263c-2936-47c9-b593-d44b0152cdab
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.empresas_certificaco
+id: taxonomy_term.empresas_certificaco
+target_entity_type_id: taxonomy_term
+target_bundle: empresas_certificaco
+default_langcode: site_default
+language_alterable: false

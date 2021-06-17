@@ -1,0 +1,19 @@
+<div class="G-fondo--primario G-max--100 G-borde--blanco G-borde--lr-no G-borde--bottom-no">
+  <div class="E-max--940 G-margen--auto G-flex G-dis-h--cen G-dis-v--middle E-footer-resp" style="padding: 30px 20px;">
+    <div class="G-flex--1 G-txt--cen G-margen--xxl G-margen--tb-0 G-margen--left-0">
+      <a class="E-logo-footer" href="/">
+        <img src="/themes/custom/frontend/assets/icons/logo-white.svg" />
+      </a>
+      <p class="G-color--blanco G-txt--xs G-txt--cen E-font-montserrat E-separador-difuminado G-pos--relativo G-margen--xxs G-margen--lr-0 G-padding--xxs G-padding--lr-0 G-padding--bottom-0">Síguenos en:</p>
+      <div class="redes">
+        {{ drupal_entity('block_content', 1) }}
+      </div>
+    </div>
+    <div class="G-flex G-dis-h--cen" style="flex: 2;">
+      {{ drupal_menu('sobre-nosotros') }}
+      {{ drupal_menu('tienda') }}
+      {{ drupal_menu('politicas') }}
+    </div>
+  </div>
+</div>
+{{ drupal_entity('block_content', 2) }}

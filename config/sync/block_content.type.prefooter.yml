@@ -1,0 +1,8 @@
+uuid: fa8b0966-1fe0-4cec-9f19-006e0c7dc3c5
+langcode: es
+status: true
+dependencies: {  }
+id: prefooter
+label: Prefooter
+revision: 0
+description: ''

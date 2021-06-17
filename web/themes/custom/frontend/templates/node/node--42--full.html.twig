@@ -1,0 +1,36 @@
+<div class="G-fondo--blanco G-max--100">
+  <div class="G-margen--auto" style="padding: 160px 20px 115px;max-width: 760px;">
+    {% if node.field_titulo.value %}
+      <p class="G-margen--xxgigante G-margen--lr-0 G-margen--top-0 G-padding--xl G-padding--lr-0 G-padding--top-0 G-txt--xxl G-color--primario G-txt--negrita G-txt--cen E-linea-titulo G-pos--relativo" style="line-height: 1;">{{ node.field_titulo.value }}</p>
+    {% endif %}
+    {% if node.field_descripcion.value %}
+      <div class="E-font-montserrat E-txt--18 G-color--terciario G-margen--0">{{ node.field_descripcion.value|raw }}</div>
+    {% endif %}
+  </div>
+</div>
+
+{% if node.field_pregunta_respuesta.0 %}
+  <div id="field_pregunta_respuesta">
+    {% for key,item in node.field_pregunta_respuesta %}
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="G-margen--0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#listado-{{ key }}" aria-expanded="false" aria-controls="listado-{{ key }}">
+              {{ item.entity.name.value }}
+            </button>
+          </h5>
+        </div>
+        <div id="listado-{{ key }}" class="collapse" aria-labelledby="headingOne" data-parent="#field_pregunta_respuesta">
+
+          <div class="card-body">
+            {{ item.entity.description.value|raw }}
+          </div>
+
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+<div class="banner-cookies">
+  <a href="#modificarCookies">Modificar cookies</a>
+</div>

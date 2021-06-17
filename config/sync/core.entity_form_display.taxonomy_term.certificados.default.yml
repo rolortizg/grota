@@ -1,0 +1,83 @@
+uuid: ab218289-33e8-47f7-abec-90f960c4c4df
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.certificados.field_check
+    - field.field.taxonomy_term.certificados.field_empresa_certificadora
+    - field.field.taxonomy_term.certificados.field_icono
+    - field.field.taxonomy_term.certificados.field_su
+    - taxonomy.vocabulary.certificados
+  module:
+    - field_group
+    - field_layout
+    - file
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_detalles:
+      children:
+        - field_empresa_certificadora
+        - field_check
+      parent_name: ''
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Detalles
+id: taxonomy_term.certificados.default
+targetEntityType: taxonomy_term
+bundle: certificados
+mode: default
+content:
+  field_check:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_empresa_certificadora:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_icono:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_su:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true
+  status: true

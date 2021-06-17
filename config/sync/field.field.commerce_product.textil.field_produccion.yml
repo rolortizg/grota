@@ -1,0 +1,29 @@
+uuid: a9e1f0a6-669b-4b1c-824d-f27174bd3184
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.textil
+    - field.storage.commerce_product.field_produccion
+    - taxonomy.vocabulary.produccion
+id: commerce_product.textil.field_produccion
+field_name: field_produccion
+entity_type: commerce_product
+bundle: textil
+label: Producción
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      produccion: produccion
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

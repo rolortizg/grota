@@ -1,0 +1,12 @@
+uuid: e0f3bb6c-d313-4cd6-ada5-f2d3532acfbb
+langcode: es
+status: true
+dependencies: {  }
+id: hogar
+label: Hogar
+description: ''
+variationType: hogar
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

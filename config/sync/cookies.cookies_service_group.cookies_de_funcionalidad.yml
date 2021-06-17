@@ -1,0 +1,9 @@
+uuid: 3e7ff749-7161-4d87-ab71-0bfc199f0e7c
+langcode: es
+status: true
+dependencies: {  }
+id: cookies_de_funcionalidad
+label: 'Cookies de funcionalidad'
+weight: 3
+title: 'Cookies de funcionalidad'
+details: 'Estas cookies permiten que el sitio ofrezca una mejor funcionalidad y personalización. Pueden ser establecidas por nosotros o por terceras partes cuyos servicios hemos agregado a nuestras páginas. Si no permite estas cookies algunos de nuestros servicios no funcionarán correctamente.'

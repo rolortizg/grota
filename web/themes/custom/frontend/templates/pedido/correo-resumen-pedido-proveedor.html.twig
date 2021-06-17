@@ -1,0 +1,50 @@
+{% block order_items %}
+  <table style="padding-top: 15px; padding-bottom:15px; width: 80%; margin: auto">
+    <tbody style="text-align: left; font-size: 13px">
+    {% for order_item in order_items %}
+      <tr>
+        <td style="width: 30%">
+          {{ order_item.purchased_entity.entity.sku.value }}
+        </td>
+        <td style="width: 6%">
+          {{ order_item.getQuantity|number_format }}x
+        </td>
+        <td style="width: 54%">
+          <span>{{ order_item.label }}</span>
+        </td>
+        <td style="width: 10%">
+          <span style="float: right;">{{ order_item.getTotalPrice|commerce_price_format }}</span>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <hr>
+  <table style="padding-top: 15px; padding-bottom:15px; width: 80%; margin: auto">
+    <tbody>
+    {% if gastos_envio %}
+    <tr>
+      <td style="width: 80%; text-align: right">
+        Gastos de envío:
+      </td>
+      <td style="text-align: right">
+        {{ gastos_envio|number_format(2, ',', '.') }} €
+      </td>
+    </tr>
+    {% endif %}
+    {% if total %}
+      <tr>
+        <td style="width: 80%; text-align: right">
+          <b>Total:</b>
+        </td>
+        <td style="text-align: right">
+          {{ total|number_format(2, ',', '.') }} €
+        </td>
+      </tr>
+    {% endif %}
+    </tbody>
+  </table>
+{% endblock %}
+
+
+

@@ -1,0 +1,27 @@
+uuid: e4539d63-9aa1-4d50-b471-867d370ccfd0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icono
+    - taxonomy.vocabulary.labor_social
+  module:
+    - file
+id: taxonomy_term.labor_social.field_icono
+field_name: field_icono
+entity_type: taxonomy_term
+bundle: labor_social
+label: Icono
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: iconos
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

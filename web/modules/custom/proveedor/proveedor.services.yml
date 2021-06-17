@@ -1,0 +1,11 @@
+services:
+  theme.negotiator.proveedor:
+    class: Drupal\proveedor\Theme\PageThemeNegotiator
+    arguments: [ '@current_user', '@request_stack' ]
+    tags:
+      - { name: theme_negotiator, priority: 1 }
+  backend.proveedor:
+    class: Drupal\proveedor\EventSubscriber\BackendEventSubscriber
+    arguments: [ '@current_user',  '@request_stack' ]
+    tags:
+      - { name: event_subscriber, priority: 1 }

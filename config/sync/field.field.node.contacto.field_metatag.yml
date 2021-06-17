@@ -1,0 +1,21 @@
+uuid: bd72b415-4ed5-49df-99d5-0c73b149f27b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.contacto
+  module:
+    - metatag
+id: node.contacto.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: contacto
+label: 'Meta etiquetas'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

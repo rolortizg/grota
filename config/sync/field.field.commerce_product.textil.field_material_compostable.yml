@@ -1,0 +1,23 @@
+uuid: 2e08cd10-c90e-4b4c-94f8-c3d04be00389
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.textil
+    - field.storage.commerce_product.field_material_compostable
+id: commerce_product.textil.field_material_compostable
+field_name: field_material_compostable
+entity_type: commerce_product
+bundle: textil
+label: 'Material compostable'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

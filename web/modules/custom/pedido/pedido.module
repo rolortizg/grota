@@ -1,0 +1,322 @@
+<?php
+
+
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function pedido_form_commerce_checkout_flow_multistep_default_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+
+  // Información de contacto.
+  if (isset($form['contact_information']['email'])) {
+    $form['contact_information']['email']["#title_display"] = 'none';
+    $form['contact_information']['email']["#attributes"]['placeholder'] = 'Correo electrónico';
+  }
+
+  // Información de envio.
+  $pane = 'shipping_information';
+  $profile = 'shipping_profile';
+  if (isset($form['shipping_information']["recalculate_shipping"])) {
+    $form['shipping_information']["recalculate_shipping"]['#ajax']['callback'][0] = '\Drupal\pedido\Controller\CheckoutController';
+    $form['shipping_information']["recalculate_shipping"]["#attributes"]['class'][] = 'hidden';
+    $form['shipping_information']["recalculate_shipping"]["#attributes"]['class'][] = 'button-recalculate-shipping';
+
+    $shipping_profile = $form_state->get('shipping_profile');
+
+    if ($shipping_profile instanceof  \Drupal\profile\Entity\Profile) {
+      $form_state->set('shipping_profile', $shipping_profile);
+      if ($shipping_profile->address->administrative_area != '' && $shipping_profile->address->locality != '') {
+        $form['shipping_information']["recalculate_shipping"]["#attributes"]['class'][] = 'button-recalculate-shipping-onload';
+      }
+    }
+  }
+
+
+
+  if (isset($form[$pane][$profile]["address"])) {
+    $form[$pane][$profile]["address"]['widget'][0]['address']['#after_build'][] = ['\Drupal\pedido\Controller\CheckoutController', '_address_field'];
+    $form[$pane][$profile]["field_telefono"]['widget'][0]['value']["#attributes"]['placeholder'] = 'Teléfono';
+    $form[$pane][$profile]["field_telefono"]['widget'][0]['value']["#title_display"] = 'none';
+    $form[$pane][$profile]["field_telefono"]['widget'][0]['value']["#attributes"]['data-toggle'] = 'tooltip';
+    $form[$pane][$profile]["field_telefono"]['widget'][0]['value']["#attributes"]['title'] = $form[$pane][$profile]["field_telefono"]['widget'][0]['value']["#attributes"]['placeholder'];
+
+    $form[$pane][$profile]["field_dni"]['widget'][0]['value']["#attributes"]['placeholder'] = 'DNI/CIF';
+    $form[$pane][$profile]["field_dni"]['widget'][0]['value']["#title_display"] = 'none';
+    $form[$pane][$profile]["field_dni"]['widget'][0]['value']["#attributes"]['data-toggle'] = 'tooltip';
+    $form[$pane][$profile]["field_dni"]['widget'][0]['value']["#attributes"]['title'] = $form[$pane][$profile]["field_dni"]['widget'][0]['value']["#attributes"]['placeholder'];
+  }
+
+  if (isset($form[$pane]['shipments'])) {
+    $form[$pane]['shipments']['#access'] = FALSE;
+  }
+
+
+  // Datos de facturación
+
+
+  $pane = 'order_fields:checkout';
+  $profile = 'billing_profile';
+
+  $billing_profile = NULL;
+  if (isset($form[$pane][$profile]['widget'][0]['profile'])) {
+
+    if (Drupal::currentUser()->id())  {
+      $storage = \Drupal::entityTypeManager()->getStorage('profile');
+      $user = \Drupal\user\Entity\User::load(Drupal::currentUser()->id());
+      $profiles = $storage->loadMultipleByUser($user, 'factura');
+      if (!empty($profiles)) {
+        $billing_profile = current($profiles);
+      }
+    }
+    $form_state->set('billing_profile_default', $billing_profile);
+    if (isset($form[$pane][$profile]['widget'][0]['profile']['rendered']['#profile']) && $billing_profile) {
+      $form[$pane][$profile]['widget'][0]['profile']['rendered']['#profile'] = \Drupal\profile\Entity\Profile::load($billing_profile->id());
+    }
+
+    $form[$pane][$profile]['widget'][0]['profile']["address"]['widget'][0]['address']['#after_build'][] = ['\Drupal\pedido\Controller\CheckoutController', '_address_field'];
+    $form[$pane][$profile]['widget'][0]['profile']["field_telefono"]['widget'][0]['value']["#attributes"]['placeholder'] = 'Teléfono';
+    $form[$pane][$profile]['widget'][0]['profile']["field_telefono"]['widget'][0]['value']["#title_display"] = 'none';
+    $form[$pane][$profile]['widget'][0]['profile']["field_telefono"]['widget'][0]['value']["#attributes"]['data-toggle'] = 'tooltip';
+    $form[$pane][$profile]['widget'][0]['profile']["field_telefono"]['widget'][0]['value']["#attributes"]['title'] = $form[$pane][$profile]['widget'][0]['profile']["field_telefono"]['widget'][0]['value']["#attributes"]['placeholder'];
+
+    $form[$pane][$profile]['widget'][0]['profile']["field_dni"]['widget'][0]['value']["#attributes"]['placeholder'] = 'DNI/CIF';
+    $form[$pane][$profile]['widget'][0]['profile']["field_dni"]['widget'][0]['value']["#title_display"] = 'none';
+    $form[$pane][$profile]['widget'][0]['profile']["field_dni"]['widget'][0]['value']["#attributes"]['data-toggle'] = 'tooltip';
+    $form[$pane][$profile]['widget'][0]['profile']["field_dni"]['widget'][0]['value']["#attributes"]['title'] = $form[$pane][$profile]['widget'][0]['profile']["field_dni"]['widget'][0]['value']["#attributes"]['placeholder'];
+
+    if (isset($form[$pane][$profile]['widget'][0]['profile']['copy_to_address_book'])) {
+      $form[$pane][$profile]['widget'][0]['profile']['copy_to_address_book']["#access"] = FALSE;
+    }
+  }
+
+  $form['#attached']['library'][] = 'pedido/checkout';
+
+  if (isset($form['completion_register']['name'])) {
+    $profiles = NULL;
+    $order = \Drupal::routeMatch()->getParameter('commerce_order');
+
+    if ($order instanceof \Drupal\commerce_order\Entity\Order) {
+      $profiles = $order->collectProfiles();
+    }
+
+
+    $form['completion_register']['name']["#title_display"] = 'none';
+    $form['completion_register']['name']["#attributes"]['placeholder'] = 'Correo electrónico';
+    $form['completion_register']['name']["#description"] = '';
+    if ($order instanceof \Drupal\commerce_order\Entity\Order) {
+      $form['completion_register']['name']["#default_value"] = $order->getEmail();
+      $form['completion_register']['name']['#attributes']['class'][] = 'hidden';
+
+    }
+
+    $form['completion_register']['field_nombre']['widget'][0]['value']['#placeholder'] = 'Nombre';
+    $form['completion_register']['field_nombre']['widget'][0]['value']['#title_display'] = 'invisible';
+    $form['completion_register']['field_nombre']['widget'][0]['value']['#attributes']['data-toggle'] = 'tooltip';
+    $form['completion_register']['field_nombre']['widget'][0]['value']['#attributes']['title'] = $form['completion_register']['field_nombre']['widget'][0]['value']['#placeholder'];
+
+    $form['completion_register']['field_apellidos']['widget'][0]['value']['#placeholder'] = 'Apellidos';
+    $form['completion_register']['field_apellidos']['widget'][0]['value']['#title_display'] = 'invisible';
+    $form['completion_register']['field_apellidos']['widget'][0]['value']['#attributes']['data-toggle'] = 'tooltip';
+    $form['completion_register']['field_apellidos']['widget'][0]['value']['#attributes']['title'] = $form['completion_register']['field_apellidos']['widget'][0]['value']['#placeholder'];
+
+    if (isset($profiles['shipping'])) {
+      $profile = $profiles['shipping'];
+      if ($profile instanceof \Drupal\profile\Entity\Profile) {
+        $form['completion_register']['field_nombre']['widget'][0]['value']['#default_value'] = $profile->get('address')->given_name;
+        $form['completion_register']['field_apellidos']['widget'][0]['value']['#default_value'] = $profile->get('address')->family_name;
+        $form['completion_register']['field_nombre']['#attributes']['class'][] = 'hidden';
+        $form['completion_register']['field_apellidos']['#attributes']['class'][] = 'hidden';
+      }
+    }
+
+    $form['completion_register']['field_nombre']['#weight'] = 1;
+    $form['completion_register']['field_apellidos']['#weight'] = 2;
+    $form['completion_register']['name']['#weight'] = 3;
+    $form['completion_register']['pass']['#weight'] = 4;
+  }
+
+
+
+  if (isset($form['#step_id'])) {
+    switch ($form['#step_id']) {
+      case 'order_information':
+        $form['texto'] = [
+          '#markup' => '<p>En GRÖTA trataremos los datos introducidos en el formulario para gestionar tus pedidos (facturación, gestión de cambios o facturaciones y emisión de tickets), así como, para tramitar los pagos independientemente de los medios de pago utilizados. Es posible que utilicemos sus datos de contacto para enviarle productos similares a los previamente contratados. Puede ejercer los derechos establecidos en los artículos 15 a 22 del Reglamento (UE) 2016/679 mediante el envío de un mensaje de correo electrónico a <a href="mailto:hello@grota.eco"> hello@grota.eco.</a> Para más información consulte nuestra <a href="/politica-de-privacidad"> Política de Privacidad.</a></p>',
+        ];
+        $form['politica'] = [
+          '#type' => 'checkbox',
+          '#title' => ' He leído y acepto los Términos y Condiciones de Contratación y la Política de Privacidad de GRÖTA.',
+          '#required' => true,
+        ];
+        $form['#validate'][] = ['\Drupal\pedido\Controller\CheckoutController', 'stockValidate'];
+        $form['actions']['next']['#value'] = 'Pagar y completar compra';
+        $form['actions']['next']['#submit'][] = ['\Drupal\pedido\Controller\CheckoutController', 'submitForm'];
+
+        $object = $form_state->getformObject();
+        $order = NULL;
+        if (method_exists($object, 'getOrder')) {
+          /** @var \Drupal\commerce_order\Entity\Order $order */
+          $order = $object->getOrder();
+          if ($error = \Drupal\pedido\Controller\CartController::checkStock($order)) {
+            \Drupal::messenger()->addError($error);
+          }
+        }
+
+        break;
+      case 'review':
+        $form['sidebar']['coupon_redemption']['#access'] = FALSE;
+        $form['#attributes']['class'][] = 'chechout-review';
+        $form['actions']['next']['#value'] = 'Procesando pago...';
+        $form['actions']['next']['#suffix'] = '';
+        break;
+      case 'complete':
+        if (isset($form['completion_register'])) {
+          $form['#submit'][] = ['\Drupal\pedido\Controller\CheckoutController', 'registerSubmit'];
+        }
+        break;
+    }
+  }
+}
+
+
+/**
+ * Implements hook_theme().
+ *
+ * @param $existing
+ * @param $type
+ * @param $theme
+ * @param $path
+ *
+ * @return array[]
+ */
+function pedido_theme($existing, $type, $theme, $path) {
+  return [
+    'correo_resumen_pedido' => [
+      'template' => 'correo-resumen-pedido',
+      'path' => $path . '/templates',
+      'variables' => [
+        'order_entity' => NULL,
+        'gastos_envio' => NULL,
+      ]
+    ],
+    'correo_resumen_pedido_proveedor' => [
+      'template' => 'correo-resumen-pedido-proveedor',
+      'path' => $path . '/templates',
+      'variables' => [
+        'order_items' => NULL,
+        'total' => NULL,
+        'gastos_envio' => NULL,
+      ]
+    ],
+    'correo_informacion_envio' => [
+      'template' => 'correo_informacion_envio',
+      'path' => $path . '/templates',
+      'variables' => [
+        'profile' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_form_display_alter().
+ *
+ * @param \Drupal\Core\Entity\Display\EntityFormDisplayInterface $form_display
+ * @param array $context
+ */
+function pedido_entity_form_display_alter(\Drupal\Core\Entity\Display\EntityFormDisplayInterface &$form_display, array $context) {
+
+  if($context['entity_type'] == 'commerce_order_item'){
+    $current_uri = \Drupal::request()->getRequestUri();
+    $perfil = NULL;
+    /** @var \Drupal\user\Entity\User $user */
+    $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    if ($user->hasRole('proveedor') && preg_match("/backend*/i", $current_uri)) {
+      $perfil = 'commerce_order_item.' . $context['bundle'] . '.proveedor';
+    }
+
+    if ($perfil) {
+      $storage = \Drupal::service('entity_type.manager')->getStorage('entity_form_display');
+      $form_display = $storage->load($perfil);
+    }
+
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ *
+ * @param \Drupal\commerce_order\Entity\OrderItemInterface $entity
+ *
+ * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+ */
+function pedido_commerce_order_item_update(\Drupal\commerce_order\Entity\OrderItemInterface $entity) {
+  $original = $entity->original;
+  if ($original->get('field_estado')->value && $original->get('field_estado')->value != $entity->get('field_estado')->value) {
+    \Drupal::service('event_dispatcher')->dispatch(\Drupal\pedido\Event\OrderItemStateEvent::UPDATE_STATE, new \Drupal\pedido\Event\OrderItemStateEvent($entity));
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function pedido_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  // Formulario de la cesta
+  if (preg_match("/views_form_commerce_cart_form_default*/i", $form_id)) {
+    $store = \Drupal::service('commerce_store.current_store')->getStore();
+    $order_actual = \Drupal::service('commerce_cart.cart_provider')
+      ->getCart('default', $store);
+
+    if ($error = \Drupal\pedido\Controller\CartController::checkStock($order_actual)) {
+      \Drupal::messenger()->addError($error);
+    }
+
+  }
+}
+
+/**
+ * Implements hook_commerce_payment_method_update().
+ */
+function pedido_commerce_payment_method_update(\Drupal\commerce_payment\Entity\PaymentMethodInterface $paymentMethod) {
+  // Añadir id cliente stripe para usuario de compra anónima.
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('commerce_stripe')) {
+    if ($paymentMethod->getOwnerId()) {
+      $user = \Drupal\user\Entity\User::load($paymentMethod->getOwnerId());
+      if ($user instanceof \Drupal\user\Entity\User) {
+        if (!$user->get('commerce_remote_id')->remote_id) {
+          $orders = \Drupal::entityTypeManager()
+            ->getStorage('commerce_order')
+            ->loadByProperties(['mail' => $user->getEmail()]);
+          if ($orders) {
+            foreach ($orders as $order) {
+              if ($order instanceof \Drupal\commerce_order\Entity\Order) {
+                if ($order->get('field_customer_id')->value) {
+                  \Drupal::service('commerce_order.order_receipt_subscriber')->addCustomerStripe($order, $user);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_view().
+ *
+ * @param \Drupal\views\ViewExecutable $view
+ * @param $display_id
+ * @param array $args
+ */
+function pedido_views_pre_view(\Drupal\views\ViewExecutable $view, $display_id, array &$args) {
+  $order = Drupal::routeMatch()->getParameter('commerce_order');
+  if ($order) {
+    $args[0] = $order->id();
+  }
+}
+
+

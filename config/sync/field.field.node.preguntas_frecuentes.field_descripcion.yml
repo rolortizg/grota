@@ -1,0 +1,21 @@
+uuid: beb97cdd-74ff-4f43-b807-2672f0a3bd39
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion
+    - node.type.preguntas_frecuentes
+  module:
+    - text
+id: node.preguntas_frecuentes.field_descripcion
+field_name: field_descripcion
+entity_type: node
+bundle: preguntas_frecuentes
+label: Descripción
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

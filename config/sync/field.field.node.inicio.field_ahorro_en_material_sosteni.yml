@@ -1,0 +1,28 @@
+uuid: b28d80d7-ec99-48c2-b664-2e2d59b1fd4f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ahorro_en_material_sosteni
+    - media.type.icono_titulo_subtitulo
+    - node.type.inicio
+id: node.inicio.field_ahorro_en_material_sosteni
+field_name: field_ahorro_en_material_sosteni
+entity_type: node
+bundle: inicio
+label: 'Ahorro en material sostenible'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      icono_titulo_subtitulo: icono_titulo_subtitulo
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

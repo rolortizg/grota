@@ -1,0 +1,21 @@
+uuid: c2b6c04d-095f-4b73-aeec-4c37ee486d70
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion
+    - node.type.nuestros_proveedores
+  module:
+    - text
+id: node.nuestros_proveedores.field_descripcion
+field_name: field_descripcion
+entity_type: node
+bundle: nuestros_proveedores
+label: Descripción
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

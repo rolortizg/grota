@@ -1,0 +1,19 @@
+uuid: 1f8f31b8-03f5-45f5-a2cf-e783a3af7f89
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_su
+    - taxonomy.vocabulary.certificados
+id: taxonomy_term.certificados.field_su
+field_name: field_su
+entity_type: taxonomy_term
+bundle: certificados
+label: Subtítulo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

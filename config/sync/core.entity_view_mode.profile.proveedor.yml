@@ -1,0 +1,10 @@
+uuid: 7a90fefd-694e-492e-886b-59e14ee45423
+langcode: es
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.proveedor
+label: Proveedor
+targetEntityType: profile
+cache: true

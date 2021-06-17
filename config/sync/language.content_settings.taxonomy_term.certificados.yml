@@ -1,0 +1,11 @@
+uuid: 3b3d89a5-984e-440c-a22b-9d4476398149
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.certificados
+id: taxonomy_term.certificados
+target_entity_type_id: taxonomy_term
+target_bundle: certificados
+default_langcode: site_default
+language_alterable: false

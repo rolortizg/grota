@@ -1,0 +1,25 @@
+uuid: 841f0ef4-b3bf-4127-92ef-694a500b839c
+langcode: es
+status: true
+dependencies:
+  module:
+    - grota_config
+    - system
+  theme:
+    - frontend
+id: blockfooter
+theme: frontend
+region: footer_first
+weight: 0
+provider: null
+plugin: block_footer
+settings:
+  id: block_footer
+  label: 'Block Footer'
+  provider: grota_config
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/cart\r\n/cart/*\r\n/checkout\r\n/checkout/*"
+    negate: true

@@ -1,0 +1,11 @@
+uuid: 2823cdcd-deab-48ca-9703-f163e8e22d65
+langcode: es
+status: true
+dependencies: {  }
+id: hogar
+label: Hogar
+orderItemType: default
+generateTitle: true
+traits:
+  - purchasable_entity_shippable
+locked: false

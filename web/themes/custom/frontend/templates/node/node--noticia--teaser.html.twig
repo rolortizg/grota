@@ -1,0 +1,12 @@
+{% if(node.field_imagen_de_fondo.0) %}
+  {% set imagen = node.field_imagen_de_fondo.0.entity.uri.value %}
+{% else %}
+  {% set imagen = '' %}
+{% endif %}
+<div class="G-max--100 G-fondo--full G-padding--xm G-flex G-dis-v--middle G-dis-h--cen" style="background-image: radial-gradient(circle, rgba(72,86,162,0.6) 0%, rgba(72,86,162,0.6) 100%), url({{ file_url(imagen) }});min-height: 720px;">
+  <div class="E-fondo--blanco-transp G-max--375 G-borde--redondeado-xs G-sombra-box--si-l G-padding--xgigante G-txt--cen">
+    <p class="G-margen--0 G-padding--xm G-padding--lr-0 G-padding--top-0 G-txt--xxl G-color--primario G-txt--negrita G-txt--cen E-linea-titulo G-pos--relativo" style="line-height: 1;">{{ node.title.value }}</p>
+    <p class="E-font-montserrat E-txt--18 G-color--terciario G-margen--xl G-margen--lr-0 G-txt--cen">{{ node.body.summary }}</p>
+    <a class="E-hover-secundario G-txt--sinsubrayado G-borde--redondeado-xl G-borde--primario G-color--primario E-txt--18 G-txt--negrita" style="padding: 5px 20px;" href="{{ path('entity.node.canonical', {node: node.id}) }}">Leer más</a>
+  </div>
+</div>

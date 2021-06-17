@@ -1,0 +1,27 @@
+uuid: dde455c7-6f11-42de-be30-c479cff1f2c2
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.redes_sociales
+    - field.storage.block_content.field_linkedin
+  module:
+    - file
+id: block_content.redes_sociales.field_linkedin
+field_name: field_linkedin
+entity_type: block_content
+bundle: redes_sociales
+label: Linkedin
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: rrss
+  file_extensions: svg
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

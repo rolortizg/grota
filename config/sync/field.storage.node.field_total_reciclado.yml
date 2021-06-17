@@ -1,0 +1,24 @@
+uuid: 88ba5584-fd88-435f-831f-0910bc05e494
+langcode: es
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_total_reciclado
+field_name: field_total_reciclado
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

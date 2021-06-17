@@ -1,0 +1,59 @@
+uuid: fe75eb17-bd05-474a-b8e3-8fab8acaf52e
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_apellidos
+    - field.field.user.user.field_coste_de_envio
+    - field.field.user.user.field_coste_envio_ceuta_y_melill
+    - field.field.user.user.field_coste_envio_islas_
+    - field.field.user.user.field_coste_envio_islas_baleares
+    - field.field.user.user.field_nombre
+    - field.field.user.user.field_proveedor
+    - field.field.user.user.field_telefono
+    - field.field.user.user.field_total_pedido_envio_gratis_
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  field_apellidos:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nombre:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  commerce_remote_id: true
+  customer_profiles: true
+  factura_profiles: true
+  field_coste_de_envio: true
+  field_coste_envio_ceuta_y_melill: true
+  field_coste_envio_islas_: true
+  field_coste_envio_islas_baleares: true
+  field_proveedor: true
+  field_telefono: true
+  field_total_pedido_envio_gratis_: true
+  langcode: true
+  member_for: true

@@ -1,0 +1,19 @@
+uuid: 93a9d159-46d2-430f-852e-afa2bbb3e7fa
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titulo_2
+    - node.type.medir_el_impacto
+id: node.medir_el_impacto.field_titulo_2
+field_name: field_titulo_2
+entity_type: node
+bundle: medir_el_impacto
+label: 'Título 2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

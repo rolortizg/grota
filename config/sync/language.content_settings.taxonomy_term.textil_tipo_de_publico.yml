@@ -1,0 +1,11 @@
+uuid: 631294bc-f887-4fcc-8fa0-c6ca230f3d4c
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.textil_tipo_de_publico
+id: taxonomy_term.textil_tipo_de_publico
+target_entity_type_id: taxonomy_term
+target_bundle: textil_tipo_de_publico
+default_langcode: site_default
+language_alterable: false

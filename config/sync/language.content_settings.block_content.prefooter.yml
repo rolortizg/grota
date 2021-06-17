@@ -1,0 +1,11 @@
+uuid: 312bc96f-3fb4-4ef8-bdac-4516eefac21f
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.prefooter
+id: block_content.prefooter
+target_entity_type_id: block_content
+target_bundle: prefooter
+default_langcode: site_default
+language_alterable: false

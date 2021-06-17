@@ -1,0 +1,265 @@
+{% if node.field_banner_principal.0 %}
+  <div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ul class="carousel-indicators G-tabs circular G-txt--cen G-pos--absoluto" style="bottom: 16px;">
+        {% for key,item in node.field_banner_principal %}
+          <li data-target="#carouselExampleIndicators" data-slide-to="{{ key }}" class="{% if(key == 0) %}  active {% endif %}"></li>
+        {% endfor %}
+      </ul>
+      <div class="carousel-inner">
+        {% for key,item in node.field_banner_principal %}
+          <div class="carousel-item {% if(key == 0) %}  active {% endif %}">
+            <div class="E-fondo-norepeat E-espacio-cabecera G-fondo--full G-flex G-dis-v--middle G-dis-h--cen G-pos--relativo" style="background-image:url('{{ file_url(item.entity.field_media_image_2.entity.fileuri) }}');height: 360px;background-position: center bottom;">
+              <div class="G-flex G-flex-h--repartidos E-max--580 G-margen--auto" style="padding: 50px 20px;">
+                {% if item.entity.field_descripcion.value %}
+                  <div style="line-height: 1;" class="G-max--100 G-txt--xxgigante G-txt--negrita G-color--blanco G-sombra-txt--si-s G-txt--cen E-p-nomargen E-titulo-resp">
+                    {{ item.entity.field_descripcion.value|raw }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<div class="E-fondo-norepeat G-fondo--full G-max--100" style="background-image: linear-gradient(134deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.63) 28%, rgba(255,255,255,0.85) 59%, #FFFFFF 100%), url('{{ file_url(node.field_imagen_de_fondo.entity.fileuri) }}');">
+  <div class="E-max--1277 G-margen--auto G-pos--relativo" style="padding: 50px 20px 75px;">
+    {% if node.field_titulo.value %}
+      <p class="G-txt--xgigante G-color--primario G-txt--negrita  G-margen--supergigante G-margen--lr-0 G-margen--top-0  E-titulo-resp" style="line-height: 1;">{{ node.field_titulo.value }}</p>
+    {% endif %}
+    <div class="G-flex E-carousel-inicio E-productos-inicio-fila-1">
+      {{ productos_destacados }}
+    </div>
+  </div>
+</div>
+
+<div class="E-fondo-norepeat G-fondo--full G-max--100" style="background-image: linear-gradient(234deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.63) 28%, rgba(255,255,255,0.85) 59%, #FFFFFF 100%), url('{{ file_url(node.field_imagen_de_fondo_2.entity.fileuri) }}');">
+  <div class="E-max--1277 G-margen--auto E-novedades-inicio G-pos--relativo" style="padding: 50px 20px 75px;">
+    {% if node.field_titulo_2.value %}
+      <p class="G-txt--xgigante G-color--primario G-txt--negrita  G-margen--l G-margen--lr-0 G-margen--top-0  E-titulo-resp G-txt--der" style="line-height: 1;">{{ node.field_titulo_2.value }}</p>
+    {% endif %}
+    <div class="G-flex E-carousel-inicio">
+      {{ productos_fav }}
+    </div>
+  </div>
+</div>
+
+
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--1277 G-margen--auto" style="padding: 50px 20px 75px;">
+    {% if node.field_titulo_3.value %}
+      <p class="G-txt--xgigante G-color--primario G-txt--negrita G-margen--l G-margen--lr-0 G-margen--top-0 G-txt--cen">{{ node.field_titulo_3.value }}</p>
+    {% endif %}
+    <div class="G-flex G-dis-h--cen">
+      {{ drupal_view('destacados_sostenibles', 'block_3') }}
+    </div>
+  </div>
+</div>
+
+
+<div class="G-fondo--degra-arriba G-max--100">
+  <div class="E-max--1277 G-margen--auto" style="padding: 33px 20px 80px;">
+    {% if node.field_titulo_4.value %}
+      <p style="line-height: 1" class="G-txt--xgigante G-color--primario G-txt--negrita G-margen--l G-margen--lr-0 G-margen--top-0 G-txt--cen">{{ node.field_titulo_4.value }}</p>
+    {% endif %}
+    {{ drupal_view('familias_principales', 'block_1') }}
+  </div>
+</div>
+
+
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--860 G-margen--auto G-pos--relativo" style="padding: 0 20px 80px;">
+    <div class="G-fondo--secundario G-padding--xxm G-max--100 G-borde--redondeado-xxs G-sombra-box--si-xl">
+      {% if node.field_titulo_5.value %}
+        <p class="G-txt--xxm G-txt--negrita G-color--blanco G-txt--cen G-margen--0">{{ node.field_titulo_5.value }}</p>
+      {% endif %}
+
+        <ul class="G-listado G-flex G-dis-h--cen G-flex--wrap E-materiales-sostenibles-iconos ">
+
+            <li class="G-padding--m G-txt--cen">
+              {{ source(file_url('public://iconos/materiales-organicos_0.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--l G-color--blanco G-txt--negrita G-txt--cen G-margen--xxs G-margen--lr-0 G-margen--bottom-0" style="line-height: 1">
+                {% if(cantidad_organico > 1000000) %}
+                 {% set organico = cantidad_organico/1000000 %}
+                  {{ organico|round(2) }} T
+                {% elseif(cantidad_organico > 1000) %}
+                  {% set organico = cantidad_organico/1000 %}
+                  {{ organico|round(2) }} kg
+                  {% elseif(cantidad_organico == 0) %}
+                    0 g
+                    {% else %}
+                      {{ cantidad_organico|round(2) }} g
+                {% endif %}
+                </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--blanco G-margen--0">Orgánico</p>
+            </li>
+
+
+            <li class="G-padding--m G-txt--cen">
+              {{ source(file_url('public://iconos/materialescompostables_3.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--l G-color--blanco G-txt--negrita G-txt--cen G-margen--xxs G-margen--lr-0 G-margen--bottom-0" style="line-height: 1">
+                {% if(cantidad_compostable > 1000000) %}
+                  {% set compostable = cantidad_compostable/1000000 %}
+                  {{ compostable|round(2) }} T
+                {% elseif(cantidad_compostable > 1000) %}
+                  {% set compostable = cantidad_compostable/1000 %}
+                  {{ compostable|round(2) }} kg
+                {% elseif(cantidad_compostable == 0) %}
+                  0 g
+                  {% else %}
+                  {{ cantidad_compostable|round(2) }} g
+                {% endif %}
+              </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--blanco G-margen--0">Compostable</p>
+            </li>
+
+
+            <li class="G-padding--m G-txt--cen">
+              {{ source(file_url('public://iconos/materiales-biosinteticos_0.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--l G-color--blanco G-txt--negrita G-txt--cen G-margen--xxs G-margen--lr-0 G-margen--bottom-0" style="line-height: 1">
+                {% if(cantidad_biosintetico > 1000000) %}
+                  {% set biosintetico = cantidad_biosintetico/1000000 %}
+                  {{ biosintetico|round(2) }} T
+                {% elseif(cantidad_biosintetico > 1000) %}
+                  {% set biosintetico = cantidad_biosintetico/1000 %}
+                  {{ biosintetico|round(2) }} kg
+                {% elseif(cantidad_biosintetico == 0) %}
+                  0 g
+                  {% else %}
+                  {{ cantidad_biosintetico|round(2) }} g
+                {% endif %}
+              </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--blanco G-margen--0">Biosintetico</p>
+            </li>
+
+
+            <li class="G-padding--m G-txt--cen">
+              {{ source(file_url('public://iconos/productos-reciclables_0.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--l G-color--blanco G-txt--negrita G-txt--cen G-margen--xxs G-margen--lr-0 G-margen--bottom-0" style="line-height: 1">
+                {% if(cantidad_reciclable > 1000000) %}
+                  {% set reciclable = cantidad_reciclable/1000000 %}
+                  {{ reciclable|round(2) }} T
+                {% elseif(cantidad_reciclable > 1000) %}
+                  {% set reciclable = cantidad_reciclable/1000 %}
+                  {{ reciclable|round(2) }} kg
+                {% elseif(cantidad_reciclable == 0) %}
+                  0 g
+                  {% else %}
+                  {{ cantidad_reciclable|round(2) }} g
+                {% endif %}
+              </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--blanco G-margen--0">Reciclable</p>
+            </li>
+
+
+            <li class="G-padding--m G-txt--cen">
+              {{ source(file_url('public://iconos/empaquetado-ecologico_0.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--l G-color--blanco G-txt--negrita G-txt--cen G-margen--xxs G-margen--lr-0 G-margen--bottom-0" style="line-height: 1">
+                {% if(cantidad_reciclado > 1000000) %}
+                  {% set reciclado = cantidad_reciclado/1000000 %}
+                  {{ reciclado|round(2) }} T
+                {% elseif(cantidad_reciclado > 1000) %}
+                  {% set reciclado = cantidad_reciclado/1000 %}
+                  {{ reciclado|round(2) }} kg
+                {% elseif(cantidad_reciclado == 0) %}
+                  0 g
+                  {% else %}
+                  {{ cantidad_reciclado|round(2) }} g
+                {% endif %}
+              </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--blanco G-margen--0">Reciclado</p>
+            </li>
+
+
+            <li class="G-padding--m G-txt--cen">
+              {{ source(file_url('public://iconos/bio.svg'), ignore_missing = true) }}
+              <p class="E-font-montserrat G-txt--l G-color--blanco G-txt--negrita G-txt--cen G-margen--xxs G-margen--lr-0 G-margen--bottom-0" style="line-height: 1">
+                {% if(cantidad_biodegradable > 1000000) %}
+                  {% set biodegradable = cantidad_biodegradable/1000000 %}
+                  {{ biodegradable|round(2) }} T
+                {% elseif(cantidad_biodegradable > 1000) %}
+                  {% set biodegradable = cantidad_biodegradable/1000 %}
+                  {{ biodegradable|round(2) }} kg
+                {% elseif(cantidad_biodegradable == 0) %}
+                  0 g
+                  {% else %}
+                  {{ cantidad_biodegradable|round(2) }} g
+                {% endif %}
+              </p>
+              <p class="E-font-montserrat G-txt--cen G-txt--xxs G-color--blanco G-margen--0">Biodegradable</p>
+            </li>
+
+        </ul>
+
+    </div>
+  </div>
+</div>
+
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--860 G-margen--auto G-pos--relativo" style="padding: 0 20px 120px;">
+    {% if node.field_destacado_home.0 %}
+      <ul class="G-listado G-flex G-dis-h--cen G-flex--wrap">
+        {% for key,item in node.field_destacado_home %}
+          <li class="E-max--296 G-padding--m G-txt--cen">
+            <img class="E-img-contain G-size--w-xxsupergigante G-size--h-xxsupergigante G-margen--xxs G-margen--lr-0 G-margen--top-0" src="{{ file_url(item.entity.field_media_file_1.entity.fileuri) }}" alt="">
+            {% if item.entity.field_subtitulo.value %}
+              <p class="E-font-montserrat G-txt--cen E-txt--18 G-color--primario E-max--223 G-margen--auto G-padding--xxs G-padding--lr-0 G-padding--top-0" style="line-height: 1;">
+                {{ item.entity.field_subtitulo.value }}
+              </p>
+            {% endif %}
+            {% if item.entity.field_titulo_2.value %}
+              <p class="E-font-montserrat G-txt--l G-color--primario G-txt--seminegrita G-txt--cen G-margen--0 G-padding--xxs G-padding--lr-0 G-padding--top-0" style="line-height: 1;">
+                {{ cantidad_co2 }} {{ item.entity.field_titulo_2.value }}
+              </p>
+            {% endif %}
+            <div class="G-fondo--secundario G-padding--xm G-margen--auto G-borde--redondeado-xxs G-sombra-box--si-xl">
+              {% if item.entity.field_titulo_3.value %}
+                <p class="E-font-montserrat G-txt--cen G-txt--m G-color--blanco G-margen--0">
+                  {{ item.entity.field_titulo_3.value }}
+                </p>
+              {% endif %}
+              {% if item.entity.field_titulo_4.value %}
+                <p class="E-font-montserrat G-txt--cen G-txt--gigante G-color--blanco G-margen--0 G-txt--seminegrita" style="line-height: 1">
+                  {{ item.entity.field_titulo_4.value }}
+                </p>
+              {% endif %}
+
+              {% if item.entity.field_titulo_5.value %}
+                <p class="E-font-montserrat G-txt--cen G-txt--m G-color--blanco G-margen--0 G-txt--negrita">
+                  {{ item.entity.field_titulo_5.value }}
+                </p>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</div>
+
+
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--1277 G-margen--auto" style="padding: 0 20px 40px;">
+    {% if node.field_titulo_6.value %}
+      <p class="E-txt--18 G-color--primario G-txt--negrita G-margen--top-0 G-txt--cen">{{ node.field_titulo_6.value }}</p>
+    {% endif %}
+    <ul class="G-listado G-flex G-dis-h--cen G-dis-v--middle G-flex--wrap E-compromiso">
+      {% for key,item in node.field_imagen %}
+        <li class="G-padding--xm G-padding--bottom-0 G-flex G-dis-h--cen G-dis-v--middle">
+          <img class="E-img-contain" style="width:76px;height: 76px;" src="{{ file_url(item.entity.fileuri) }}" alt="">
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

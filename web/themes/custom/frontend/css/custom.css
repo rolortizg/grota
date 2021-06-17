@@ -1,0 +1,49 @@
+.main-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+#variations-bar-position {
+  width: 100%;
+  left: 0;
+  z-index: 1;
+  bottom: -18px; }
+  #variations-bar-position #variations-bar {
+    width: 100%;
+    background: #28a745; }
+    #variations-bar-position #variations-bar form {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      #variations-bar-position #variations-bar form #edit-purchased-entity-0-attributes {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+
+#views-exposed-form-productos-page-1 .form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  #views-exposed-form-productos-page-1 .form-row #edit-field-categoria-de-producto-target-id .form-checkboxes > ul > li {
+    height: 27px;
+    overflow: hidden;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease; }
+  #views-exposed-form-productos-page-1 .form-row #edit-field-categoria-de-producto-target-id .form-checkboxes.active-collapse > ul > li.li-parent {
+    height: auto;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    overflow: hidden; }
+
+/*# sourceMappingURL=custom.css.map */

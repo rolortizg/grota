@@ -1,0 +1,10 @@
+services:
+  grota_config.change_Attribute_cart_event_subscriber:
+    class: Drupal\grota_config\EventSubscriber\ChangeAttributeCartEventSubscriber
+    tags:
+      - { name: event_subscriber }
+  grota_config.event_subscriber:
+    class: Drupal\grota_config\EventSubscriber\PanelUsuarioSubscriber
+    arguments: [ '@current_user',  '@request_stack']
+    tags:
+      - {name: event_subscriber}

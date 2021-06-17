@@ -1,0 +1,31 @@
+grota_config.moda:
+  path: '/moda'
+  defaults:
+    _controller: '\Drupal\grota_config\Controller\ProductoController::producto'
+    _title: 'Moda'
+  requirements:
+    _permission: 'access content'
+
+grota_config.hogar:
+  path: '/hogar'
+  defaults:
+    _controller: '\Drupal\grota_config\Controller\ProductoController::producto_hogar'
+    _title: 'Hogar'
+  requirements:
+    _permission: 'access content'
+
+grota_config.dia_a_dia:
+  path: '/dia-a-dia'
+  defaults:
+    _controller: '\Drupal\grota_config\Controller\ProductoController::producto_dia_a_dia'
+    _title: 'Día a día'
+  requirements:
+    _permission: 'access content'
+
+grota_config.editar_cesta:
+  path: '/editar/cesta/{product_id}/{order_id}'
+  defaults:
+    _controller: '\Drupal\grota_config\Controller\ProductoController::editar_cesta'
+    _title: 'Editar cesta'
+  requirements:
+    _permission: 'access content'

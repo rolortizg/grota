@@ -1,0 +1,27 @@
+uuid: 898abe36-bf54-41e2-b181-e926d8a4c37c
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - field_permissions
+    - file
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: commerce_order.field_factura
+field_name: field_factura
+entity_type: commerce_order
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

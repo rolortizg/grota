@@ -1,0 +1,8 @@
+uuid: ef9d95b5-48de-4037-879e-f70e732eed04
+langcode: es
+status: true
+dependencies: {  }
+id: tienda
+label: Tienda
+description: ''
+locked: false

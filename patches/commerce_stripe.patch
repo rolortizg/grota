@@ -1,0 +1,15 @@
+diff --git a/src/Plugin/Commerce/PaymentGateway/Stripe.php b/src/Plugin/Commerce/PaymentGateway/Stripe.php
+index 041095a3c..786564f68 100755
+--- a/src/Plugin/Commerce/PaymentGateway/Stripe.php
++++ b/src/Plugin/Commerce/PaymentGateway/Stripe.php
+@@ -195,6 +195,10 @@ public function createPayment(PaymentInterface $payment, $capture = TRUE) {
+     $order = $payment->getOrder();
+     assert($order instanceof OrderInterface);
+     $intent_id = $order->getData('stripe_intent');
++    if(empty($intent_id)){
++      $intent = $this->createPaymentIntent($order);
++      $intent_id = $intent['id'];
++    }
+     try {
+       $intent = \Stripe\PaymentIntent::retrieve($intent_id);
+       if ($intent->status === PaymentIntent::STATUS_REQUIRES_CONFIRMATION) {

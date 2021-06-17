@@ -1,0 +1,28 @@
+uuid: d883caaf-6db7-4c67-ae3d-a1acf8b53057
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_destacado_home
+    - media.type.destacado_home
+    - node.type.inicio
+id: node.inicio.field_destacado_home
+field_name: field_destacado_home
+entity_type: node
+bundle: inicio
+label: 'Destacados home'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      destacado_home: destacado_home
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

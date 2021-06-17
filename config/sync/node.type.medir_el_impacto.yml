@@ -1,0 +1,18 @@
+uuid: 7e3067b4-4a0f-4032-a6a3-a284a1be609a
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Medir el impacto'
+type: medir_el_impacto
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

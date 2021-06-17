@@ -1,0 +1,28 @@
+uuid: 6993e95f-f4e5-4d4b-8765-031c9ee48535
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_miembro_del_equipo
+    - media.type.imagen_titulo_subtitulo
+    - node.type.nosotros
+id: node.nosotros.field_miembro_del_equipo
+field_name: field_miembro_del_equipo
+entity_type: node
+bundle: nosotros
+label: 'Miembro del equipo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      imagen_titulo_subtitulo: imagen_titulo_subtitulo
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

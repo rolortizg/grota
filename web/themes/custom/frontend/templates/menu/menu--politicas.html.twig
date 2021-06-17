@@ -1,0 +1,15 @@
+{% set menu_name = menu_name|capitalize|replace({ '-':' ' }) %}
+<div class="">
+  <p class="G-margen--top-0 G-color--secundario E-txt--18 G-txt--negrita">
+    {{ menu_name }}
+  </p>
+  <ul class="G-listado" style="padding-left: 15px;">
+    {% if(items|length >0) %}
+      {% for item in items %}
+        <li class="G-padding--xs G-padding--lr-0 G-padding--top-0">
+          {{ link(item['title'], item['url'], { 'class':['G-txt--xxs G-color--blanco G-txt--seminegrita E-font-montserrat G-txt--sinsubrayado']} ) }}
+        </li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+</div>

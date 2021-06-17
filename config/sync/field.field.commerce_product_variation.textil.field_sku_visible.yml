@@ -1,0 +1,19 @@
+uuid: 6de6e514-51b1-436e-8e66-b02228a5fb6f
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.textil
+    - field.storage.commerce_product_variation.field_sku_visible
+id: commerce_product_variation.textil.field_sku_visible
+field_name: field_sku_visible
+entity_type: commerce_product_variation
+bundle: textil
+label: 'SKU visible'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

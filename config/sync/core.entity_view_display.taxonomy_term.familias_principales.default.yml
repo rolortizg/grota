@@ -1,0 +1,54 @@
+uuid: f7cc8d27-8ce0-4380-be7c-e98688aa6417
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.familias_principales.field_enlace
+    - field.field.taxonomy_term.familias_principales.field_logotipo
+    - taxonomy.vocabulary.familias_principales
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+    - link
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: taxonomy_term.familias_principales.default
+targetEntityType: taxonomy_term
+bundle: familias_principales
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_enlace:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_logotipo:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  langcode: true

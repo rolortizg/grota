@@ -1,0 +1,26 @@
+langcode: es
+default_langcode: en
+bannerText: 'Gröta utiliza cookies propias y de terceros con fines analíticos, para facilitar servicios de valor añadido (mapa de ubicación y carrito de compra), para facilitar su interacción en redes sociales y analizar sus hábitos de navegación. Para más información puede leer nuestra'
+privacyPolicy: ''
+privacyUri: ''
+imprint: ''
+imprintUri: ''
+cookieDocs: 'Política de cookies'
+cookieDocsUri: /node/42
+denyAll: 'Rechazar todo'
+settings: Configuración
+acceptAll: 'Aceptar todo'
+allowAll: 'Accept all'
+cookieSettings: 'Configuración Cookies'
+close: Cerrar
+officialWebsite: 'Ver sitio web oficial'
+requiredCookies: 'Cookies de funcionalidad'
+readMore: 'Leer más'
+allowed: permitido
+denied: rechazado
+alwaysActive: 'Siempre activo'
+settingsAllServices: 'Configuración para todos los servicios'
+saveSettings: Guardar
+credit: ''
+_core:
+  default_config_hash: X8VxTkyAAEb9q-EhYz30-BkJ9Ftv5-u1H7BXLXHQe1o

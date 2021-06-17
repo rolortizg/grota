@@ -1,0 +1,7 @@
+uuid: 519e5d90-6504-481d-96e7-9d3515262a63
+langcode: es
+status: true
+dependencies: {  }
+id: modelo
+label: Modelo
+elementType: select

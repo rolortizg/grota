@@ -1,0 +1,12 @@
+uuid: 75ef1714-744b-4693-ac4f-7072a6647f83
+langcode: es
+status: true
+dependencies: {  }
+id: textil
+label: Moda
+description: ''
+variationType: textil
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

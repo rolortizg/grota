@@ -1,0 +1,29 @@
+uuid: cf33bd11-2cb8-4a8c-84ed-aa73e6091688
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faqs
+    - node.type.preguntas_frecuentes
+    - taxonomy.vocabulary.faqs
+id: node.preguntas_frecuentes.field_faqs
+field_name: field_faqs
+entity_type: node
+bundle: preguntas_frecuentes
+label: Faqs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      faqs: faqs
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

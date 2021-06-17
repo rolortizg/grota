@@ -1,0 +1,19 @@
+uuid: fcfeffab-7fa6-445a-9e82-772f5edef79a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_titulo_2
+    - media.type.destacado_home
+id: media.destacado_home.field_titulo_2
+field_name: field_titulo_2
+entity_type: media
+bundle: destacado_home
+label: 'Título 2'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

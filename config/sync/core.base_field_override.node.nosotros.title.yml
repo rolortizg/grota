@@ -1,0 +1,18 @@
+uuid: b94e6ad0-ad31-4d37-b132-8f3c16f5ea23
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.nosotros
+id: node.nosotros.title
+field_name: title
+entity_type: node
+bundle: nosotros
+label: 'Título URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,179 @@
+<div
+  class="E-fondo--subcabecera-xs E-fondo-azul G-fondo--full G-flex G-flex--vertical G-dis-v--middle G-dis-h--cen G-pos--relativo"
+  style="background-image: url('{{ file_url(node.field_imagen_de_fondo.entity.fileuri) }}')">
+  <div class="E-max--670 G-margen--auto G-txt--cen G-padding--xm G-padding--tb-0" style="z-index: 2;">
+    {% if node.field_titulo.value %}
+      <p
+        class="G-txt--xxgigante G-txt--negrita G-color--blanco G-sombra-txt--si-s G-txt--cen G-margen--0 G-pos--relativo E-linea-titulo-white G-padding--xxs G-padding--lr-0 G-padding--top-0"
+        style="line-height: 1;">{{ node.field_titulo.value }}</p>
+    {% endif %}
+    <ul class="G-tabs E-max--1000 nav nav-tabs" style="padding: 0 20px;">
+      <li>
+        {% if node.field_titulo_2.value %}
+          <a class="active" data-toggle="tab" href="#tab-1">{{ node.field_titulo_2.value }}</a>
+        {% endif %}
+      </li>
+      <li>
+        {% if node.field_titulo_3.value %}
+          <a data-toggle="tab" href="#tab-2">{{ node.field_titulo_3.value }}</a>
+        {% endif %}
+      </li>
+      <li>
+        {% if node.field_titulo_4.value %}
+          <a data-toggle="tab" href="#tab-3">{{ node.field_titulo_4.value }}</a>
+        {% endif %}
+      </li>
+    </ul>
+
+  </div>
+</div>
+<div class="tab-content">
+  <!-- SIMBOLOS -->
+  <div id="tab-1" class="tab-pane in active">
+    <div class="G-fondo--blanco G-max--100">
+      <div class="E-max--860 G-margen--auto" style="padding: 140px 20px 120px;">
+        {% if node.field_descripcion.value %}
+          <div
+            class="E-font-montserrat G-color--primario G-txt--xxm G-txt--cen G-margen--0 ">{{ node.field_descripcion.value|raw }}</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="G-fondo--degra-arriba G-max--100">
+      <div class="E-max--1000 G-margen--auto" style="padding: 44px 20px 80px;">
+        <p
+          class="G-txt--l G-color--primario G-txt--negrita G-margen--supergigante G-margen--lr-0 G-margen--top-0 G-txt--cen">
+          Labor social</p>
+        {% if node.field_check_labor_social.0 %}
+          <ul class="G-listado G-flex G-dis-h--cen G-flex--wrap E-iconos-medir-impacto">
+            {% for key,item in node.field_check_labor_social %}
+              <li class="G-padding--xxs ">
+                <div class="E-max--110 G-margen--auto">
+                  {{ source(file_url(item.entity.field_icono.entity.fileuri), ignore_missing= true) }}
+                </div>
+                <p
+                  class="G-txt--m G-color--primario G-txt--negrita G-txt--cen  G-margen--xs G-margen--lr-0 G-margen--bottom-0">{{ item.entity.name.value }}</p>
+                <p
+                  class="E-font-montserrat G-txt--cen G-txt--xs G-color--terciario G-margen--0">{{ item.entity.field_su.value }}</p>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="G-fondo--degra-arriba G-max--100">
+      <div class="E-max--1000 G-margen--auto" style="padding: 44px 20px 80px;">
+        <p
+          class="G-txt--l G-color--primario G-txt--negrita G-margen--supergigante G-margen--lr-0 G-margen--top-0 G-txt--cen">
+          Producción</p>
+        {% if node.field_checks_de_labor_social.0 %}
+          <ul class="G-listado G-flex G-dis-h--cen G-flex--wrap E-iconos-medir-impacto">
+            {% for key,item in node.field_checks_de_labor_social %}
+              <li class="G-padding--xxs ">
+                <div class="E-max--110 G-margen--auto">
+                  {{ source(file_url(item.entity.field_icono.entity.fileuri), ignore_missing = true) }}
+                </div>
+                <p
+                  class="G-txt--m G-color--primario G-txt--negrita G-txt--cen  G-margen--xs G-margen--lr-0 G-margen--bottom-0">{{ item.entity.name.value }}</p>
+                <p
+                  class="E-font-montserrat G-txt--cen G-txt--xs G-color--terciario G-margen--0">{{ item.entity.field_su.value }}</p>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="G-fondo--degra-arriba G-max--100">
+      <div class="E-max--1000 G-margen--auto" style="padding: 44px 20px 100px;">
+        <p
+          class="G-txt--l G-color--primario G-txt--negrita G-margen--supergigante G-margen--lr-0 G-margen--top-0 G-txt--cen">
+          Materiales</p>
+        {% if node.field_checks_de_materiales.0 %}
+          <ul class="G-listado G-flex G-dis-h--cen G-flex--wrap E-iconos-medir-impacto">
+            {% for key,item in node.field_checks_de_materiales %}
+              <li class="G-padding--xxs">
+                <div class="E-max--110 G-margen--auto">
+                  {{ source(file_url(item.entity.field_icono.entity.fileuri), ignore_missing = true) }}
+                </div>
+                <p
+                  class="G-txt--m G-color--primario G-txt--negrita G-txt--cen  G-margen--xs G-margen--lr-0 G-margen--bottom-0">{{ item.entity.name.value }}</p>
+                <p
+                  class="E-font-montserrat G-txt--cen G-txt--xs G-color--terciario G-margen--0">{{ item.entity.field_su.value }}</p>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div id="tab-2" class="tab-pane fade">
+    <!-- CERTIFICADOS -->
+
+    <div class="G-fondo--blanco G-max--100">
+      <div class="E-max--860 G-margen--auto" style="padding: 140px 20px 120px;">
+        {% if node.field_descripcion_2.value %}
+          <div
+            class="E-font-montserrat G-color--primario G-txt--xxm G-txt--cen G-margen--0 ">{{ node.field_descripcion_2.value|raw }}</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="G-fondo--blanco G-max--100">
+      <div class="E-max--670 G-margen--auto" style="padding: 44px 20px 80px;">
+        <p
+          class="G-txt--l G-color--primario G-txt--negrita G-margen--supergigante G-margen--lr-0 G-margen--top-0 G-txt--cen">
+          Certificados</p>
+        {% if node.field_certificados.0 %}
+          <ul class="G-listado G-flex G-dis-h--cen G-flex--wrap">
+            {% for key,item in node.field_certificados %}
+              <li
+                class="G-flex G-flex-h--repartidos G-dis-v--top G-max--100 G-margen--gigante G-margen--lr-0 G-margen--top-0 E-certificado-resp">
+                <div class="E-max--223 E-arrow-shape-l G-pos--relativo">
+                  <div class="E-max--110 E-op-s G-margen--auto">
+                    <img lass="E-max--wyh" src="{{ file_url(item.entity.field_icono.entity.fileuri) }}" />
+                  </div>
+                  <p
+                    class="G-txt--m G-color--primario G-txt--negrita G-txt--cen  G-margen--xs G-margen--lr-0 G-margen--bottom-0">{{ item.entity.name.value }}</p>
+                  <p
+                    class="E-font-montserrat G-txt--cen G-txt--xs G-color--terciario G-margen--0">{{ item.entity.field_su.value }}</p>
+                </div>
+                <div>
+                  <p class="G-txt--m G-color--primario G-txt--negrita G-margen--0">Quién lo da…</p>
+                  <p
+                    class="E-font-montserrat G-txt--xxs G-color--terciario G-margen--xs G-margen--lr-0 G-margen--top-0">{{ item.entity.field_empresa_certificadora.entity.name.value }}</p>
+                  <p class="G-txt--m G-color--primario G-txt--negrita G-margen--0">Qué se necesita para
+                    conseguirlo...</p>
+
+                    <ul class="G-listado">
+
+                      {% if(item.entity.field_check.0) %}
+                        {% for key,cert in item.entity.field_check %}
+                          <li
+                            class="E-font-montserrat G-txt--xxs G-color--terciario G-margen--s G-margen--lr-0 G-margen--top-0 E-subicono-check">{{ cert.value }}</li>
+                        {% endfor %}
+                      {% endif %}
+                    </ul>
+
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+  <!-- MEDIMOS -->
+  <div id="tab-3" class="tab-pane fade">
+    <div class="G-fondo--blanco G-max--100">
+      <div class="E-max--860 G-margen--auto" style="padding: 140px 20px 120px;">
+        {% if node.field_descripcion_3.value %}
+          <div
+            class="E-font-montserrat G-color--primario G-txt--xxm G-txt--cen G-margen--0 ">{{ node.field_descripcion_3.value|raw }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

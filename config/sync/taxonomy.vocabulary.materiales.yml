@@ -1,0 +1,8 @@
+uuid: 2dfee710-4655-4274-9cd0-945a746397ea
+langcode: es
+status: true
+dependencies: {  }
+name: Materiales
+vid: materiales
+description: 'Se muestra en Medir el impacto - Labor social'
+weight: -9

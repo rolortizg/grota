@@ -1,0 +1,6 @@
+name: Proveedor
+description: Funciones para los proveedores
+package: Grota
+type: module
+core_version_requirement: ^9
+

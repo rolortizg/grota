@@ -1,0 +1,24 @@
+uuid: 98471532-d616-4533-b270-571b12355ff5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_coste_envio_islas_
+  module:
+    - user
+id: user.user.field_coste_envio_islas_
+field_name: field_coste_envio_islas_
+entity_type: user
+bundle: user
+label: 'Coste envio (Islas Canarias)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

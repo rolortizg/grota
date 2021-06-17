@@ -1,0 +1,133 @@
+uuid: d779518a-0cd7-42c6-90f6-def02120e60a
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - field.field.commerce_order.default.field_customer_id
+    - field.field.commerce_order.default.field_factura
+    - field.field.commerce_order.default.shipments
+  module:
+    - commerce_order
+    - entity_reference_revisions
+    - field_layout
+    - file
+    - layout_discovery
+    - state_machine
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: evnV-nUZotGAM4kgVWKzCtGRJQMstQX5RxlGG7kx3fg
+id: commerce_order.default.default
+targetEntityType: commerce_order
+bundle: default
+mode: default
+content:
+  billing_profile:
+    type: entity_reference_revisions_entity_view
+    weight: 9
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  changed:
+    type: timestamp
+    weight: 4
+    label: inline
+    settings:
+      date_format: short
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    region: content
+  completed:
+    label: inline
+    type: timestamp
+    weight: 2
+    settings:
+      date_format: short
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    region: content
+  field_customer_id:
+    weight: 11
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_factura:
+    weight: 10
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  ip_address:
+    label: inline
+    type: string
+    weight: 7
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  mail:
+    label: inline
+    type: basic_string
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  order_items:
+    type: commerce_order_item_table
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    label: hidden
+    region: content
+  placed:
+    label: inline
+    type: timestamp
+    weight: 3
+    settings:
+      date_format: short
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    region: content
+  state:
+    label: hidden
+    type: state_transition_form
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  total_price:
+    type: commerce_order_total_summary
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    label: hidden
+    region: content
+  uid:
+    label: inline
+    type: author
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  balance: true
+  order_number: true
+  shipments: true
+  store_id: true
+  total_paid: true

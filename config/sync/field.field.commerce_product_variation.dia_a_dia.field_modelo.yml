@@ -1,0 +1,29 @@
+uuid: 22de65e5-4f61-410e-8d5b-1a27f1f4b5a5
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.dia_a_dia
+    - field.storage.commerce_product_variation.field_modelo
+    - taxonomy.vocabulary.modelo
+id: commerce_product_variation.dia_a_dia.field_modelo
+field_name: field_modelo
+entity_type: commerce_product_variation
+bundle: dia_a_dia
+label: Modelo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      modelo: modelo
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

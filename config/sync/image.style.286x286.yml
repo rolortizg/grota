@@ -1,0 +1,15 @@
+uuid: eba7a1ff-5703-422f-af59-78ee0be5eea5
+langcode: es
+status: true
+dependencies: {  }
+name: 286x286
+label: 286x286
+effects:
+  a50274f8-0d94-4e64-91d4-86c6038c92ae:
+    uuid: a50274f8-0d94-4e64-91d4-86c6038c92ae
+    id: image_scale
+    weight: 1
+    data:
+      width: 286
+      height: 286
+      upscale: false

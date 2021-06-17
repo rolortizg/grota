@@ -1,0 +1,7 @@
+uuid: 1a001a07-62a6-4272-a4b8-6189cf3f6698
+langcode: es
+status: true
+dependencies: {  }
+id: talla
+label: Talla
+elementType: radios

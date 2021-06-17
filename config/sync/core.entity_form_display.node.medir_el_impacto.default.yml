@@ -1,0 +1,220 @@
+uuid: a38af5a8-b548-4b75-9a75-3ccdc699a368
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.medir_el_impacto.field_certificados
+    - field.field.node.medir_el_impacto.field_check_labor_social
+    - field.field.node.medir_el_impacto.field_checks_de_labor_social
+    - field.field.node.medir_el_impacto.field_checks_de_materiales
+    - field.field.node.medir_el_impacto.field_descripcion
+    - field.field.node.medir_el_impacto.field_descripcion_2
+    - field.field.node.medir_el_impacto.field_descripcion_3
+    - field.field.node.medir_el_impacto.field_imagen_de_fondo
+    - field.field.node.medir_el_impacto.field_titulo
+    - field.field.node.medir_el_impacto.field_titulo_2
+    - field.field.node.medir_el_impacto.field_titulo_3
+    - field.field.node.medir_el_impacto.field_titulo_4
+    - image.style.thumbnail
+    - node.type.medir_el_impacto
+  module:
+    - field_group
+    - field_layout
+    - image
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_simbolo:
+      children:
+        - field_titulo_2
+        - field_descripcion
+        - field_check_labor_social
+        - field_checks_de_labor_social
+        - field_checks_de_materiales
+      parent_name: group_contenido
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: Símbolos
+    group_certificados:
+      children:
+        - field_titulo_3
+        - field_descripcion_2
+        - field_certificados
+      parent_name: group_contenido
+      weight: 4
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Certificados
+    group__como_lo_:
+      children:
+        - field_titulo_4
+        - field_descripcion_3
+      parent_name: group_contenido
+      weight: 5
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: '¿Cómo lo medimos?'
+    group_cabecera:
+      children:
+        - field_titulo
+        - field_imagen_de_fondo
+      parent_name: ''
+      weight: 1
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Cabecera
+    group_contenido:
+      children:
+        - group_simbolo
+        - group_certificados
+        - group__como_lo_
+      parent_name: ''
+      weight: 2
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Contenido
+id: node.medir_el_impacto.default
+targetEntityType: node
+bundle: medir_el_impacto
+mode: default
+content:
+  field_certificados:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_check_labor_social:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_checks_de_labor_social:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_checks_de_materiales:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_descripcion:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_descripcion_2:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_descripcion_3:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_imagen_de_fondo:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_titulo:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_2:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_3:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_titulo_4:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

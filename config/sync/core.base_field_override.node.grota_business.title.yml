@@ -1,0 +1,18 @@
+uuid: 2132451c-75c3-4745-a25f-9e2bf09722db
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.grota_business
+id: node.grota_business.title
+field_name: title
+entity_type: node
+bundle: grota_business
+label: 'Título URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: d0f09358-b02e-460f-b7ef-6cdeea80a11c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.grota_business
+  module:
+    - metatag
+id: node.grota_business.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: grota_business
+label: 'Meta etiquetas'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

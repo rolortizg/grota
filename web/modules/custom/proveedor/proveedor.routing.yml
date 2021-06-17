@@ -1,0 +1,7 @@
+proveedor.perfil:
+  path: /backend/editar-perfil
+  defaults:
+    _controller: '\Drupal\proveedor\Controller\ProveedorController::editarPerfil'
+    _title: 'Editar perfil'
+  requirements:
+    _role: 'proveedor'

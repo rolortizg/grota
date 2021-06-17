@@ -1,0 +1,24 @@
+uuid: e70303b1-5f54-44e5-9bd6-3f6f55fd96c3
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - field_permissions
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: commerce_product.field_material_organico
+field_name: field_material_organico
+entity_type: commerce_product
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

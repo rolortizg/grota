@@ -1,0 +1,27 @@
+uuid: a0ee03ca-ed1f-473e-b8e0-0e47e2bc210f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icono
+    - taxonomy.vocabulary.produccion
+  module:
+    - file
+id: taxonomy_term.produccion.field_icono
+field_name: field_icono
+entity_type: taxonomy_term
+bundle: produccion
+label: Icono
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: iconos
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

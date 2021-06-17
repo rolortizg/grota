@@ -1,0 +1,51 @@
+.main-menu ul {
+  display: flex;
+  flex-direction: row;
+}
+
+#variations-bar-position {
+  width: 100%;
+  left: 0;
+  z-index: 1;
+  bottom: -18px;
+
+  #variations-bar {
+    width: 100%;
+    background: #28a745;
+
+    form {
+      display: flex;
+      justify-content: center;
+
+      #edit-purchased-entity-0-attributes {
+        display: flex;
+      }
+    }
+  }
+}
+
+#views-exposed-form-productos-page-1 {
+  .form-row {
+    display: flex;
+    flex-direction: column;
+
+    #edit-field-categoria-de-producto-target-id {
+      .form-checkboxes {
+        > ul > li {
+          height: 27px;
+          overflow: hidden;
+          transition: all .5s ease;
+        }
+
+        &.active-collapse {
+          > ul > li.li-parent {
+            height: auto;
+            transition: all .5s ease;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}
+

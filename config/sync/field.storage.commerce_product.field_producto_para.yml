@@ -1,0 +1,20 @@
+uuid: fb47ed0a-056c-48bf-b6f3-17e01cdf7e3b
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - taxonomy
+id: commerce_product.field_producto_para
+field_name: field_producto_para
+entity_type: commerce_product
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,11 @@
+uuid: 90ec7a9e-a002-4247-b8b5-d58081935486
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 9HsUQAY2hE2MtZUHMO1HpHEubLb0iBl98m69bx3-SOU
+id: base
+label: 'Cookies de funcionalidad'
+group: cookies_tecnicas_y_necesarias
+url: /politica-de-cookies
+consent: false

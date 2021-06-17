@@ -1,0 +1,10 @@
+uuid: 29804cdd-2256-4f7a-92cc-6fe6de99ebe5
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.proveedor
+label: Proveedor
+targetEntityType: commerce_product_variation
+cache: true

@@ -1,0 +1,10 @@
+uuid: 670f809c-770e-4106-aa08-ed4d1705ed9d
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.resumen
+label: Resumen
+targetEntityType: commerce_product_variation
+cache: true

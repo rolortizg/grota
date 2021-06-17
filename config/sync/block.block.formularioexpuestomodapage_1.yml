@@ -1,0 +1,23 @@
+uuid: 7b9aeebc-21d0-4e66-bbfd-d11dae11b762
+langcode: es
+status: false
+dependencies:
+  config:
+    - views.view.moda
+  module:
+    - views
+  theme:
+    - frontend
+id: formularioexpuestomodapage_1
+theme: frontend
+region: sidebar_first
+weight: -3
+provider: null
+plugin: 'views_exposed_filter_block:moda-page_1'
+settings:
+  id: 'views_exposed_filter_block:moda-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility: {  }

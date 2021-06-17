@@ -1,0 +1,21 @@
+uuid: 8bcddbd4-eb14-42df-a507-5dbfcf2e612b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion
+    - node.type.grota_business
+  module:
+    - text
+id: node.grota_business.field_descripcion
+field_name: field_descripcion
+entity_type: node
+bundle: grota_business
+label: Descripción
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

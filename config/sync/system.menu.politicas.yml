@@ -1,0 +1,8 @@
+uuid: 42fa16af-3a5b-4aae-8050-8df5ef5d3bf8
+langcode: es
+status: true
+dependencies: {  }
+id: politicas
+label: Políticas
+description: ''
+locked: false

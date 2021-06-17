@@ -1,0 +1,23 @@
+uuid: 5fbfeea8-d58d-4fdb-aad7-0b56bcdace78
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.dia_a_dia
+    - field.storage.commerce_product.field_destacar_en_sostenibles
+id: commerce_product.dia_a_dia.field_destacar_en_sostenibles
+field_name: field_destacar_en_sostenibles
+entity_type: commerce_product
+bundle: dia_a_dia
+label: 'Destacar en sostenibles'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

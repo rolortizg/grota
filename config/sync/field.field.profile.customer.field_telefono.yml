@@ -1,0 +1,19 @@
+uuid: dfab6fe0-c48c-407a-a9b3-56723079833c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_telefono
+    - profile.type.customer
+id: profile.customer.field_telefono
+field_name: field_telefono
+entity_type: profile
+bundle: customer
+label: Telefono
+description: 'Ni nosotros ni nadie utilizará este número de teléfono con fines comerciales, sólo se dará a los transportistas que lo requieran para ponerse en contacto con el cliente en caso de ser necesario para el envío.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

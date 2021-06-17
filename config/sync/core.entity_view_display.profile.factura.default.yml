@@ -1,0 +1,52 @@
+uuid: e1cb6d25-6413-4698-ae6f-ffbc95493391
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.profile.factura.address
+    - field.field.profile.factura.field_dni
+    - field.field.profile.factura.field_telefono
+    - profile.type.factura
+  enforced:
+    module:
+      - commerce_order
+  module:
+    - address
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: zA0MBGUGdWqnBBoC762uDcH92qRZHC8KllbkpOjNUcs
+id: profile.factura.default
+targetEntityType: profile
+bundle: factura
+mode: default
+content:
+  address:
+    type: address_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_dni:
+    type: string
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_telefono:
+    type: string
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

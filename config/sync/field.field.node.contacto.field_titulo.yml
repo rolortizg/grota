@@ -1,0 +1,19 @@
+uuid: e1eece80-8209-44ee-90fc-0313c2e6fb77
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titulo
+    - node.type.contacto
+id: node.contacto.field_titulo
+field_name: field_titulo
+entity_type: node
+bundle: contacto
+label: Título
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

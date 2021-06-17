@@ -1,0 +1,19 @@
+uuid: 8018b763-9656-43ba-84d5-41f883209a45
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titulo
+    - node.type.preguntas_frecuentes
+id: node.preguntas_frecuentes.field_titulo
+field_name: field_titulo
+entity_type: node
+bundle: preguntas_frecuentes
+label: Título
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

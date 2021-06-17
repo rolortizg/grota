@@ -1,0 +1,7 @@
+login_redirection:
+  anonymous: null
+  authenticated: /
+  propietario: /
+  proveedor: /backend/pedidos
+  cliente: /
+exclude_urls: "/checkout/*/login\r\n/user/login/*/callback"

@@ -1,0 +1,19 @@
+uuid: e13930b4-5cc7-4291-bb73-99df971f53c2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titulo_6
+    - node.type.inicio
+id: node.inicio.field_titulo_6
+field_name: field_titulo_6
+entity_type: node
+bundle: inicio
+label: 'Título 6'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

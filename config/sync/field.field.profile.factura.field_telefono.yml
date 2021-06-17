@@ -1,0 +1,19 @@
+uuid: 3e542923-2ef9-41ac-bdc7-2035b031ec93
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_telefono
+    - profile.type.factura
+id: profile.factura.field_telefono
+field_name: field_telefono
+entity_type: profile
+bundle: factura
+label: Telefono
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

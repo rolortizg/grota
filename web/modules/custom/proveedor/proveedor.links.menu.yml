@@ -1,0 +1,14 @@
+proveedor.perfil:
+  title: 'Editar perfil'
+  route_name: proveedor.perfil
+  menu_name: 'proveedor'
+  weight: 3
+proveedor.logout:
+  title: 'Cerrar sesión'
+  route_name: user.logout
+  menu_name: 'proveedor'
+  weight: 4
+
+
+
+

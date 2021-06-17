@@ -1,0 +1,18 @@
+uuid: 451daaf2-696f-41c8-850d-b9625b36968f
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.noticia
+id: node.noticia.title
+field_name: title
+entity_type: node
+bundle: noticia
+label: 'Título URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

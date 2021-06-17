@@ -1,0 +1,102 @@
+.cookiesjsr-banner {
+  background-color: $primary-shade !important;
+  padding: 1em;
+  border-top: 1px solid white;
+}
+
+.cookiesjsr-banner .cookiesjsr-banner--text{
+  text-align: justify;
+}
+
+.cookiesjsr-banner .cookiesjsr-btn {
+  background-color: $primary-shade !important;
+}
+
+.cookiesjsr-banner .cookiesjsr-btn.important {
+  background-color: white !important;
+  color: $primary-shade !important;
+}
+
+.cookiesjsr-banner ul.cookiesjsr-links a {
+  font-weight: bold;
+}
+
+.cookiesjsr-service-group.active .cookiesjsr-service-group--tab{
+  background-color: $primary-shade !important;
+}
+
+.cookiesjsr-service-group.active .cookiesjsr-service-group--content{
+  background-color: white !important;
+  color: black;
+  text-align: justify;
+}
+
+.cookiesjsr-service--description h3{
+  color: $primary-shade !important;
+  font-weight: bold;
+}
+
+.cookiesjsr-service--links a, .cookiesjsr-service--links a:active, .cookiesjsr-service--links a:hover, .cookiesjsr-service--links a:visited {
+  color: $primary-shade !important;
+  text-decoration: underline;
+}
+
+.cookiesjsr-btn.invert {
+  border-color: $primary-shade !important;
+  color: $primary-shade !important;
+}
+
+.cookiesjsr-btn.invert.important {
+  background-color: $primary-shade !important;
+  color: white !important;
+}
+
+.cookiesjsr-switch:after{
+  background-color: $primary-shade !important;
+  box-shadow: none !important;
+  top: -1px;
+}
+
+label.cookiesjsr-switch {
+  border: 1px solid gray;
+  box-shadow: none;
+}
+
+.cookiesjsr-switch.active {
+  background-color:  $primary-shade !important;
+}
+
+.cookiesjsr-switch.active:after{
+  background-color: white !important;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+  display: none;
+}
+
+div.banner-cookies{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+div.banner-cookies a {
+  background-color: $primary-shade;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid $primary-shade;
+  transition: all 0.5s;
+}
+
+div.banner-cookies a:hover {
+  background-color: white;
+  color: $primary-shade;
+  transition: all 0.5s;
+}

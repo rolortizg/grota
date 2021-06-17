@@ -1,0 +1,34 @@
+uuid: 75550324-0699-48c5-a43a-e67fe22fb6bd
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - field_permissions
+    - file
+    - image
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: commerce_product.field_imagen_producto
+field_name: field_imagen_producto
+entity_type: commerce_product
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

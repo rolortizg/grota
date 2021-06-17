@@ -1,0 +1,19 @@
+uuid: 476993ae-14b7-405e-8c05-a5c0ae294c3c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resumen_proveedor
+    - node.type.proveedor
+id: node.proveedor.field_resumen_proveedor
+field_name: field_resumen_proveedor
+entity_type: node
+bundle: proveedor
+label: 'Resumen proveedor (se muestra en los productos)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

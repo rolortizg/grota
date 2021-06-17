@@ -1,0 +1,51 @@
+uuid: 9703d8c1-3d62-4707-acf5-e1a56c7c4afe
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.media.icono_titulo_subtitulo.field_media_file
+    - field.field.media.icono_titulo_subtitulo.field_subtitulo
+    - media.type.icono_titulo_subtitulo
+  module:
+    - field_layout
+    - file
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: media.icono_titulo_subtitulo.default
+targetEntityType: media
+bundle: icono_titulo_subtitulo
+mode: default
+content:
+  field_media_file:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_subtitulo:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

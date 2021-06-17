@@ -1,0 +1,11 @@
+uuid: b68caf55-f7e9-4769-95de-c305ad213ee3
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.nosotros
+id: node.nosotros
+target_entity_type_id: node
+target_bundle: nosotros
+default_langcode: site_default
+language_alterable: false

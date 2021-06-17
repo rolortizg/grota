@@ -1,0 +1,13 @@
+uuid: 07db254b-af67-4d02-aac0-3e4aac72114d
+langcode: es
+status: true
+dependencies: {  }
+id: imagen_titulo_subtitulo
+label: 'Imagen + Título + Subtítulo'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map: {  }

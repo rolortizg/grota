@@ -1,0 +1,6 @@
+name: Pedido
+description: Funciones para los pedidos
+package: Grota
+type: module
+core_version_requirement: ^9
+

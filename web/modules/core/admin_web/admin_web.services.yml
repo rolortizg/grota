@@ -1,0 +1,5 @@
+services:
+  admin_web.route_subscriber:
+    class: Drupal\admin_web\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

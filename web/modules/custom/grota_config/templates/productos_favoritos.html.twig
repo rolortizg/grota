@@ -1,0 +1,76 @@
+<div class="container my-4">
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example-fav" class="carousel slide carousel-multi-item" data-ride="carousel">
+    <!--Controls-->
+    <div class="controls-top">
+      <a class="btn-floating" href="#multi-item-example-fav" data-slide="prev">Flecha <</i></a>
+      <a class="btn-floating" href="#multi-item-example-fav" data-slide="next">Flecha ></i></a>
+    </div>
+    <!--/.Controls-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+
+      {% set aux= 0 %}
+      {% for key, elem in content %}
+        <!--First slide-->
+        <div class="carousel-item {% if key == 0 %} active {% endif %}">
+
+
+          <div class="row">
+            <div class="col">
+              <div class="mb-2">
+                {% if(content[aux] != null) %}
+                  {{ content[aux] }}
+                {% else %}
+                  {{ content[0] }}
+                  {% set aux= 0 %}
+                {% endif %}
+              </div>
+            </div>
+            {% set aux= aux +1 %}
+            <div class="col clearfix d-none d-md-block">
+              <div class="mb-2">
+                {% if(content[aux] != null) %}
+                  {{ content[aux] }}
+                {% else %}
+                  {{ content[0] }}
+                  {% set aux= 0 %}
+                {% endif %}
+              </div>
+            </div>
+            {% set aux= aux +1 %}
+            <div class="col clearfix d-none d-md-block">
+              <div class="mb-2">
+                {% if(content[aux] != null) %}
+                  {{ content[aux] }}
+                {% else %}
+                  {{ content[0] }}
+                  {% set aux= 0 %}
+                {% endif %}
+              </div>
+            </div>
+            {% set aux= aux +1 %}
+            <div class="col clearfix d-none d-md-block">
+              <div class="mb-2">
+                {% if(content[aux] != null) %}
+                  {{ content[aux] }}
+                {% else %}
+                  {{ content[0] }}
+                  {% set aux= 0 %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% set aux= aux +1 %}
+        </div>
+      {% endfor %}
+
+
+
+    </div>
+    <!--/.Slides-->
+
+  </div>
+  <!--/.Carousel Wrapper-->
+</div>

@@ -1,0 +1,9 @@
+uuid: c02e4137-a1a5-4afe-8e56-f8fbc87ca750
+langcode: es
+status: true
+dependencies: {  }
+id: cookies_de_funcionalidad
+label: 'Cookies de funcionalidad'
+group: cookies_de_funcionalidad
+url: /politica-de-cookies
+consent: false

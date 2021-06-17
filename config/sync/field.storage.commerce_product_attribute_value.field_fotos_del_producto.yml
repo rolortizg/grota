@@ -1,0 +1,30 @@
+uuid: 0917d5e4-2ec2-4b69-a52f-9130d2151b82
+langcode: es
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - file
+    - image
+id: commerce_product_attribute_value.field_fotos_del_producto
+field_name: field_fotos_del_producto
+entity_type: commerce_product_attribute_value
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

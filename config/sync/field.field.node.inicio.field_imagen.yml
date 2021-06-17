@@ -1,0 +1,38 @@
+uuid: 6d2c3b0f-3ab6-44c9-a9bd-3ccd445b31a7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_imagen
+    - node.type.inicio
+  module:
+    - image
+id: node.inicio.field_imagen
+field_name: field_imagen
+entity_type: node
+bundle: inicio
+label: Logos
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: logos-pie-home
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

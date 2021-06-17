@@ -1,0 +1,103 @@
+<?php
+
+
+/**
+ * Implements hook_entity_presave().
+ */
+function producto_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity instanceof \Drupal\commerce_product\Entity\Product) {
+    $entity->set('stores', \Drupal\producto\Controller\ProductoController::TIENDA_PREDETERMINADA);
+  }
+}
+
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function producto_entity_type_alter(array &$entity_types) {
+  /** @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
+  $entity_types['commerce_product_variation']->setListBuilderClass('Drupal\producto\Builder\ProductVariationListBuilder');
+}
+
+/**
+ * Implements hook_entity_form_display_alter().
+ *
+ * @param \Drupal\Core\Entity\Display\EntityFormDisplayInterface $form_display
+ * @param array $context
+ */
+function producto_entity_form_display_alter(\Drupal\Core\Entity\Display\EntityFormDisplayInterface &$form_display, array $context) {
+  if($context['entity_type'] == 'commerce_product_variation'){
+    $perfil = NULL;
+    /** @var \Drupal\user\Entity\User $user */
+    $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    if ($user->hasRole('proveedor')) {
+      $perfil = 'commerce_product_variation.' . $context['bundle'] . '.proveedor';
+    }
+
+    if ($perfil) {
+      $storage = \Drupal::service('entity_type.manager')->getStorage('entity_form_display');
+      $form_display = $storage->load($perfil);
+    }
+
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function producto_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  // Formulario de edicion de variación de producto
+  if (isset($form['#entity_type']) && $form['#entity_type'] == 'commerce_product_variation') {
+    /** @var \Drupal\user\Entity\User $user */
+    $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    if ($user->hasRole('proveedor')) {
+      $form['actions']['delete']['#access'] = FALSE;
+    }
+  }
+  // Formulario de añadir a la cesta
+  if (preg_match("/commerce_order_item_add_to_cart_form_commerce*/i", $form_id)) {
+    $form_data = $form_state->getStorage();
+    $id_default = NULL;
+    if (isset($form_data['selected_variation'])) {
+      $variation = \Drupal\commerce_product\Entity\ProductVariation::load($form_data['selected_variation']);
+      if ($variation instanceof \Drupal\commerce_product\Entity\ProductVariation) {
+        $controller = new \Drupal\producto\Controller\ProductVariationController($variation);
+        $stock = $controller->comprobarStock();
+        if ($stock) {
+          $form['quantity']['widget'][0]['value']['#max'] = $stock;
+        }
+        else {
+          $disponible = FALSE;
+          if (!$form_state->getTriggeringElement()) {
+            $disponible = $controller->getVariacionDisponible($variation->getProduct());
+          }
+
+          if ($disponible) {
+            $selector = FALSE;
+            foreach ($disponible->getAttributeFieldNames() as $fieldName) {
+              if (isset($form['purchased_entity']['widget'][0]['attributes'][$fieldName]) && $disponible->get($fieldName)->target_id) {
+                if (!$selector) {
+                  $selector = TRUE;
+                  $id_default = $disponible->get($fieldName)->target_id;
+                  $form['purchased_entity']['widget'][0]['attributes'][$fieldName]['#attributes']['class'][] = 'ajax-variation-load-' . $disponible->get($fieldName)->target_id;
+                }
+                $form['purchased_entity']['widget'][0]['attributes'][$fieldName]['#default_value'] = $disponible->get($fieldName)->target_id;
+
+              }
+            }
+          }
+          else {
+            $form['actions']['submit']['#value'] = 'No disponible';
+            $form['actions']['submit']['#attributes']['class'][] = 'no-disponible';
+            $form['actions']['submit']['#disabled'] = TRUE;
+          }
+        }
+      }
+    }
+    $form['#cache'] = ['max-age' => 0];
+    $form['#attached']['drupalSettings']['variation'] = $id_default;
+    $form['#attached']['library'][] = 'producto/add_cart';
+  }
+
+}

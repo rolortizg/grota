@@ -1,0 +1,20 @@
+uuid: 96fbc458-8918-490d-8a2e-5e1d1926120d
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - webform
+id: node.field_formulario
+field_name: field_formulario
+entity_type: node
+type: webform
+settings:
+  target_type: webform
+module: webform
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

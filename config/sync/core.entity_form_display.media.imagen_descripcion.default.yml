@@ -1,0 +1,54 @@
+uuid: 926fc9d6-07f8-4d23-836a-525f21c7c7e4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.media.imagen_descripcion.field_descripcion
+    - field.field.media.imagen_descripcion.field_media_image
+    - image.style.thumbnail
+    - media.type.imagen_descripcion
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: media.imagen_descripcion.default
+targetEntityType: media
+bundle: imagen_descripcion
+mode: default
+content:
+  field_descripcion:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_media_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

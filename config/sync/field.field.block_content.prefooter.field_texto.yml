@@ -1,0 +1,19 @@
+uuid: ee074e49-0092-4c85-bd24-2dee64f1ae8e
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.prefooter
+    - field.storage.block_content.field_texto
+id: block_content.prefooter.field_texto
+field_name: field_texto
+entity_type: block_content
+bundle: prefooter
+label: Texto
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,43 @@
+uuid: 6cc595a7-5994-49fb-9e94-7e2b558d204f
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - core.entity_view_mode.commerce_order.proveedor
+    - field.field.commerce_order.default.field_customer_id
+    - field.field.commerce_order.default.field_factura
+    - field.field.commerce_order.default.shipments
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: evnV-nUZotGAM4kgVWKzCtGRJQMstQX5RxlGG7kx3fg
+id: commerce_order.default.proveedor
+targetEntityType: commerce_order
+bundle: default
+mode: proveedor
+content: {  }
+hidden:
+  balance: true
+  billing_profile: true
+  changed: true
+  completed: true
+  field_customer_id: true
+  field_factura: true
+  ip_address: true
+  mail: true
+  order_items: true
+  order_number: true
+  placed: true
+  shipments: true
+  state: true
+  store_id: true
+  total_paid: true
+  total_price: true
+  uid: true

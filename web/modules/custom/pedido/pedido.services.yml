@@ -1,0 +1,22 @@
+services:
+  pedido.cart_subscriber:
+    class: Drupal\pedido\EventSubscriber\CartEventSubscriber
+    tags:
+      - { name: event_subscriber }
+  pedido.route_subscriber:
+    class: Drupal\pedido\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  commerce_order.order_receipt_subscriber:
+    class: Drupal\pedido\EventSubscriber\OrderCompletedEventSuscriber
+    arguments: [ '@language_manager', '@plugin.manager.mail' ]
+    tags:
+      - { name: event_subscriber }
+  pedido.commerce_order_item:
+    class: Drupal\pedido\EventSubscriber\OrderItemEventSuscriber
+    arguments: [ '@current_user', '@language_manager', '@plugin.manager.mail']
+    tags:
+      - { name: event_subscriber }
+  commerce_order.order_receipt_mail:
+    class: Drupal\pedido\Mail\OrderReceiptMail
+    arguments: [ '@entity_type.manager', '@commerce.mail_handler', '@commerce_order.order_total_summary' ]

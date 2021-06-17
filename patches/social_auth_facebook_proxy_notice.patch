@@ -1,0 +1,17 @@
+Index: src/Plugin/Network/FacebookAuth.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Plugin/Network/FacebookAuth.php	(date 1535205717844)
++++ src/Plugin/Network/FacebookAuth.php	(date 1535205717844)
+@@ -147,7 +147,8 @@
+       ];
+ 
+       // Proxy configuration data for outward proxy.
+-      $proxyUrl = $this->siteSettings->get('http_client_config')['proxy']['http'];
++      $proxyUrl = !empty($this->siteSettings->get('http_client_config')['proxy']['http'])
++        ? $this->siteSettings->get('http_client_config')['proxy']['http'] : '';
+       if ($proxyUrl) {
+         $league_settings['proxy'] = $proxyUrl;
+       }

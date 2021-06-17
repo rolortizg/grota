@@ -1,0 +1,46 @@
+uuid: 9b654c47-df51-4761-a1b5-8fcf8e214c05
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.destacado_home.field_media_file_1
+    - field.field.media.destacado_home.field_subtitulo
+    - field.field.media.destacado_home.field_titulo_2
+    - field.field.media.destacado_home.field_titulo_3
+    - field.field.media.destacado_home.field_titulo_4
+    - field.field.media.destacado_home.field_titulo_5
+    - media.type.destacado_home
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: media.destacado_home.media_library
+targetEntityType: media
+bundle: destacado_home
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_file_1: true
+  field_subtitulo: true
+  field_titulo_2: true
+  field_titulo_3: true
+  field_titulo_4: true
+  field_titulo_5: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

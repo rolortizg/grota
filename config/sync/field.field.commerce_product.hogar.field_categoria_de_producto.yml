@@ -1,0 +1,29 @@
+uuid: 34a9e6f1-8cbf-4bbe-98e8-a1a22e20e4a8
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.hogar
+    - field.storage.commerce_product.field_categoria_de_producto
+    - taxonomy.vocabulary.textil_tipo_de_publico
+id: commerce_product.hogar.field_categoria_de_producto
+field_name: field_categoria_de_producto
+entity_type: commerce_product
+bundle: hogar
+label: 'Categoría de producto'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      textil_tipo_de_publico: textil_tipo_de_publico
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

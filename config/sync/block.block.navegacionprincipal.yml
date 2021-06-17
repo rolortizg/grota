@@ -1,0 +1,25 @@
+uuid: 6a6b9709-18cd-4c24-8142-e9bffea560cc
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - frontend
+id: navegacionprincipal
+theme: frontend
+region: primary_menu
+weight: -4
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navegación principal'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

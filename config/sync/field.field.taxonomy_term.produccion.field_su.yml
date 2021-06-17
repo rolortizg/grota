@@ -1,0 +1,19 @@
+uuid: 705d957f-a8cf-4caf-bc0e-9d6a2b1502b4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_su
+    - taxonomy.vocabulary.produccion
+id: taxonomy_term.produccion.field_su
+field_name: field_su
+entity_type: taxonomy_term
+bundle: produccion
+label: Subtítulo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

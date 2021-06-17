@@ -1,0 +1,14 @@
+uuid: 5a4153f0-3bc7-4c3e-8f83-40ef0f563179
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.propietario
+  module:
+    - user
+id: user_remove_role_action.propietario
+label: 'Elimina el rol Propietario al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: propietario

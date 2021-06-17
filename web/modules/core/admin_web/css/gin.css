@@ -1,0 +1,44 @@
+.tabledrag-toggle-weight-wrapper.js-tabledrag-toggle-weight-wrapper,
+#edit-relations,
+.js-form-wrapper.form-wrapper.filter-help,
+#edit-gin-theme-settings,
+#edit-timezone,
+.path-node .content-header,
+.path-admin-user #block-gin-primary-local-tasks {
+  display: none;
+}
+
+input[type="text"],
+.claro-autocomplete,
+.user-logged-in.path-user input[type="password"],
+.user-logged-in.path-user input[type="email"],
+.user-logged-in.path-user #edit-pass,
+.user-logged-in.path-user .password-confirm__password,
+.form-item__description, .fieldset__description{
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+#taxonomy-overview-terms #edit-help{
+  padding-bottom: 12px;
+}
+
+#edit-title-wrapper .form-item--title-0-value{
+  margin-top: 0;
+  margin-bottom: 44px;
+}
+
+details:last-child{
+  margin-bottom: 0;
+}
+
+
+@media (max-width: 1024px) {
+ .layout-region.layout-region-node-secondary{
+    display: none;
+  }
+  #edit-advanced{
+    display:  none;
+  }
+}
+

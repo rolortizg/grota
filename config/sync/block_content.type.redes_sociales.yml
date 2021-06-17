@@ -1,0 +1,8 @@
+uuid: eccc04b6-fb63-4998-804d-bfe0ad6604a1
+langcode: es
+status: true
+dependencies: {  }
+id: redes_sociales
+label: 'Redes sociales'
+revision: 0
+description: ''

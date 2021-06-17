@@ -1,0 +1,27 @@
+uuid: 20ceff03-506e-4b14-b414-b0b8c251d2fb
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_icono
+    - node.type.grota_business
+  module:
+    - file
+id: node.grota_business.field_icono
+field_name: field_icono
+entity_type: node
+bundle: grota_business
+label: Icono
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: iconos
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

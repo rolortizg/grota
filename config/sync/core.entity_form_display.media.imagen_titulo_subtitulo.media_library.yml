@@ -1,0 +1,47 @@
+uuid: 4ed8c491-16af-4c20-bded-c62ebe0fe4aa
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.imagen_titulo_subtitulo.field_media_image_1
+    - field.field.media.imagen_titulo_subtitulo.field_subtitulo
+    - image.style.thumbnail
+    - media.type.imagen_titulo_subtitulo
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: media.imagen_titulo_subtitulo.media_library
+targetEntityType: media
+bundle: imagen_titulo_subtitulo
+mode: media_library
+content:
+  field_media_image_1:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_subtitulo: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

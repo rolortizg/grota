@@ -1,0 +1,6 @@
+name: Producto
+description: Funciones para los productos
+package: Grota
+type: module
+core_version_requirement: ^9
+

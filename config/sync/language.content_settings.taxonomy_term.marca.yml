@@ -1,0 +1,11 @@
+uuid: b6fb10bb-c036-42bf-85b1-de17c4cb4af9
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.marca
+id: taxonomy_term.marca
+target_entity_type_id: taxonomy_term
+target_bundle: marca
+default_langcode: site_default
+language_alterable: false

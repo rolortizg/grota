@@ -1,0 +1,23 @@
+uuid: bffab01d-19a1-4efa-acca-8762f3921f75
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.dia_a_dia
+    - field.storage.commerce_product.field_material_reciclable
+id: commerce_product.dia_a_dia.field_material_reciclable
+field_name: field_material_reciclable
+entity_type: commerce_product
+bundle: dia_a_dia
+label: 'Material reciclable'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

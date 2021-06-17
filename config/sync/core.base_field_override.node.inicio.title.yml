@@ -1,0 +1,18 @@
+uuid: b1caad06-cb20-4e92-aefb-a7ab8dfbee4f
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.inicio
+id: node.inicio.title
+field_name: title
+entity_type: node
+bundle: inicio
+label: 'Título de URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

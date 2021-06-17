@@ -1,0 +1,28 @@
+uuid: 093c0e14-8b3e-4b85-8e5b-01980c95baaa
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_proyectos
+    - media.type.imagen_titulo_subtitulo
+    - node.type.grota_business
+id: node.grota_business.field_proyectos
+field_name: field_proyectos
+entity_type: node
+bundle: grota_business
+label: Proyectos
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      imagen_titulo_subtitulo: imagen_titulo_subtitulo
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

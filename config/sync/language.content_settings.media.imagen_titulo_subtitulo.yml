@@ -1,0 +1,11 @@
+uuid: 13d94058-4e62-4332-bfcb-a29c7d0bb2f6
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.imagen_titulo_subtitulo
+id: media.imagen_titulo_subtitulo
+target_entity_type_id: media
+target_bundle: imagen_titulo_subtitulo
+default_langcode: site_default
+language_alterable: false

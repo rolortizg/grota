@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>x-gruesa</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="x-gruesa" transform="translate(3.000000, 3.000000)" stroke="#4856A2" stroke-width="6">
+            <line x1="0" y1="0" x2="29.6799115" y2="29.6799115" id="Path"></line>
+            <line x1="29.7111615" y1="3.12e-05" x2="0.03125" y2="29.6799427" id="Path"></line>
+        </g>
+    </g>
+</svg>

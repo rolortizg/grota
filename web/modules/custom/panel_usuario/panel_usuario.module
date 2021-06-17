@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * Implements hook_views_data();
+ */
+function panel_usuario_views_data() {
+  $data['views']['table']['group'] = t('Custom Global');
+  $data['views']['table']['join'] = [
+    '#global' => [],
+  ];
+
+  $data['views']['acciones_pedido_field'] = [
+    'title' => t('Acciones del pedido'),
+    'help' => t('Acciones del pedido.'),
+    'field' => [
+      'id' => 'acciones_pedido_field',
+    ],
+  ];
+  return $data;
+}
+function panel_usuario_theme($existing, $type, $theme, $path) {
+  $theme = [
+    'acciones_pedido' => [
+      'template' => 'acciones-pedido',
+      'path' => $path . '/templates',
+      'variables' => [
+        'linkFactura' => FALSE,
+        'linkProductos' => FALSE,
+      ],
+      'render element' => 'elements',
+    ],
+    'tarjetas' => [
+      'template' => 'tarjetas',
+      'path' => $path . '/templates',
+      'variables' => [
+        'tarjetas' => NULL,
+      ],
+    ],
+  ];
+  return $theme;
+}
+
+/**
+ * Preprocess function for tarjetas template.
+ *
+ * @param $variables
+ */
+function template_preprocess_tarjetas(&$variables) {
+
+  $tarjetas = [];
+  $query = \Drupal::entityQuery('commerce_payment_method');
+  $query->condition('uid', \Drupal::currentUser()->id());
+  $result = $query->execute();
+  foreach ($result as $id) {
+    $entity = \Drupal\commerce_payment\Entity\PaymentMethod::load($id);
+    if ($entity instanceof \Drupal\commerce_payment\Entity\PaymentMethod) {
+      $tarjetas[] = $entity;
+    }
+  }
+  $variables['tarjetas'] = $tarjetas;
+}
+
+function panel_usuario_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+  if (strpos($form_id, 'mis_datos_form') !== FALSE){
+    //form['columna1']['datos_fiscales']['direccion']['#attributes']['required'] = false;
+
+  }
+}
+

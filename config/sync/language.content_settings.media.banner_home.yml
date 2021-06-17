@@ -1,0 +1,11 @@
+uuid: e11a5a97-14e1-4727-9050-a6cb0ebb323d
+langcode: es
+status: true
+dependencies:
+  config:
+    - media.type.banner_home
+id: media.banner_home
+target_entity_type_id: media
+target_bundle: banner_home
+default_langcode: site_default
+language_alterable: false

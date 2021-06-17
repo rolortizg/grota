@@ -1,0 +1,66 @@
+uuid: 44d447cd-13de-4231-ad17-82844224ecff
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.inicio.field_ahorro_en_material_sosteni
+    - field.field.node.inicio.field_banner_principal
+    - field.field.node.inicio.field_destacado_home
+    - field.field.node.inicio.field_imagen
+    - field.field.node.inicio.field_imagen_de_fondo
+    - field.field.node.inicio.field_imagen_de_fondo_2
+    - field.field.node.inicio.field_titulo
+    - field.field.node.inicio.field_titulo_2
+    - field.field.node.inicio.field_titulo_3
+    - field.field.node.inicio.field_titulo_4
+    - field.field.node.inicio.field_titulo_5
+    - field.field.node.inicio.field_titulo_6
+    - field.field.node.inicio.field_total_biodegradable
+    - field.field.node.inicio.field_total_biosintetico
+    - field.field.node.inicio.field_total_co2
+    - field.field.node.inicio.field_total_compostable
+    - field.field.node.inicio.field_total_organico
+    - field.field.node.inicio.field_total_reciclable
+    - field.field.node.inicio.field_total_reciclado
+    - node.type.inicio
+  module:
+    - field_layout
+    - layout_discovery
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.inicio.teaser
+targetEntityType: node
+bundle: inicio
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_ahorro_en_material_sosteni: true
+  field_banner_principal: true
+  field_destacado_home: true
+  field_imagen: true
+  field_imagen_de_fondo: true
+  field_imagen_de_fondo_2: true
+  field_titulo: true
+  field_titulo_2: true
+  field_titulo_3: true
+  field_titulo_4: true
+  field_titulo_5: true
+  field_titulo_6: true
+  field_total_biodegradable: true
+  field_total_biosintetico: true
+  field_total_co2: true
+  field_total_compostable: true
+  field_total_organico: true
+  field_total_reciclable: true
+  field_total_reciclado: true
+  langcode: true

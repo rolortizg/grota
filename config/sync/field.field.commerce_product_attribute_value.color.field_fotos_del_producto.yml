@@ -1,0 +1,38 @@
+uuid: a5abbd8b-a87c-44f7-9224-fbf38f8eab2e
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_attribute.color
+    - field.storage.commerce_product_attribute_value.field_fotos_del_producto
+  module:
+    - image
+id: commerce_product_attribute_value.color.field_fotos_del_producto
+field_name: field_fotos_del_producto
+entity_type: commerce_product_attribute_value
+bundle: color
+label: 'Foto del producto'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: fotos-de-producto
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

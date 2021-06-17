@@ -1,0 +1,27 @@
+uuid: bfc3f48f-2a69-4365-9851-2509dff6ae4d
+langcode: es
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.dia_a_dia
+    - field.storage.commerce_product.field_productos
+id: commerce_product.dia_a_dia.field_productos
+field_name: field_productos
+entity_type: commerce_product
+bundle: dia_a_dia
+label: 'Productos relacionados'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product'
+  handler_settings:
+    target_bundles:
+      dia_a_dia: dia_a_dia
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: dia_a_dia
+field_type: entity_reference

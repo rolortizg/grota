@@ -1,0 +1,43 @@
+uuid: 20ba869e-77f5-4d1d-a366-8d2b55913e30
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.categoria_de_producto.field_icono_textil
+    - image.style.thumbnail
+    - taxonomy.vocabulary.categoria_de_producto
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: taxonomy_term.categoria_de_producto.default
+targetEntityType: taxonomy_term
+bundle: categoria_de_producto
+mode: default
+content:
+  field_icono_textil:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true
+  status: true

@@ -1,0 +1,23 @@
+uuid: 74a7af44-559d-47cf-86de-2fb5d718770c
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.prefooter
+    - field.storage.block_content.field_enlace_multiple
+  module:
+    - link
+id: block_content.prefooter.field_enlace_multiple
+field_name: field_enlace_multiple
+entity_type: block_content
+bundle: prefooter
+label: 'Enlace multiple'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

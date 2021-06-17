@@ -1,0 +1,26 @@
+pedido.estados:
+  id: pedido_estados
+  group: commerce_order
+  label: 'Estados pedido'
+  states:
+    draft:
+      label: Cesta
+    processing:
+      label: Procesando
+    completed:
+      label: Completado
+    canceled:
+      label: Cancelado
+  transitions:
+    place:
+      label: 'Cesta'
+      from: [draft]
+      to: processing
+    fulfill:
+      label: 'Completado'
+      from: [processing]
+      to: completed
+    cancel:
+      label: 'Cancelado'
+      from: [draft, processing, completed]
+      to:   canceled

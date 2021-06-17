@@ -1,0 +1,23 @@
+uuid: b83e959b-8184-43bb-9456-1cd4036f6f70
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.redes_sociales
+    - field.storage.block_content.field_enlace_linkedin
+  module:
+    - link
+id: block_content.redes_sociales.field_enlace_linkedin
+field_name: field_enlace_linkedin
+entity_type: block_content
+bundle: redes_sociales
+label: 'Enlace Linkedin'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

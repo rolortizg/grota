@@ -1,0 +1,25 @@
+uuid: f3950ad5-40b5-433a-9f53-876fa2b6d32c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_total_reciclado
+    - node.type.inicio
+id: node.inicio.field_total_reciclado
+field_name: field_total_reciclado
+entity_type: node
+bundle: inicio
+label: 'Total reciclado'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

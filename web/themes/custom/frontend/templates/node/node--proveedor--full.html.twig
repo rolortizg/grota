@@ -1,0 +1,54 @@
+<div class="G-fondo--secundario G-max--100">
+  <div class="E-max--940 G-margen--auto G-txt--cen" style="padding: 110px 20px 90px;">
+    {% if node.field_titulo.value %}
+      <p class="G-margen--xl G-margen--lr-0 G-margen--top-0 G-padding--xxs G-padding--lr-0 G-padding--top-0 G-txt--xxl G-color--blanco G-txt--negrita G-txt--cen E-linea-titulo-white G-pos--relativo" style="line-height: 1;">{{ node.field_titulo.value }}</p>
+    {% endif %}
+    <div class="G-fondo--blanco G-max--100 G-borde--redondeado-xxs G-padding--xxsupergigante">
+      <img style="max-width: 190px;width: 100%;" src="{{ file_url(node.field_logotipo.entity.fileuri) }}" alt="">
+      {% if node.field_descripcion.value %}
+        <div class="E-txt-proveedor E-font-montserrat G-color--auxiliar E-txt--18 G-txt--cen G-margen--gigante G-margen--lr-0">
+          {{ node.field_descripcion.value|raw }}
+        </div>
+      {% endif %}
+      {% if node.field_certificados_proveedor.0 %}
+        <ul class="G-listado G-flex G-dis-h--cen G-dis-v--middle G-flex--wrap">
+          {% for key,item in node.field_certificados_proveedor %}
+            <li class="G-padding--xm G-max--150 G-flex G-dis-h--cen G-dis-v--middle">
+              <img class="E-max--wyh" src="{{ file_url(item.entity.field_icono.entity.fileuri) }}" alt="">
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <div class="G-txt--cen G-pos--relativo" style="bottom: -80px;">
+        {% if(node.field_tallas.0) %}
+          <a href="{{ file_url(node.field_tallas.0.entity.uri.value) }}" class="E-hover-primario G-fondo--primario G-color--blanco G-borde--redondeado-xs E-txt--18 G-txt--sinsubrayado G-txt--cen" style="padding: 7px 20px;">Guía de tallas</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% if node.field_titulo_2.value %}
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--670 G-margen--auto G-txt--cen" style="padding: 60px 20px 100px;">
+    <p class="G-margen--xxm G-margen--lr-0 G-margen--top-0 G-txt--xxm G-color--primario G-txt--negrita G-txt--cen">Video corporativo</p>
+      {% set video = node.field_titulo_2.value|split('=') %}
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video[1] }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+{% endif %}
+
+<!-- Todas sus cosas -->
+<div>
+  <p class="G-margen--xxm G-margen--lr-0 G-margen--top-0 G-txt--xxm G-color--primario G-txt--negrita G-txt--cen">Todas sus cosas</p>
+  {{ drupal_view('productos_proveedores', 'block_1', node.id) }}
+</div>
+<div class="G-fondo--blanco G-max--100">
+  <div class="E-max--580 G-margen--auto" style="padding: 0 20px 120px;">
+    {% if node.field_titulo_3.value %}
+      <p class="G-margen--xxm G-margen--lr-0 G-margen--top-0 G-txt--xxm G-color--primario G-txt--negrita G-txt--cen" style="line-height: 1;">{{ node.field_titulo_3.value }}</p>
+    {% endif %}
+    {% if node.field_descripcion_2.value %}
+      <div class="E-txt-proveedor E-font-montserrat G-txt--xxs G-color--terciario G-margen--0 G-txt--jus">{{ node.field_descripcion_2.value|raw }}</div>
+    {% endif %}
+  </div>
+</div>

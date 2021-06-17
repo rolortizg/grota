@@ -1,0 +1,23 @@
+uuid: 6fed4461-8da7-4eee-9c9a-fc2b14251eb1
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_enlace
+    - node.type.nosotros
+  module:
+    - link
+id: node.nosotros.field_enlace
+field_name: field_enlace
+entity_type: node
+bundle: nosotros
+label: Enlace
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link
